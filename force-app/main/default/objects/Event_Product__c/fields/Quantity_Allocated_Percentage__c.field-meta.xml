@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_Allocated_Percentage__c</fullName>
+    <description>Quantity Allocated Percentage</description>
+    <formula>IF(AND(NOT(ISBLANK(Quantity_Allocated__c)),NOT(ISBLANK(Total_Quantity_Available__c ))), 
+(Quantity_Allocated__c/Total_Quantity_Available__c ), 
+ null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Quantity Allocated Percentage</inlineHelpText>
+    <label>Quantity Allocated %</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

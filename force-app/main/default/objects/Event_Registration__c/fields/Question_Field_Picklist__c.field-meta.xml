@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Question_Field_Picklist__c</fullName>
+    <description>This is test field for question component form</description>
+    <inlineHelpText>This is test field for question component form</inlineHelpText>
+    <label>Picklist Field</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>--None--</fullName>
+                <default>false</default>
+                <label>--None--</label>
+            </value>
+            <value>
+                <fullName>Option A</fullName>
+                <default>false</default>
+                <label>Option A</label>
+            </value>
+            <value>
+                <fullName>Option B</fullName>
+                <default>false</default>
+                <label>Option B</label>
+            </value>
+            <value>
+                <fullName>Option C</fullName>
+                <default>false</default>
+                <label>Option C</label>
+            </value>
+            <value>
+                <fullName>Option D</fullName>
+                <default>false</default>
+                <label>Option D</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

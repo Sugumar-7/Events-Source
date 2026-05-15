@@ -1,0 +1,30 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 01-17-2021
+  @last modified by  : Umashankar Creation
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   10-27-2020   Creation Admin   Initial Version
+-->
+<template>
+  <template if:true={canRenderTicketForm}>
+  <!--DISPLAY EVENT DETAILS-->
+  <c-ct_event-summary-box-v2 selected-event={selectedEvent}></c-ct_event-summary-box-v2>
+  <!--DISPLAY EVENT DETAILS-->
+  <template if:true={ticketForms}>
+  <template for:each={ticketForms} for:item="eachTicket">
+    <c-ct_ticket-form-v2 onattendeechanged={handleattendeereset}  onattendeerevert={handleattendeerevert} onmanageavailablesessions={handleManageSessions} oneventemailvalidation={validateForDuplicateEventRegistrations} order-by={orderBy} event-id={selectedEvent.Id} allow-duplicate-event-registration={allowDuplicateEventRegistration} ticket={eachTicket} all-ordered-tickets={orderedTickets} key={eachTicket.ticketNumber} event-registration={eachTicket.eventRegistration} dynamic-session-data={dynamicSessionData} number-of-tickets={numberOfTickets}></c-ct_ticket-form-v2>
+  </template>
+  <div class="slds-grid buttongridflexdirection">
+    <div class="slds-p-right_small slds-p-top_x-small buttonStyle">
+      <button type="button" name="Back" value="Back" onclick={handlePrevPage} class="activeButton slds-button slds-button_success">Back</button>
+    </div>
+    <div class="slds-p-right_small buttonStyle slds-p-top_x-small">
+      <button type="button" name="Next" value="Next" onclick={handleDisplaySummary} class="activeButton slds-button slds-button_success">Next</button>
+    </div>
+  </div>
+</template>
+</template>
+</template>

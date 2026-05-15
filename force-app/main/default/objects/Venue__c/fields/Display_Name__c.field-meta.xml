@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Display_Name__c</fullName>
+    <label>Display Name</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Anglesea Building</fullName>
+                <default>false</default>
+                <label>Anglesea Building</label>
+            </value>
+            <value>
+                <fullName>Buckingham Building</fullName>
+                <default>false</default>
+                <label>Buckingham Building</label>
+            </value>
+            <value>
+                <fullName>Burnaby Building</fullName>
+                <default>false</default>
+                <label>Burnaby Building</label>
+            </value>
+            <value>
+                <fullName>Dennis Sciama</fullName>
+                <default>false</default>
+                <label>Dennis Sciama</label>
+            </value>
+            <value>
+                <fullName>Eldon Building</fullName>
+                <default>false</default>
+                <label>Eldon Building</label>
+            </value>
+            <value>
+                <fullName>Eye Clinic</fullName>
+                <default>false</default>
+                <label>Eye Clinic</label>
+            </value>
+            <value>
+                <fullName>Future Technology Centre</fullName>
+                <default>false</default>
+                <label>Future Technology Centre</label>
+            </value>
+            <value>
+                <fullName>Institute of Marine Science</fullName>
+                <default>false</default>
+                <label>Institute of Marine Science</label>
+            </value>
+            <value>
+                <fullName>King Henry Building</fullName>
+                <default>false</default>
+                <label>King Henry Building</label>
+            </value>
+            <value>
+                <fullName>Lion Gate Building</fullName>
+                <default>false</default>
+                <label>Lion Gate Building</label>
+            </value>
+            <value>
+                <fullName>Mildam Building</fullName>
+                <default>false</default>
+                <label>Mildam Building</label>
+            </value>
+            <value>
+                <fullName>Park Building</fullName>
+                <default>false</default>
+                <label>Park Building</label>
+            </value>
+            <value>
+                <fullName>Portland Building</fullName>
+                <default>false</default>
+                <label>Portland Building</label>
+            </value>
+            <value>
+                <fullName>Queen Alexandra Hospital</fullName>
+                <default>false</default>
+                <label>Queen Alexandra Hospital</label>
+            </value>
+            <value>
+                <fullName>Richmond Building</fullName>
+                <default>false</default>
+                <label>Richmond Building</label>
+            </value>
+            <value>
+                <fullName>Rosalind Franklin West</fullName>
+                <default>false</default>
+                <label>Rosalind Franklin West</label>
+            </value>
+            <value>
+                <fullName>Spinnaker Building</fullName>
+                <default>false</default>
+                <label>Spinnaker Building</label>
+            </value>
+            <value>
+                <fullName>Spinnaker Sports Centre</fullName>
+                <default>false</default>
+                <label>Spinnaker Sports Centre</label>
+            </value>
+            <value>
+                <fullName>St Andrew&apos;s Court</fullName>
+                <default>false</default>
+                <label>St Andrew&apos;s Court</label>
+            </value>
+            <value>
+                <fullName>St George&apos;s Building</fullName>
+                <default>false</default>
+                <label>St George&apos;s Building</label>
+            </value>
+            <value>
+                <fullName>St Micheal&apos;s Building</fullName>
+                <default>false</default>
+                <label>St Micheal&apos;s Building</label>
+            </value>
+            <value>
+                <fullName>St Pauls Gym</fullName>
+                <default>false</default>
+                <label>St Pauls Gym</label>
+            </value>
+            <value>
+                <fullName>University Learning Centre</fullName>
+                <default>false</default>
+                <label>University Learning Centre</label>
+            </value>
+            <value>
+                <fullName>University Library</fullName>
+                <default>false</default>
+                <label>University Library</label>
+            </value>
+            <value>
+                <fullName>White Swan Building</fullName>
+                <default>false</default>
+                <label>White Swan Building</label>
+            </value>
+            <value>
+                <fullName>William Beaty Building</fullName>
+                <default>false</default>
+                <label>William Beaty Building</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

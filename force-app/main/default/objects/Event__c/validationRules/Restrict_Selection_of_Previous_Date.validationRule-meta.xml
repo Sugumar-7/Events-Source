@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Selection_of_Previous_Date</fullName>
+    <active>false</active>
+    <description>Restrict User to select previous date for Scheduled Publishing of Event.</description>
+    <errorConditionFormula>AND(
+TEXT( Manual_or_Scheduled_Publishing__c ) = &quot;Scheduled Publishing&quot;,
+ OR(  
+  AND(
+    OR(
+     ISCHANGED(Manual_or_Scheduled_Publishing__c),
+     ISCHANGED(Event_Publishing_Date_Time__c)
+    ),
+    OR(
+       Event_Publishing_Date_Time__c  &lt; NOW(),
+       ISBLANK( Event_Publishing_Date_Time__c ),
+       Active__c == true
+     )
+   ),
+   AND(
+          ISCHANGED(Active__c),
+          Active__c == true,
+          Event_Publishing_Date_Time__c  &gt; NOW()
+      )
+ )
+)</errorConditionFormula>
+    <errorMessage>If the Event Publishing is Scheduled Publishing then 
+1. you have to enter the date and time and it should not be in past.
+2. Active checkbox should not be checked</errorMessage>
+</ValidationRule>

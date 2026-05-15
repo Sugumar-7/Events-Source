@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maximum_Registration_Session__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The maximum number of registrations for this session. NOTE: Cannot be more than the maximum venue capacity.</inlineHelpText>
+    <label>Maximum Session Registration</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

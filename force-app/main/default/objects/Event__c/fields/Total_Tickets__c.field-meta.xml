@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Tickets__c</fullName>
+    <inlineHelpText>Roll up of total Event Product Tickets. NOTE - Total Tickets available can EITHER equal Maximum Registrations e.g. 100 student tickets + 100 parent tickets = 200 max registrations, OR exceed Max Registrations e.g. 100 student tickets OR 100 parent tickets</inlineHelpText>
+    <label>Total Tickets Available</label>
+    <summarizedField>Event_Product__c.Total_Quantity_Available__c</summarizedField>
+    <summaryForeignKey>Event_Product__c.Event__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

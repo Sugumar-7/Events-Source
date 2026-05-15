@@ -1,0 +1,144 @@
+@font-face {
+    font-family: "'Encode Sans Expanded', sans-serif";
+    src: url(/s/sfsites/c/resource/ct_Font_Encode_Sans_Expanded);
+}
+
+@font-face {
+    font-family: "'Open Sans', sans-serif";
+    src: url(/s/sfsites/c/resource/font_Open_Sans);
+}
+
+.headingStyle {
+    font-family: "'Encode Sans Expanded', sans-serif" !important;
+    color: #027119;
+    font-weight: bold;
+}
+
+.fieldLabelStyle {
+    font-family: "'Open Sans', sans-serif" !important;
+    font-size: 14px !important;
+    font-weight: normal;
+    color: #505457;
+}
+
+.slds-input[readonly] {
+    font-family: "'Open Sans', sans-serif" !important;
+    font-size: 14px !important;
+    font-weight: normal;
+    color: #505457;
+}
+
+.uopButtonStyle {
+    font-family: "'Encode Sans Expanded', sans-serif" !important;
+    font-size: 15px !important;
+    /* font: inherit; */
+    height: 50px;
+    width: 200px;
+    background-color: #05884a !important;
+    border-color: #FFFFFF !important;
+    color: #FFFFFF;
+    font-weight: 600;
+    /* border-radius: 3px; */
+    padding: 0px;
+    margin: 0px;
+    transition-duration: 0.3s;
+    transition-property: background-color, color;
+}
+
+.uopButtonStyle:hover {
+    background-color: #069f56 !important;
+    color: white;
+    font-weight: 600;
+}
+
+.uopTopicBrandLabel {
+    color: #3C023C;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    font-family: "'Encode Sans Expanded', sans-serif";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* font: inherit; */
+}
+
+.uopInputFieldLabel {
+    font-family: "'Open Sans', sans-serif" !important;
+    color: #212F3B;
+    font-size: 14px !important;
+    font-weight: bold;
+    /* font: inherit; */
+}
+
+.activeButton:hover {
+    background-color: #069f56 !important;
+    color: white;
+    font-weight: 600;
+}
+
+.activeButton {
+    font-family: "'Encode Sans Expanded', sans-serif" !important;
+    font-size: 15px !important;
+    /* font: inherit; */
+    height: 50px;
+    width: 200px;
+    background-color: #05884a !important;
+    border-color: #FFFFFF !important;
+    color: #FFFFFF;
+    font-weight: 600;
+    /* border-radius: 3px; */
+    padding: 0px;
+    margin: 0px;
+    transition-duration: 0.3s;
+    transition-property: background-color, color;
+}
+
+.completeDonationActiveButton {
+    font-family: "'Encode Sans Expanded', sans-serif" !important;
+    font-size: 15px !important;
+    /* font: inherit; */
+    height: 50px;
+    width: 200px;
+    background-color: #05884a !important;
+    border-color: #FFFFFF !important;
+    color: #FFFFFF;
+    font-weight: 600;
+    /* border-radius: 3px; */
+    padding: 0px;
+    margin: 0px;
+    transition-duration: 0.3s;
+    transition-property: background-color, color;
+}
+
+.completeDonationActiveButton:hover {
+    background-color: #069f56 !important;
+    color: white;
+    font-weight: 600;
+}
+
+.radioButton {
+    padding-right: 10px;
+}
+
+.capsStyle{
+    text-transform: uppercase;
+}
+
+@media (max-width: 1280px) {
+    .buttongridflexdirection{
+      flex-direction: row !important;
+    }
+    .buttonStyle{
+      padding-right: 12px;
+    }
+    .backButtonStyle{
+        padding-bottom: 12px;
+    }
+}
+@media (max-width: 768px){
+    .buttongridflexdirection{
+      flex-direction: column !important;
+    }
+    
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AED_Event_Reg_inc_Session</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Event__c</columns>
+    <columns>Session__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Event_Registration__c.AED,Event_Registration__c.Open_Day</value>
+    </filters>
+    <filters>
+        <field>Event__c</field>
+        <operation>equals</operation>
+        <value>AED - Faculty of Technology - 27/04/2019</value>
+    </filters>
+    <filters>
+        <field>Session__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>AED Event Reg inc. Session</label>
+</ListView>

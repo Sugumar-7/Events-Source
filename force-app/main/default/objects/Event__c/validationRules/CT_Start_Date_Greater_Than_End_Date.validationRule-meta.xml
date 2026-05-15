@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CT_Start_Date_Greater_Than_End_Date</fullName>
+    <active>true</active>
+    <description>Event End date should not be before the Event Start date</description>
+    <errorConditionFormula>IF(Event_End_Date__c = Event_Start_Date__c, 
+    End_Time__c  &lt; Start_Time__c, 
+    Event_End_Date__c &lt;  Event_Start_Date__c )</errorConditionFormula>
+    <errorMessage>Event End Date and Time must be after Event Start Date and Time</errorMessage>
+</ValidationRule>

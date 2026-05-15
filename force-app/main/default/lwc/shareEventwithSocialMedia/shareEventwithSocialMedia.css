@@ -1,0 +1,51 @@
+.share, .webshare {
+    display: none;
+  }
+  
+  .social .share {
+    display: flex;
+    flex-wrap: wrap;
+    user-select: none;
+  }
+  
+  .webshareapi .webshare {
+    display: block;
+  }
+  
+  .share, .share li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .share a {
+    display: block;
+    text-decoration: none;
+    padding: 0.3em 1em 0.3em 0.3em;
+    margin: 0.2em;
+    color: #fff;
+    background-color: #557;
+    border-radius: 1.5em;
+    outline: 0 none;
+  }
+  
+  .share svg {
+    width: 1.2em;
+    height: 1.2em;
+    padding: 0;
+    margin: 0 0.2em 0 0;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 0.4em solid #fff;
+    border-radius: 50%;
+    overflow: visible;
+    transition: transform 0.2s cubic-bezier(0.2,-1.3, 0.5, 5);
+  }
+  
+  .share a:hover, .share a:focus {
+    background-color: #779;
+  }
+  
+  .share a:hover svg, .share a:focus svg {
+    transform: scale(1.15);
+  }

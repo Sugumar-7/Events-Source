@@ -1,0 +1,130 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 02-02-2021
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   08-19-2020   Creation Admin   Initial Version
+-->
+
+
+<messaging:emailTemplate renderUsingSystemContextWithoutSharing="True"  subject="Event Registration Confirmation Email - {!relatedTo.Event__r.Name}" recipientType="Contact" relatedToType="Event_Registration__c">
+<messaging:htmlEmailBody >
+<html>
+  <div style="text-align: center">
+  </div>
+<body>
+  <div style="padding-top: .5rem;padding-bottom: .5rem;font-size: 16px !important;">
+    Dear {!relatedTo.First_Name__c}, please find your ticket to your below event.
+  </div>
+
+  <span style="padding-top: .5rem;padding-bottom: .5rem; color: #621360; font-size: 18px !important; font-weight: bold;">Event Details</span>
+
+  <table class="padding-top: .5rem;padding-bottom: .5rem;">
+
+    <tr>
+      <td width="25%" style="font-size: 16px !important;font-weight: bold;color: black;">
+        <apex:outputText value="Event" />
+      </td>
+        <td width="40%" style="font-size: 16px !important;color: black;">
+          <apex:outputText value="{!relatedTo.Event__r.Name}" />
+        </td>
+    </tr>
+
+    <tr>
+      <td width="25%" style="font-size: 16px !important;font-weight: bold;color: black;">
+        <apex:outputText value="Date / Time" />
+      </td>
+        <td width="40%" style="font-size: 16px !important;color: black;">
+          <div style="width:100%">
+            <apex:outputField value="{!relatedTo.Event__r.Event_Start_Date__c}"/>&nbsp;&nbsp; from  &nbsp;&nbsp; <apex:outputField value="{!relatedTo.Event__r.Start_Time__c}"/>&nbsp;&nbsp;to&nbsp;&nbsp;<apex:outputField value="{!relatedTo.Event__r.End_Time__c}"/> 
+          </div>
+        </td>
+
+
+
+    </tr>
+  
+</table>
+
+<div style="padding-top: .5rem;padding-bottom: .5rem;">
+  <span style="padding-top: .5rem;padding-bottom: .5rem; color: #621360; font-size: 18px !important; font-weight: bold;">Event Ticket</span>
+
+    <div style="padding-top: .5rem;padding-bottom: .5rem;">
+    <div style="border: 1px solid black !important;">
+
+      <table>
+        <tr>
+          <td width= "70%" style="padding: .75rem;">
+            <div style="font-size: 16px !important;font-weight: bold;color: black;">
+              <apex:outputText value="{!relatedTo.Event_Product__r.Name}" /><br/><br/>
+            </div>
+            <div style="font-size: 16px !important;color: black;">
+              <apex:outputText value="{!IF(ISBLANK(relatedTo.First_Name__c), 'Guest', relatedTo.First_Name__c +' '+ relatedTo.Last_Name__c)}" /><br/><br/>
+            </div>
+            <div style="font-size: 16px !important;">
+              <a href="{!$Label.Experience_Site_Base_URL}/s?regId={!relatedTo.Id}">Ticket Management</a>
+            </div>
+
+          </td>
+          <td>
+         <apex:outputText value="{!
+        SUBSTITUTE(
+            relatedTo.QR_Code__c,
+            '.file.force.com',
+            '.my.site.com'
+        )
+    }" 
+    escape="false"/>
+
+
+          
+
+</td>
+
+ 
+
+
+
+        
+        </tr>
+      </table>
+        
+      <div style="font-size: 16px !important;color: black;padding: .75rem;">
+        <apex:outputText value="{!relatedTo.Event_Product__r.Event_Product_Description__c}" />
+      </div>
+
+      <div style="padding: .75rem;">
+        <span style="font-size: 16px !important;font-weight: bold;color: black;"> Event Registration Number: </span> <span><apex:outputText value="{!relatedTo.Name}" /></span>
+      </div>
+          </div>
+          </div>
+    </div>
+</body>
+</html>
+</messaging:htmlEmailBody>
+
+<messaging:attachment filename="Event Details.ics">BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//xyz Corp//NONSGML PDA Calendar Version 1.0//EN
+BEGIN:VEVENT
+DTSTAMP;TZID=GMT:{!TEXT(YEAR(relatedTo.Event__r.Event_Start_Date__c)) + LPAD(TEXT(MONTH(relatedTo.Event__r.Event_Start_Date__c)), 2, '0' ) +    LPAD( TEXT( DAY( relatedTo.Event__r.Event_Start_Date__c ) ), 2, '0' ) + 'T' + LPAD( TEXT( HOUR( TIMEVALUE( relatedTo.Event__r.Start_Time__c ) ) ), 2, '0' ) + LPAD( TEXT( MINUTE( TIMEVALUE(relatedTo.Event__r.Start_Time__c ) ) ), 2, '0' ) +  LPAD( TEXT( SECOND( TIMEVALUE( relatedTo.Event__r.Start_Time__c ) ) ), 2, '0' ) +   'Z'}
+UID:<apex:outputText value="{!relatedTo.id}"/>
+ORGANIZER;CN="University of Portsmouth":mailto:<apex:outputText value="test@example.com"/>
+DTSTART;TZID=GMT:{!TEXT(YEAR(relatedTo.Event__r.Event_Start_Date__c)) + LPAD(TEXT(MONTH(relatedTo.Event__r.Event_Start_Date__c)), 2, '0' ) +    LPAD( TEXT( DAY( relatedTo.Event__r.Event_Start_Date__c ) ), 2, '0' ) + 'T' + LPAD( TEXT( HOUR( TIMEVALUE( relatedTo.Event__r.Start_Time__c ) ) ), 2, '0' ) + LPAD( TEXT( MINUTE( TIMEVALUE(relatedTo.Event__r.Start_Time__c ) ) ), 2, '0' ) +  LPAD( TEXT( SECOND( TIMEVALUE( relatedTo.Event__r.Start_Time__c ) ) ), 2, '0' ) +   'Z'}
+DTEND;TZID=GMT:{!TEXT(YEAR(relatedTo.Event__r.Event_End_Date__c)) + LPAD(TEXT(MONTH(relatedTo.Event__r.Event_End_Date__c)), 2, '0' ) +    LPAD( TEXT( DAY( relatedTo.Event__r.Event_End_Date__c ) ), 2, '0' ) + 'T' + LPAD( TEXT( HOUR( TIMEVALUE( relatedTo.Event__r.End_Time__c ) ) ), 2, '0' ) + LPAD( TEXT( MINUTE( TIMEVALUE(relatedTo.Event__r.End_Time__c ) ) ), 2, '0' ) +    LPAD( TEXT( SECOND( TIMEVALUE( relatedTo.Event__r.End_Time__c ) ) ), 2, '0' ) +'Z'}
+SUMMARY:<apex:outputText value="Event: {!relatedTo.Event__r.Name}"/>
+DESCRIPTION:<apex:outputText value="{!JSENCODE(relatedTo.Event__r.Name)}" escape="false"/>
+LOCATION:<apex:outputText value="{!JSENCODE(LEFT(IF(NOT(ISNULL(relatedTo.Event__r.Venue_Street_Address_1__c )), relatedTo.Event__r.Venue_Street_Address_1__c +  IF(NOT(ISNULL(relatedTo.Event__r.Venue_Street_Address_2__c )), ',' , '' ) , '' ) + IF(NOT(ISNULL( relatedTo.Event__r.Venue_Street_Address_2__c )), relatedTo.Event__r.Venue_Street_Address_2__c + IF(NOT(ISNULL(relatedTo.Event__r.Venue_City__c )), ',' , '' ) , '' ) + IF(NOT(ISNULL( relatedTo.Event__r.Venue_City__c )), relatedTo.Event__r.Venue_City__c +',' , '' ) + IF(NOT(ISNULL( relatedTo.Event__r.Venue_State__c )), relatedTo.Event__r.Venue_State__c +',' , '' ) + IF(NOT(ISNULL( relatedTo.Event__r.Venue_Country__c )), relatedTo.Event__r.Venue_Country__c +',' , '' ) + IF(NOT(ISNULL( relatedTo.Event__r.Venue_Postal_Code__c )), relatedTo.Event__r.Venue_Postal_Code__c +',' , '' ), LEN(IF(NOT(ISNULL(relatedTo.Event__r.Venue_Street_Address_1__c )), relatedTo.Event__r.Venue_Street_Address_1__c +  IF(NOT(ISNULL(relatedTo.Event__r.Venue_Street_Address_2__c )), ',' , '' ) , '' ) + IF(NOT(ISNULL( relatedTo.Event__r.Venue_Street_Address_2__c )), relatedTo.Event__r.Venue_Street_Address_2__c + IF(NOT(ISNULL(relatedTo.Event__r.Venue_City__c )), ',' , '' ) , '' ) + IF(NOT(ISNULL( relatedTo.Event__r.Venue_City__c )), relatedTo.Event__r.Venue_City__c +',' , '' ) + IF(NOT(ISNULL( relatedTo.Event__r.Venue_State__c )), relatedTo.Event__r.Venue_State__c +',' , '' ) + IF(NOT(ISNULL( relatedTo.Event__r.Venue_Country__c )), relatedTo.Event__r.Venue_Country__c +',' , '' ) + IF(NOT(ISNULL( relatedTo.Event__r.Venue_Postal_Code__c )), relatedTo.Event__r.Venue_Postal_Code__c +',' , '' ))-1))}" escape="false"/>
+BEGIN:VALARM
+TRIGGER:-PT1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+</messaging:attachment>
+
+</messaging:emailTemplate>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Question__c</fullName>
+    <description>This field holds the question that needs to displayed in the web forms</description>
+    <inlineHelpText>Please enter a appropriate question for related Event Question Set</inlineHelpText>
+    <label>Question</label>
+    <length>131072</length>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

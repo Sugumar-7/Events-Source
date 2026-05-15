@@ -1,0 +1,22 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 10-20-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   10-20-2020   Creation Admin   Initial Version
+-->
+<template>
+  <div class="slds-p-vertical_x-small alphabetLabel">{getBy}</div>
+  
+  <template for:each={registationRecordsByFirstAlphabet} for:item="thisEventRegistration">
+    <c-ct_-registration-check-in-manager-mobile-tile 
+    onsessionregupdatedevent={handlesessionRegUpdatedEvent} 
+    key={registationRecordsByFirstAlphabet.Id} 
+    event-registration={thisEventRegistration} 
+    is-main-entrance={isMainEntrance}></c-ct_-registration-check-in-manager-mobile-tile>
+  </template>
+  
+</template>

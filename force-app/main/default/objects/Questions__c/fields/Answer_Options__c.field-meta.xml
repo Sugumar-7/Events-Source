@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Answer_Options__c</fullName>
+    <description>This field is used to display answers as options if the data type is selected as Picklist</description>
+    <inlineHelpText>Please enter each option in a new line when you choose either &quot;Picklist&quot; or &quot;Picklist with Radio Options&quot; as data type</inlineHelpText>
+    <label>Answer Options</label>
+    <length>131072</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

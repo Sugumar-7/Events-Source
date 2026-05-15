@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Postgraduate_Study__c</fullName>
+    <description>This field is used to identify the type of post grade</description>
+    <inlineHelpText>Type of PG study information populated further to event question set</inlineHelpText>
+    <label>Type of Postgraduate Study</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Postgraduate Taught</fullName>
+                <default>false</default>
+                <label>Postgraduate Taught</label>
+            </value>
+            <value>
+                <fullName>Postgraduate Research</fullName>
+                <default>false</default>
+                <label>Postgraduate Research</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

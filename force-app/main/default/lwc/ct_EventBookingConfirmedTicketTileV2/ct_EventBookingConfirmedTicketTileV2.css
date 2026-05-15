@@ -1,0 +1,205 @@
+@font-face {
+  font-family: "'Encode Sans Expanded', sans-serif";
+  src: url(/s/sfsites/c/resource/ct_Font_Encode_Sans_Expanded);
+}
+
+@font-face {
+  font-family: "Encode Sans Expanded Bold";
+  src: url(/s/sfsites/c/s/sfsites/c/resource/ct_Font_Encode_Sans_Expanded_Extra_Bold);
+}
+
+@font-face {
+  font-family: "'Open Sans', sans-serif";
+  src: url(/s/sfsites/c/resource/font_Open_Sans);
+}
+
+.ticketInformation {
+  font-family: "'Open Sans', sans-serif" !important;
+  font-size: 14px;
+  font-weight: 400;
+  color: #505457;
+}
+
+.customUoPButton{
+  font-family: "'Encode Sans Expanded', sans-serif" !important;
+  border-radius: 0px; 
+  height: 50px; 
+  width: 200px;
+  border: none;
+  padding: 1rem;
+}
+
+.openSansClass {
+  font-family: "'Open Sans', sans-serif" !important;
+}
+
+.ticketManagerButton{
+  background-color: #05884a !important;
+}
+
+.ticketManagerButton:hover {
+  background-color: #069f56 !important;
+}
+.sessionRegistrationButton{
+  background-color: #c4c1c1 !important;
+  color: #000;
+}
+
+.sessionRegistrationButton:hover {
+  background-color: #a9a9a9 !important;
+  color: #000;
+}
+
+.fontsizefifteenpx{
+  font-size: 14px !;
+  font-family: "'Open Sans', sans-serif" !important;
+  color:#505457;
+}
+.slds-box {
+  padding: 0;
+}
+@media (min-width: 37.5em) {
+	h1 {
+		font-size: 30px;
+		font-size: 1.875rem;
+		line-height: 34px;
+		line-height: 2.125rem
+	}
+	.no-touch h1 {
+		font-size: 30px;
+		font-size: 1.875rem;
+		line-height: 34px;
+		line-height: 2.125rem
+	}
+}
+
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1305px) {
+  .maingridflexdirection{
+    flex-direction: row !important;
+  }
+  .buttonPadding{
+    padding-left:1rem;
+  }
+  .aroundPadding{
+    padding:16px;
+  }
+  .qrCodeAlign{
+    padding-right: 16px;
+    padding-top: 8px;
+  }
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .maingridflexdirection{
+    flex-direction: row !important;
+  }
+  .buttonPadding{
+    padding-left:1rem;
+  }
+  .aroundPadding{
+    padding:16px;
+  }
+  .qrCodeAlign{
+    padding-right: 16px;
+    padding-top: 8px;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .maingridflexdirection{
+    flex-direction: column !important;
+  }
+  .buttonPadding{
+    padding-left:0px;
+  }
+  .aroundPadding{
+    padding:16px;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .maingridflexdirection{
+    flex-direction: row !important;
+  } 
+  .buttonPadding{
+    padding-left:1rem;
+  }
+  .aroundPadding{
+    padding:16px;
+  }
+  /* .qrCodeAlign{
+    padding-right: 16px;
+    padding-top: 8px;
+  } */
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  .maingridflexdirection{
+    flex-direction: row !important;
+  }
+  .buttonPadding{
+    padding-left:1rem;
+  }
+  .aroundPadding{
+    padding:16px;
+    padding-bottom: 0;
+  }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 1130px) {
+  
+  .maingridflexdirection{
+    flex-direction: column !important;
+  }
+  .buttonPadding{
+    padding-left:0px;
+  }
+  .aroundPadding{
+    padding:16px;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1100px) {
+  
+  .buttongridflexdirection{
+    flex-direction: column !important;
+  }
+  .buttonPadding{
+    padding-left:0px;
+  }
+  .aroundPadding{
+    padding:16px;
+    padding-bottom: 0;
+  }
+}

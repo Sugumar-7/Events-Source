@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Registration__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Link to the Event Registration for the associated Campaign</description>
+    <label>Event Registration</label>
+    <referenceTo>Event_Registration__c</referenceTo>
+    <relationshipLabel>Campaign Members</relationshipLabel>
+    <relationshipName>Campaign_Members</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,69 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 02-01-2021
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   07-22-2020   Creation Admin   Initial Version
+-->
+<template>
+  <div data-id="topElement" id="topElem" class="topElement"></div>
+    <template if:true={selectedEvent}>
+      
+      <template if:false={isInternalComponent}>
+        <c-ct_event-tile-v2 event-detail={selectedEvent} single-event=true></c-ct_event-tile-v2>
+        <div class=" slds-p-vertical--xx-small"></div>
+      </template>
+       
+        <template if:true={showTicketPanel}>
+          <!-- <template if:false={isInternalComponent}> -->
+        <h2 class="slds-card__header-title slds-p-bottom_x-small headingStyle">
+          Event tickets ({selectedEvent.Event_Registrations_Available__c} remaining)
+        </h2>
+       
+          <!-- </template> -->
+          <template if:true={eventTickets}>
+            
+            <template for:each={eventTickets} for:item="eachTicket">
+              <div class="slds-p-vertical_x-small" key={eachTicket.ticketNumber}>
+                <c-ct_ticket-tile-v2 selected-tickets-from-ticket-selection={selectedTickets} onticketselection={handleTicketSelection} selected-event={selectedEvent} is-internal-component={isInternalComponent} event-ticket={eachTicket} key={eachTicket.Id} set-back-values={setBackRedirectionValues}></c-ct_ticket-tile-v2>
+              </div>
+            </template>
+            <c-ct_ticket-order-form-v2 event-id={selectedEventId} selected-event={selectedEvent} ordered-by={orderBy} is-internal-component={isInternalComponent} selected-tickets={selectedTickets} set-back-values={setBackRedirectionValues}></c-ct_ticket-order-form-v2>
+          </template>
+          <!-- <template if:false={isInternalComponent}> -->
+          <div class="slds-col slds-p-top--medium">
+            <!-- <div class="slds-align_absolute-center"> -->
+              <template if:true={isCheckInManagerComponent}>
+                <button type="button" value="Cancel" style="border-radius: 0px;"
+                    class="checkoutButton slds-p-right_x-small  slds-button slds-button_success" onclick={handleInternalRegistrationCancel}>Cancel</button>
+                <span class="slds-m-left_x-small"></span>
+              </template>
+              <template if:true={showTicketCountMessage}>
+                <label class="slds-p-bottom--medium fieldLabelStyle" style="color: red;">This event is close to capacity. There are only {selectedEvent.Event_Registrations_Available__c} Event Registrations Available</label><br/>
+              </template>
+              <button type="button"  title="Back" onclick={redirectToSearchEvents}
+              class="checkoutButton slds-p-right_x-small  slds-button slds-button_success" style="border-radius: 0px;">Back</button>
+              <button type="button"  title="Next" onclick={redirectToOrderDetails}
+              class="checkoutButton slds-p-right_x-small  slds-button slds-button_success" style="border-radius: 0px;">Checkout</button>
+              
+          <!-- </div> -->
+        </div>
+        </template>
+        <template if:true={showTicketsClosed}>
+          <h2 class="registrationCloseMessageStyle slds-p-vertical--xx-small">{ticketsCloseMessage}</h2>
+          <div class="slds-col slds-p-top--medium">
+          <button type="button"  title="Back" onclick={redirectToSearchEvents}
+              class="checkoutButton slds-p-right_x-small  slds-button slds-button_success" style="border-radius: 0px;">Back</button>
+          </div>
+        </template>
+        <template if:true={showWaitingLisBtn}>
+          <div>
+            <c-ct_waiting-list-page-v2 event-id={selectedEventId}></c-ct_waiting-list-page-v2>
+          </div>
+        </template>
+</template>
+
+</template>

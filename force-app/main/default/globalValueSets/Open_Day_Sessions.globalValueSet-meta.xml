@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>I can&apos;t find my course</fullName>
+        <default>false</default>
+        <label>I can&apos;t find my course</label>
+    </customValue>
+    <customValue>
+        <fullName>I haven&apos;t decided yet</fullName>
+        <default>false</default>
+        <label>I haven&apos;t decided yet</label>
+    </customValue>
+    <customValue>
+        <fullName>Accounting and Finance</fullName>
+        <default>false</default>
+        <label>Accounting and Finance</label>
+    </customValue>
+    <customValue>
+        <fullName>Animation</fullName>
+        <default>false</default>
+        <label>Animation</label>
+    </customValue>
+    <customValue>
+        <fullName>Architecture &amp; Interior Architecture and Design</fullName>
+        <default>false</default>
+        <label>Architecture &amp; Interior Architecture and Design</label>
+    </customValue>
+    <customValue>
+        <fullName>Biological Sciences</fullName>
+        <default>false</default>
+        <label>Biological Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>Building surveying, Property Develeopment and Quantity Surveying</fullName>
+        <default>false</default>
+        <label>Building surveying, Property Develeopment and Quantity Surveying</label>
+    </customValue>
+    <customValue>
+        <fullName>Business and Management</fullName>
+        <default>false</default>
+        <label>Business and Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Business and Suppy Chain Management</fullName>
+        <default>false</default>
+        <label>Business and Suppy Chain Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Management and Entrepreneurship</fullName>
+        <default>false</default>
+        <label>Business Management and Entrepreneurship</label>
+    </customValue>
+    <customValue>
+        <fullName>Childhood Studies</fullName>
+        <default>false</default>
+        <label>Childhood Studies</label>
+    </customValue>
+    <customValue>
+        <fullName>Civil Engineering and Construction Engineering Management</fullName>
+        <default>false</default>
+        <label>Civil Engineering and Construction Engineering Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Computer Animation and Visual Effects</fullName>
+        <default>false</default>
+        <label>Computer Animation and Visual Effects</label>
+    </customValue>
+    <customValue>
+        <fullName>Computer Games Technology and Computer Games Enterprise</fullName>
+        <default>false</default>
+        <label>Computer Games Technology and Computer Games Enterprise</label>
+    </customValue>
+    <customValue>
+        <fullName>Computing</fullName>
+        <default>false</default>
+        <label>Computing</label>
+    </customValue>
+    <customValue>
+        <fullName>Creative Media Technologies</fullName>
+        <default>false</default>
+        <label>Creative Media Technologies</label>
+    </customValue>
+    <customValue>
+        <fullName>Creative Writing</fullName>
+        <default>false</default>
+        <label>Creative Writing</label>
+    </customValue>
+    <customValue>
+        <fullName>Criminology</fullName>
+        <default>false</default>
+        <label>Criminology</label>
+    </customValue>
+    <customValue>
+        <fullName>Dental Hygiene, Therapy and Nursing</fullName>
+        <default>false</default>
+        <label>Dental Hygiene, Therapy and Nursing</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Media</fullName>
+        <default>false</default>
+        <label>Digital Media</label>
+    </customValue>
+    <customValue>
+        <fullName>Earth and Environmental Sciences</fullName>
+        <default>false</default>
+        <label>Earth and Environmental Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>Economics</fullName>
+        <default>false</default>
+        <label>Economics</label>
+    </customValue>
+    <customValue>
+        <fullName>Electrical and Renewable Energy Engineering</fullName>
+        <default>false</default>
+        <label>Electrical and Renewable Energy Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>Electronic Engineering</fullName>
+        <default>false</default>
+        <label>Electronic Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>English Language and Linguistics (with optional pathways in English Literature)</fullName>
+        <default>false</default>
+        <label>English Language and Linguistics (with optional pathways in English Literature)</label>
+    </customValue>
+    <customValue>
+        <fullName>English Literature (with optional pathways in History or Media Studies)</fullName>
+        <default>false</default>
+        <label>English Literature (with optional pathways in History or Media Studies)</label>
+    </customValue>
+    <customValue>
+        <fullName>Fashion and Textile Design</fullName>
+        <default>false</default>
+        <label>Fashion and Textile Design</label>
+    </customValue>
+    <customValue>
+        <fullName>Film Industries</fullName>
+        <default>false</default>
+        <label>Film Industries</label>
+    </customValue>
+    <customValue>
+        <fullName>Film Production</fullName>
+        <default>false</default>
+        <label>Film Production</label>
+    </customValue>
+    <customValue>
+        <fullName>Geography</fullName>
+        <default>false</default>
+        <label>Geography</label>
+    </customValue>
+    <customValue>
+        <fullName>Graphic Design</fullName>
+        <default>false</default>
+        <label>Graphic Design</label>
+    </customValue>
+    <customValue>
+        <fullName>History (with optional pathways in Sociology or Politics)</fullName>
+        <default>false</default>
+        <label>History (with optional pathways in Sociology or Politics)</label>
+    </customValue>
+    <customValue>
+        <fullName>HND Business</fullName>
+        <default>false</default>
+        <label>HND Business</label>
+    </customValue>
+    <customValue>
+        <fullName>Human Resource Management</fullName>
+        <default>false</default>
+        <label>Human Resource Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Illustration</fullName>
+        <default>false</default>
+        <label>Illustration</label>
+    </customValue>
+    <customValue>
+        <fullName>Innovation Engineering</fullName>
+        <default>false</default>
+        <label>Innovation Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>International Business</fullName>
+        <default>false</default>
+        <label>International Business</label>
+    </customValue>
+    <customValue>
+        <fullName>International Development</fullName>
+        <default>false</default>
+        <label>International Development</label>
+    </customValue>
+    <customValue>
+        <fullName>International Relations and Politics</fullName>
+        <default>false</default>
+        <label>International Relations and Politics</label>
+    </customValue>
+    <customValue>
+        <fullName>Journalism</fullName>
+        <default>false</default>
+        <label>Journalism</label>
+    </customValue>
+    <customValue>
+        <fullName>Languages</fullName>
+        <default>false</default>
+        <label>Languages</label>
+    </customValue>
+    <customValue>
+        <fullName>Law</fullName>
+        <default>false</default>
+        <label>Law</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing</fullName>
+        <default>false</default>
+        <label>Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Mathematics</fullName>
+        <default>false</default>
+        <label>Mathematics</label>
+    </customValue>
+    <customValue>
+        <fullName>Mechanical Engineering</fullName>
+        <default>false</default>
+        <label>Mechanical Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>Media and Communication with Foundation Year</fullName>
+        <default>false</default>
+        <label>Media and Communication with Foundation Year</label>
+    </customValue>
+    <customValue>
+        <fullName>Media Studies &amp; Media and Digital Practice</fullName>
+        <default>false</default>
+        <label>Media Studies &amp; Media and Digital Practice</label>
+    </customValue>
+    <customValue>
+        <fullName>Music and Sound Technology</fullName>
+        <default>false</default>
+        <label>Music and Sound Technology</label>
+    </customValue>
+    <customValue>
+        <fullName>Nursing</fullName>
+        <default>false</default>
+        <label>Nursing</label>
+    </customValue>
+    <customValue>
+        <fullName>Operating Department Practice</fullName>
+        <default>false</default>
+        <label>Operating Department Practice</label>
+    </customValue>
+    <customValue>
+        <fullName>Paramedic Science</fullName>
+        <default>false</default>
+        <label>Paramedic Science</label>
+    </customValue>
+    <customValue>
+        <fullName>Performing Arts</fullName>
+        <default>false</default>
+        <label>Performing Arts</label>
+    </customValue>
+    <customValue>
+        <fullName>Pharmacy and Biomedical Sciences</fullName>
+        <default>false</default>
+        <label>Pharmacy and Biomedical Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>Photography</fullName>
+        <default>false</default>
+        <label>Photography</label>
+    </customValue>
+    <customValue>
+        <fullName>Physics</fullName>
+        <default>false</default>
+        <label>Physics</label>
+    </customValue>
+    <customValue>
+        <fullName>Product Design and Industrial Design</fullName>
+        <default>false</default>
+        <label>Product Design and Industrial Design</label>
+    </customValue>
+    <customValue>
+        <fullName>Psychology</fullName>
+        <default>false</default>
+        <label>Psychology</label>
+    </customValue>
+    <customValue>
+        <fullName>Radiography</fullName>
+        <default>false</default>
+        <label>Radiography</label>
+    </customValue>
+    <customValue>
+        <fullName>Social Work</fullName>
+        <default>false</default>
+        <label>Social Work</label>
+    </customValue>
+    <customValue>
+        <fullName>Sociology</fullName>
+        <default>false</default>
+        <label>Sociology</label>
+    </customValue>
+    <customValue>
+        <fullName>Sport Science</fullName>
+        <default>false</default>
+        <label>Sport Science</label>
+    </customValue>
+    <customValue>
+        <fullName>Television and Broadcasting</fullName>
+        <default>false</default>
+        <label>Television and Broadcasting</label>
+    </customValue>
+    <customValue>
+        <fullName>Virtual and Augmented Reality</fullName>
+        <default>false</default>
+        <label>Virtual and Augmented Reality</label>
+    </customValue>
+    <customValue>
+        <fullName>Petroleum Engineering</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Petroleum Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>Creative Computing with Foundation Year</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Creative Computing with Foundation Year</label>
+    </customValue>
+    <customValue>
+        <fullName>Business and Systems Management</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business and Systems Management</label>
+    </customValue>
+    <customValue>
+        <fullName>American Studies (with optional pathways in History or English)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>American Studies (with optional pathways in History or English)</label>
+    </customValue>
+    <customValue>
+        <fullName>Optometry</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Optometry</label>
+    </customValue>
+    <masterLabel>Open Day Sessions</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

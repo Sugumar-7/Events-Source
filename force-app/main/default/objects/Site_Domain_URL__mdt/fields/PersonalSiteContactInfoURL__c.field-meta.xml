@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PersonalSiteContactInfoURL__c</fullName>
+    <description>This field used to hold URL for PersonalSiteContactInfo Page</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Please enter a valid Site URL for PersonalSiteContactInfo page</inlineHelpText>
+    <label>PersonalSiteContactInfoURL</label>
+    <required>false</required>
+    <type>Url</type>
+</CustomField>

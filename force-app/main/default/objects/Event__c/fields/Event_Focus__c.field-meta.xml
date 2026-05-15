@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Focus__c</fullName>
+    <description>The focus for the RAO event</description>
+    <label>Event Focus</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Faculty Outreach</fullName>
+                <default>false</default>
+                <label>Faculty Outreach</label>
+            </value>
+            <value>
+                <fullName>Faculty Recruitment</fullName>
+                <default>false</default>
+                <label>Faculty Recruitment</label>
+            </value>
+            <value>
+                <fullName>Outreach</fullName>
+                <default>false</default>
+                <label>Outreach</label>
+            </value>
+            <value>
+                <fullName>Recruitment</fullName>
+                <default>false</default>
+                <label>Recruitment</label>
+            </value>
+            <value>
+                <fullName>Student Finance</fullName>
+                <default>false</default>
+                <label>Student Finance</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

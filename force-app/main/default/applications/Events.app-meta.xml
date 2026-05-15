@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Event Management functionality for simple &amp; complex events (eg. Open Days)</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>true</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Events Management</label>
+    <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Event_Simple_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Event__c</pageOrSobjectType>
+        <recordType>Event__c.Simple_Events</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Event_Simple_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Event__c</pageOrSobjectType>
+        <recordType>Event__c.Simple_Events</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <tabs>standard-home</tabs>
+    <tabs>Event_Group__c</tabs>
+    <tabs>Event__c</tabs>
+    <tabs>Venue__c</tabs>
+    <tabs>standard-Campaign</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Lead</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-Event</tabs>
+    <tabs>standard-Task</tabs>
+    <tabs>standard-File</tabs>
+    <tabs>standard-report</tabs>
+    <!-- <tabs>Training_Videos</tabs> -->
+    <tabs>Check_In_QR_Code_Scanner</tabs>
+    <tabs>QR_Scanner_User_Configuration__c</tabs>
+    <tabs>Check_In_Manager</tabs>
+    <tabs>Error_Log__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Events_Management_UtilityBar</utilityBar>
+</CustomApplication>

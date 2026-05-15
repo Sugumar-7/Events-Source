@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Web_Event_Image__c</fullName>
+    <inlineHelpText>Please use the image button in the rich text controls to add an image into this field. Please use a picture which is formatted 700 x 500. This image will display on the Event Registration page to prospective attendees.</inlineHelpText>
+    <label>Web Event Image</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

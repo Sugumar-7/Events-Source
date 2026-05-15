@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "'Encode Sans Expanded', sans-serif";
+  src: url(/s/sfsites/c/resource/ct_Font_Encode_Sans_Expanded);
+}
+@font-face {
+  font-family: "'Open Sans', sans-serif";
+  src: url(/s/sfsites/c/resource/font_Open_Sans);
+}
+
+
+/* .uopInputFieldLabel {
+  font-family: "'Open Sans', sans-serif" !important;
+  color:  #505457;
+  font-size: 14px !important;
+  font-weight: bold; 
+}
+
+
+.eventRegfieldLabelStyle {
+  font-family: "'Open Sans', sans-serif" !important;
+  font-size: 14px !important;
+  font-weight: normal;
+} */
+
+/* Match Postal Code input styling */
+/* .ticketOrderField {
+    --slds-c-input-color-border: #c9c9c9;
+    --slds-c-input-radius-border: 4px;
+    --slds-c-input-spacing-horizontal-start: 12px;
+    --slds-c-input-spacing-horizontal-end: 32px;
+    --slds-c-input-text-font-size: 14px;
+    --slds-c-input-text-color: #333;
+    --slds-c-input-font-family: Arial, sans-serif;
+}
+
+/* match background */
+/* .ticketOrderField {
+    --slds-c-combobox-color-background: white;
+} */
+
+/* label styling */
+/* .fieldLabelStyle {
+    font-size: 14px;
+    color: #505457;
+}
+
+.slds-combobox__input {
+    background: #f3f3f3;
+    border: 1px solid #d8dde6;
+}  */
+
+/* .inputFieldPlaceHolder {
+  font-family: "'Open Sans', sans-serif" !important;
+  color:  #505457;
+  font-size: 14px !important; */
+  /* font-weight: bold !important; */
+  /* color: #505457 !important;
+} */
+
+/* .fieldLabelStyle {
+    font-family: "'Open Sans', sans-serif" !important;
+    font-size: 14px !important;
+    font-weight: normal;
+    color:#505457;
+    display: block;
+    margin-bottom: 0px !important;
+    line-height: 1.2;
+}
+
+.slds-combobox__input {
+    font-family: "'Open Sans', sans-serif" !important;
+    font-size: 14px !important;
+} */
+
+.inputFieldPlaceHolder {
+  font-family: "'Open Sans', sans-serif" !important;
+  color:  #505457;
+  font-size: 14px !important;
+  /* font-weight: bold !important; */
+  color: #505457 !important;
+}
+
+.uopInputFieldLabel {
+  font-family: "'Open Sans', sans-serif" !important;
+  color:  #505457;
+  font-size: 14px !important;
+  font-weight: bold; 
+}

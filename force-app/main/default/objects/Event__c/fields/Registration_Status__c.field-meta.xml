@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registration_Status__c</fullName>
+    <inlineHelpText>This field will show as ‘Closed’ until all event set up activities have been undertaken &amp; the event status has been moved to ‘Activation’.Once moved to Activation the User can change the status manually to ‘Open’. After this field updates are automatic.</inlineHelpText>
+    <label>Registration Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Open</fullName>
+                <default>false</default>
+                <label>Open</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+            <value>
+                <fullName>Waiting List</fullName>
+                <default>false</default>
+                <label>Waiting List</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

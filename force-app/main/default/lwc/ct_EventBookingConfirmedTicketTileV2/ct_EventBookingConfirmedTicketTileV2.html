@@ -1,0 +1,84 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 01-14-2021
+  @last modified by  : Umashankar Creation
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   10-27-2020   Creation Admin   Initial Version
+-->
+<template>
+  <template if:true={spinnerBoolean}>
+    <div class="slds-spinner_container">
+      <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+    </div>
+  </template>
+
+  <div class="slds-p-top_medium">
+    <div class="slds-box ticketInformation">
+      <div class="">
+      <div class="slds-grid maingridflexdirection">
+        <div class={contentStyle}>
+          <div class="slds-grid slds-grid_vertical">
+            <div class="slds-col" >
+              <span class="fontsizefifteenpx" style={productNameStyle}>{productName}</span>
+            </div>
+            <div class="slds-col slds-p-top_medium">
+              <span class="fontsizefifteenpx">{attendeeName}</span>
+            </div>
+            <div class="slds-col">
+              <span>
+                <div class="slds-grid buttongridflexdirection">
+                  <div class="slds-col slds-size_2-of-10 slds-p-top_medium" >
+                    <button class="customUoPButton slds-button slds-button_destructive ticketManagerButton" onclick={navigateToTicketManagement}>Ticket Management</button>
+                  </div>
+                  <template if:true ={isSessionRegEnabled}>
+                    <div class="slds-col slds-size_8-of-10 slds-p-top_medium buttonPadding" >
+                      <button class="customUoPButton sessionRegistrationButton slds-button slds-button_destructive"
+                       onclick={navigateToSessionRegistration}>Session Registration</button>                    </div>
+                </template>
+                </div>
+                  
+              </span>
+            </div>
+          </div>
+          
+        </div>
+
+        <template if:true={mobileView}>
+          <div class="openSansClass fontsizefifteenpx aroundPadding" style="text-align: justify;padding-bottom:0px;padding-top:16px;">
+            {productDescription}
+          </div>
+    
+          <div class="openSansClass aroundPadding" style="padding-top:16px; padding-bottom:5px;">
+            <span class="fontsizefifteenpx" style={productNameStyle}>Event Registration Number : </span> <span class="fontsizefifteenpx">{eventRegistrationNumber}</span>
+          </div>
+        </template>
+
+        <div class={qrCodeStyle}>
+          <canvas data-id="QRCode" lwc:dom="manual"></canvas>
+          <!-- <lightning-formatted-rich-text value={qrCodeImageSrc}></lightning-formatted-rich-text> -->
+        </div>
+      </div>
+      <template if:false={mobileView}>
+        <div class="openSansClass fontsizefifteenpx aroundPadding" style="text-align: justify;padding-bottom:0px;padding-top: 5px;">
+          {productDescription}
+        </div>
+
+        <div class="openSansClass aroundPadding" style="padding-top:16px; padding-bottom:16px;">
+          <span class="fontsizefifteenpx" style={productNameStyle}>Event Registration Number : </span> <span class="fontsizefifteenpx">{eventRegistrationNumber}</span>
+        </div>
+      </template>
+    </div>
+      <!-- <div class="slds-p-vertical_x-small openSansClass fontsizefifteenpx">
+        {productDescription}
+      </div>
+
+      <div class="slds-p-vertical_x-small openSansClass ">
+        <span class="fontsizefifteenpx" style={productNameStyle}>Event Registration Number : </span> <span class="fontsizefifteenpx">{eventRegistrationNumber}</span>
+      </div> -->
+
+    </div>
+  </div>
+</template>

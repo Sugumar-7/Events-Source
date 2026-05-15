@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alumni_Directmail_Consent_Source__c</fullName>
+    <description>The field was introduced for holding legacy data from ThankQ.</description>
+    <inlineHelpText>The field was introduced for holding legacy data from ThankQ.</inlineHelpText>
+    <label>Alumni Directmail Consent Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>General enquiry</fullName>
+                <default>false</default>
+                <label>General enquiry</label>
+            </value>
+            <value>
+                <fullName>Email Unsubscribe</fullName>
+                <default>false</default>
+                <label>Email Unsubscribe</label>
+            </value>
+            <value>
+                <fullName>Online Donation</fullName>
+                <default>false</default>
+                <label>Online Donation</label>
+            </value>
+            <value>
+                <fullName>Volunteer Registration</fullName>
+                <default>false</default>
+                <label>Volunteer Registration</label>
+            </value>
+            <value>
+                <fullName>Legitimate Interest</fullName>
+                <default>false</default>
+                <label>Legitimate Interest</label>
+            </value>
+            <value>
+                <fullName>Direct Mail Fundraising</fullName>
+                <default>false</default>
+                <label>Direct Mail Fundraising</label>
+            </value>
+            <value>
+                <fullName>Telephone Fundraising</fullName>
+                <default>false</default>
+                <label>Telephone Fundraising</label>
+            </value>
+            <value>
+                <fullName>Email Fundraising</fullName>
+                <default>false</default>
+                <label>Email Fundraising</label>
+            </value>
+            <value>
+                <fullName>Event</fullName>
+                <default>false</default>
+                <label>Event</label>
+            </value>
+            <value>
+                <fullName>LED Preference Centre</fullName>
+                <default>false</default>
+                <label>LED Preference Centre</label>
+            </value>
+            <value>
+                <fullName>Regulatory Preference Service</fullName>
+                <default>false</default>
+                <label>Regulatory Preference Service</label>
+            </value>
+            <value>
+                <fullName>LED Data Processing</fullName>
+                <default>false</default>
+                <label>LED Data Processing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consent_Required_to_Register__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Set Consent is required or not for particular GDPR Statement Used.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Consent Required to Register</label>
+    <type>Checkbox</type>
+</CustomField>

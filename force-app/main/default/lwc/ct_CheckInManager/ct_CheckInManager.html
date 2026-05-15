@@ -1,0 +1,446 @@
+<!--
+  @description       : Check In Manager Web Component
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 01-21-2021
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   08-31-2020   Creation Admin   Initial Version
+-->
+<template>
+  <c-ct_-custom-toast title ={customToastTitle} message ={customToastMessage}  variant={customMessageVariant}  auto-close="true" auto-close-error-warning="true" ></c-ct_-custom-toast>
+
+  <div class="slds-theme_default">
+    <div class="slds-p-around_x-small">
+  <template if:true={spinnerBoolean}>
+    <div class="slds-spinner_container">
+      <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+    </div>
+  </template>
+
+  <template if:true={showForm}>
+    <!-- <template if:false={isReconfigurationRequest}>
+      <div class="slds-p-vertical_small tileText">
+        {checkInManagerTitleText}
+      </div>
+    </template> -->
+    
+
+  <div class ="slds-box">
+    <c-ct_-check-in-manager-q-r-code-scanner onreconfigurationrequest={handleReconfigurationRequest} onselectedoptions={handleQRSetupChange} is-check-in-manager="true" event-id-paramater = {eventIdParamater} session-id={sessionIdParamater}></c-ct_-check-in-manager-q-r-code-scanner>
+
+    <!-- <div class={gridDivClass}>
+      <div class={gridSizeTwoDivClass}>Event</div>
+      <div class={gridSizeFourDivClass}>
+        <lightning-combobox
+        name="selectedEventId"
+        label="Event"
+        value={comboBoxValuesObject.selectedEventId}
+        variant = "label-hidden"
+        placeholder="Select Event"
+        options={eventOptions}
+        onchange={handleComboxValueChange} ></lightning-combobox>
+      </div>
+      <div class={gridSizeTwoDivClass}>Session</div>
+      <div class={gridSizeFourDivClass}>
+        <lightning-combobox
+        name="selectedSessionId"
+        label="Event"
+        value={comboBoxValuesObject.selectedSessionId}
+        variant = "label-hidden"
+        placeholder="Select Session"
+        options={sessionOptions}
+        onchange={handleComboxValueChange} ></lightning-combobox>
+      </div> 
+    </div> -->
+
+  </div>
+
+  <template if:false={isReconfigurationRequest}>
+
+ 
+  <!-- Event Registration Status Chart -->
+  <div class="slds-p-vertical_small">
+    <div class ="slds-box">
+
+    <template if:true={isMobileDevice} >
+      <div class="slds-grid">
+        <div class="slds-col slds-size_3-of-4 slds-p-right_x-small">
+          <div class="slds-grid slds-grid_vertical">
+            <div class="slds-col">
+              <span>
+                <div class="slds-grid slds-p-vertical_xx-small slds-grid_vertical-align-center">
+                  <div class="slds-col slds-size_1-of-3">
+                    <div class="fieldLabelMobile">
+                      Registered
+                    </div>
+                  </div>
+                  <div class="slds-col">
+                    <span title={perRegisteredBarAssist}>
+                      <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={perRegisteredBar} role="progressbar">
+                        <span class="slds-progress-bar__value" style={perRegisteredBarWidth}>
+                          <span class="slds-assistive-text">perRegisteredBarAssist</span>
+                        </span>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </span>
+            </div>
+            
+            <div class="slds-col">
+              <span>
+                <div class="slds-grid slds-p-vertical_xx-small slds-grid_vertical-align-center">
+                  <div class="slds-col slds-size_1-of-3">
+                    <div class="fieldLabelMobile">
+                      Checked In
+                    </div>
+                  </div>
+                  <div class="slds-col">
+                    <span title={perCheckedInBarAssist}>
+                      <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={perCheckedInBar} role="progressbar">
+                        <span class="slds-progress-bar__value" style={perCheckedInBarWidth}>
+                          <span class="slds-assistive-text">{perCheckedInBarAssist</span>
+                        </span>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </span>
+            </div>
+    
+            <div class="slds-col">
+              <span>
+                <div class="slds-grid slds-p-vertical_xx-small slds-grid_vertical-align-center">
+                  <div class="slds-col slds-size_1-of-3">
+                    <div class="fieldLabelMobile">
+                      Checked Out
+                    </div>
+                  </div>
+                  <div class="slds-col">
+                    <span title ={perCheckOutBarAssist}>
+                      <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={perCheckedOutBar} role="progressbar">
+                        <span class="slds-progress-bar__value" style={perCheckedOutBarWidth}>
+                          <span class="slds-assistive-text">{perCheckOutBarAssist}</span>
+                        </span>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </span>
+            </div>
+    
+            <div class="slds-col">
+              <span>
+                <div class="slds-grid slds-p-vertical_xx-small slds-grid_vertical-align-center">
+                  <div class="slds-col slds-size_1-of-3">
+                    <div class="fieldLabelMobile">
+                      Did Not Attend
+                    </div>
+                  </div>
+                  <div class="slds-col">
+                    <span title="Did Not Attend: {perDidNotAttendBar}%">
+                      <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={perDidNotAttendBar} role="progressbar">
+                        <span class="slds-progress-bar__value" style={perDidNotAttendBarWidth}>
+                          <span class="slds-assistive-text">Did Not Attend: {perDidNotAttendBar}%</span>
+                        </span>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </span>
+            </div>
+            
+          </div>
+        </div>
+        <div class="slds-col">
+          <div class="customHeightFull slds-p-vertical_x-large" style={perCheckedInMobileStyle}>
+
+          
+          <div>
+            {eventRegistrationCountStatus.perCheckedIn}% 
+          </div>
+          <div class="slds-p-top_small">
+            % Checked In
+          </div>
+        </div>
+          <!-- <div class="slds-grid slds-p-vertical_small slds-grid_vertical slds-align_absolute-center customHeightFull" style={perCheckedInMobileStyle}>
+            <div class="slds-col">
+              {eventRegistrationCountStatus.perCheckedIn}% 
+            </div>
+            <div class="slds-col">
+              <div class="fieldLabelMobile">
+               % Checked In
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+
+
+      
+    </template>
+
+    <template if:false={isMobileDevice} >
+      <div class="slds-grid slds-grid--pull-padded slds-align_absolute-center fieldLabelStyle">
+        <div class="slds-col--padded slds-p-vertical_small slds-size--1-of-5 slds-align_absolute-center customBorderRight" style={registeredStyle}>
+          <div class="slds-grid slds-grid_vertical slds-align_absolute-center">
+            <div class="slds-col">
+              <span>{eventRegistrationCountStatus.totalRegistered}</span>
+            </div>
+            <div class="slds-col">
+              <div class="fieldLabelStyle">
+                Registered
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slds-col--padded slds-p-vertical_small slds-size--1-of-5 slds-align_absolute-center customBorderRight" style={checkedInStyle}>
+          <div class="slds-grid slds-grid_vertical slds-align_absolute-center">
+            <div class="slds-col">
+              <span>{eventRegistrationCountStatus.totalCheckedIn}</span>
+            </div>
+            <div class="slds-col">
+              <div class="fieldLabelStyle">
+                Checked In
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slds-col--padded slds-p-vertical_small slds-size--1-of-5 slds-align_absolute-center customBorderRight" style={checkedOutStyle}>
+          <div class="slds-grid slds-grid_vertical slds-align_absolute-center">
+            <div class="slds-col">
+              <span>{eventRegistrationCountStatus.totalCheckedOut}</span>
+            </div>
+            <div class="slds-col">
+              <div class="fieldLabelStyle">
+                Checked Out
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slds-col--padded slds-p-vertical_small slds-size--1-of-5 slds-align_absolute-center customBorderRight" style={didNotAttendStyle}>
+          <div class="slds-grid slds-grid_vertical slds-align_absolute-center">
+            <div class="slds-col">
+              <span>{eventRegistrationCountStatus.totalDidNotAttend}</span>
+            </div>
+            <div class="slds-col">
+              <div class="fieldLabelStyle">
+                Did Not Attend
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="slds-col--padded slds-p-vertical_small slds-size--1-of-5 slds-align_absolute-center" style={perCheckedInStyle}>
+          <div class="slds-grid slds-grid_vertical slds-align_absolute-center">
+            <div class="slds-col">
+              <span>{eventRegistrationCountStatus.perCheckedIn}% </span>
+            </div>
+            <div class="slds-col">
+              <div class="fieldLabelStyle">
+               % Checked In
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+  
+   
+  </div>
+  </div>
+
+  <!-- Search Form -->
+  <article class="slds-card slds-card_boundary noSelectCustomClass">
+    <div class="slds-p-around_small slds-grid" style="cursor: pointer;background: #351c75;" onclick={toggleSearchExpandCollapse}>
+       <header class="slds-media slds-media_center slds-has-flexi-truncate fieldLabelStyle">
+         <div class="slds-grid customWidthFull">
+           <div class="slds-media__body">
+            <h2 class="slds-card__header-title">
+              <span style={searchTitleStyle}>Search + Actions</span>
+           </h2>
+           </div>
+           <div class="slds-media__figure slds-col_bump-left">
+            <h2 class="slds-card__header-title">
+              <lightning-icon icon-name={searchIconName} variant="inverse" size="x-small"></lightning-icon>
+           </h2>
+           </div>
+         </div>
+       </header>
+    </div>
+    <template if:true ={expandSearchAccordion}>
+      <div class="slds-p-around_small">
+        <div>
+          <label class="slds-form-element__label fieldLabelStyle" for="Name">By Name</label>
+          <lightning-input type="text" id="Name" placeholder="Enter attendee name" variant="label-hidden" name="eventRegNameFilter" value ={searchFormData.eventRegNameFilter} class="inputFieldPlaceHolder" label="By Name" onchange={handleSearchFormChange}>
+          </lightning-input>
+        </div>
+
+        <div>
+          <label class="slds-form-element__label fieldLabelStyle" for="orderRefNo">By Order Reference</label>
+          <lightning-input type="text" id="orderRefNo" placeholder="Enter order reference" variant="label-hidden" name="orderRefNumberFilter" value ={searchFormData.orderRefNumberFilter} class="inputFieldPlaceHolder" label="By Order Reference" onchange={handleSearchFormChange}>
+          </lightning-input>
+        </div>
+
+        <div>
+          <label class="slds-form-element__label fieldLabelStyle" for="ticketRefNo">By Ticket Reference</label>
+          <lightning-input type="text" id="ticketRefNo" placeholder="Enter event registration reference" variant="label-hidden" name="ticketRefNumberFilter" value ={searchFormData.ticketRefNumberFilter} class="inputFieldPlaceHolder" label="By Ticket Reference" onchange={handleSearchFormChange}>
+          </lightning-input>
+        </div>
+
+        <div>
+          <label class="slds-form-element__label fieldLabelStyle" for="eventRegEmail">By Email</label>
+          <lightning-input type="email" id="eventRegEmail" placeholder="Enter event email" variant="label-hidden" name="eventRegistrationEmailFilter" value ={searchFormData.eventRegistrationEmailFilter} class="inputFieldPlaceHolder" label="By Event Registration Email" onchange={handleSearchFormChange}>
+          </lightning-input>
+        </div>
+
+        <div>
+          <label class="slds-form-element__label fieldLabelStyle" for="eventRegMobile">By Mobile</label>
+          <lightning-input type="text" pattern="[0-9-+()]*$" message-when-pattern-mismatch="Please provide a valid mobile number" max-length="11" id="eventRegMobile" placeholder="Enter event mobile" variant="label-hidden" name="eventRegMobileFilter" value ={searchFormData.eventRegMobileFilter} class="inputFieldPlaceHolder" label="By Mobile" onchange={handleSearchFormChange}>
+          </lightning-input>
+        </div>
+
+      </div>
+      <div class="slds-p-horizontal_small slds-p-bottom_x-small slds-grid slds-grid--align-end">
+        <button type="button" value="Search" style="border-radius: 0px;"
+        class={searchBtnClass} onclick={handleSearch}> Search</button>
+        <button type="button" value="Search" style="border-radius: 0px;"
+        class={searchBtnClass} onclick={handleResetSearch}> Reset </button>
+      </div>
+
+      <div class="slds-p-around_small slds-p-vertical--xx-small slds-align_absolute-center" style={borderStyle}></div>
+
+      <div class="slds-p-horizontal_small slds-p-bottom_x-small">
+        <!-- <template if:false={isMobileDevice}> -->
+        <template if:true={comboBoxValuesObject.selectedEventId}>
+          <span><button type="button" value="New Event Order" style="border-radius: 0px;"
+            class={searchBtnClass} onclick={newEventOrderForm}>New Event Order</button></span>
+        </template>
+          
+        
+        <template if:true={isEventRegistrationRecordsAvailable}>
+       
+          <span><button type="button" value="Search" style="border-radius: 0px;"
+            class={searchBtnClass} onclick={printRegister}>Print Register</button></span>
+        
+      </template>
+    <!-- </template> -->
+      </div>
+    </template>
+  </article>
+  
+  <!-- <template if:true={showXlsxForm}> -->
+    <div class="slds-p-around_small">
+      <c-xlsx-main
+      header-list={xlsHeader}
+      filename={filename}
+      worksheet-name-list={workSheetNameList}
+      sheet-data={xlsData}
+      onxlsxdownloadcomplete={handleXlsxDownloadComplete}
+      ></c-xlsx-main>
+    </div>
+  <!-- </template> -->
+ 
+  
+  <!--Event Registration Records-->
+  <template if:true={isEventRegistrationRecordsAvailable}>
+  <div class="slds-p-vertical_small">
+      <template if:true={isEventRegRecordsBeingFetched}>
+        <div class="customSpinnerContainer slds-p-vertical_large">
+          <lightning-spinner class="customInnerSpinner" alternative-text="Fetching Event Registration Records" variant="brand" size="small"></lightning-spinner>
+        </div>
+      </template>
+
+      
+       <!--Mobile View-->
+      <template if:true={isMobileDevice} >
+        <span oninvokefetchrecordsmethod ={invokefetchEventRegRecords}>
+        <template for:each={registrationRecordNameKeys} for:item="thisKey">
+          <c-ct_-check-in-manager-registration-by-first-letter 
+              registration-records-by-first-letter ={registrationRecordsByFirstLetter}
+              is-main-entrance={isMainEntrance}
+              get-by={thisKey}
+              onsessionregupdatedevent={handlesessionRegUpdatedEvent} 
+              key={thisKey} 
+              ></c-ct_-check-in-manager-registration-by-first-letter>
+          </template> 
+        </span>
+      </template>
+
+       <!--Tablet / Desktop View-->
+      <template if:false={isMobileDevice}>
+        <template if:false={isEventRegRecordsBeingFetched}>
+          <table class="slds-table slds-table--bordered slds-max-medium-table--stacked-horizontal slds-table_fixed-layout">
+            <thead>
+              <tr class="slds-text-heading--label" >
+                <template if:false={isMainEntrance}>
+                  <th scope="col" style={tableStatusHeadingStyle}>
+                    <div class="slds-truncate slds-p-around_x-small fieldLabelStyle slds-cell-wrap"  style={tableHeadingStyle} title="Status">Status</div>
+                  </th>
+                </template>
+                <th scope="col">
+                  <div class="slds-truncate slds-p-around_x-small fieldLabelStyle slds-cell-wrap"  style={tableHeadingStyle} title="Name">Name</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate slds-p-around_x-small fieldLabelStyle slds-cell-wrap"  style={tableHeadingStyle} title="Event Order">Event Order</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate slds-p-around_x-small fieldLabelStyle slds-cell-wrap"  style={tableHeadingStyle} title="Registered">Registered</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate slds-p-around_x-small fieldLabelStyle slds-cell-wrap"  style={tableHeadingStyle} title="Checked In">Checked In</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate slds-p-around_x-small fieldLabelStyle slds-cell-wrap"  style={tableHeadingStyle} title="Checked Out">Checked Out</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate slds-p-around_x-small fieldLabelStyle slds-cell-wrap"  style={tableHeadingStyle} title="Did Not Attend">Did Not Attend</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+            <template for:each={eventRegistrationRecords} for:item="thisEventRegistration">
+                <c-ct_-event-registration-check-in-manager-tile  onsessionregupdatedevent={handlesessionRegUpdatedEvent} key={thisEventRegistration.Id} event-registration={thisEventRegistration} is-main-entrance={isMainEntrance}></c-ct_-event-registration-check-in-manager-tile>
+                </template>  
+             
+            </tbody>
+          </table>
+        </template>
+      </template>
+     
+  </div>
+  </template>
+
+  <template if:false={isEventRegistrationRecordsAvailable}>
+    <template if:true={isSearchInvokedFirstTime}>
+      <div class="slds-col slds-p-around_x-small slds-align_absolute-center">
+        <span class="slds-badge slds-p-around_x-small">{noRecordsFoundMessage}</span>
+      </div>
+    </template>
+  </template>
+
+    <!--Event Order Internal component -->
+    <template if:true={showInternalRegistrationComponent}>
+      <!-- Modal/Popup Box LWC starts here -->
+      <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+          <div class="slds-modal__container">
+            
+              <!-- Modal/Popup Box LWC body starts here -->
+              <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <c-ct_-internal-event-registration-form event-record-id={comboBoxValuesObject.selectedEventId}  oneventregistered={closeInternalEventRegModal} sobject-a-p-i-name="Event__c" is-check-in-manager-component="true"  selected-session-id={comboBoxValuesObject.selectedSessionId}>
+                </c-ct_-internal-event-registration-form>
+                
+              </div>
+          </div>
+      </section>
+      <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>
+</template>
+  </template>
+  </div>
+</div>
+</template>

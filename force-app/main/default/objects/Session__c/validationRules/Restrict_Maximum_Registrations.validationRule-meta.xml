@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Maximum_Registrations</fullName>
+    <active>true</active>
+    <errorConditionFormula>Maximum_Registration_Session__c  &gt;  Maximum_Venue_Capacity__c</errorConditionFormula>
+    <errorMessage>Maximum Session Registrations cannot exceed the Maximum Venue Capacity</errorMessage>
+</ValidationRule>

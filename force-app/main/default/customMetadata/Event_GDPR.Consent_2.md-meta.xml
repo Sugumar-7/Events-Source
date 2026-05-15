@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Consent 2</label>
+    <protected>false</protected>
+    <values>
+        <field>Consent_Required_to_Register__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Declaration_Text__c</field>
+        <value xsi:type="xsd:string">I agree to the LED’s GDPR terms in v2</value>
+    </values>
+    <values>
+        <field>GDPR_Statement_Used__c</field>
+        <value xsi:type="xsd:string">Consent 2</value>
+    </values>
+    <values>
+        <field>Statement_Text_above_dec__c</field>
+        <value xsi:type="xsd:string">I understand that the LED needs to collect personal data about me as part of the registration process for the purpose of running this event, and that I will receive communications to remind me about the event, to seek feedback and to provide any follow up materials promised at the event.
+&lt;br/&gt;&lt;br/&gt;
+Lorem Ipsum
+&lt;br/&gt;&lt;br/&gt;
+I understand that the LED will photograph and film the events, and if I do not wish to appear in subsequent media in the public domain, I will alert a member of staff at registration.</value>
+    </values>
+    <values>
+        <field>Statement_Text_below_dec__c</field>
+        <value xsi:type="xsd:string">We&apos;ll keep your personal details safe within the LED and won&apos;t share them with any other organisations for their marketing purposes. From time to time we may share your details with third parties representing us or working on our behalf to clean and enrich data. This data sharing will be carried out securely, in line with contractual requirements. For full details on how we collect, use and store your personal data, please see our &lt;a href=&quot;https://www.google.com&quot;&gt;Data Protection Statement&lt;/a&gt; for Alumni and &lt;a href=&quot;https://www.google.com&quot;&gt;privacy statement&lt;/a&gt;.
+&lt;br/&gt;&lt;br/&gt;
+If, at any time, you have queries about the way we handle your data or you&apos;d like to change the way we contact you, please email alumni@led.com or call Alumni Relations on +44(0) ... in the first instance, or you can contact the LED’s Data Protection Officer, Samantha Hill, on +44(0) ... or test@lead.com.</value>
+    </values>
+    <values>
+        <field>Statement_Title__c</field>
+        <value xsi:type="xsd:string">GDPR Consent - v2</value>
+    </values>
+</CustomMetadata>

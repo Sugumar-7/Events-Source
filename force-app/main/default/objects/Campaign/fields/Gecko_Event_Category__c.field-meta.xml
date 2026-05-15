@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gecko_Event_Category__c</fullName>
+    <label>Gecko Event Category</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>(SBCS) Biological Sciences</fullName>
+                <default>false</default>
+                <label>(SBCS) Biological Sciences</label>
+            </value>
+            <value>
+                <fullName>(SBCS) Biomedical Science &amp; Central</fullName>
+                <default>false</default>
+                <label>(SBCS) Biomedical Science &amp; Central</label>
+            </value>
+            <value>
+                <fullName>(SBCS) Chemical Science &amp; Central</fullName>
+                <default>false</default>
+                <label>(SBCS) Chemical Science &amp; Central</label>
+            </value>
+            <value>
+                <fullName>(SBCS) OH All subjects</fullName>
+                <default>false</default>
+                <label>(SBCS) OH All subjects</label>
+            </value>
+            <value>
+                <fullName>(SBCS) Psychology Online Webinars</fullName>
+                <default>false</default>
+                <label>(SBCS) Psychology Online Webinars</label>
+            </value>
+            <value>
+                <fullName>(SBCS) SEFP only</fullName>
+                <default>false</default>
+                <label>(SBCS) SEFP only</label>
+            </value>
+            <value>
+                <fullName>(SEMS) OH All subjects</fullName>
+                <default>false</default>
+                <label>(SEMS) OH All subjects</label>
+            </value>
+            <value>
+                <fullName>(SPIR) - Preparing for your MA</fullName>
+                <default>false</default>
+                <label>(SPIR) - Preparing for your MA</label>
+            </value>
+            <value>
+                <fullName>Academic Schools New Student Ambassador Training 2019</fullName>
+                <default>false</default>
+                <label>Academic Schools New Student Ambassador Training 2019</label>
+            </value>
+            <value>
+                <fullName>April 2020 Campus Tour (Tuesday)</fullName>
+                <default>false</default>
+                <label>April 2020 Campus Tour (Tuesday)</label>
+            </value>
+            <value>
+                <fullName>CCLS webinar 2021</fullName>
+                <default>false</default>
+                <label>CCLS webinar 2021</label>
+            </value>
+            <value>
+                <fullName>Clearing Campus Tours 2021 (On campus)</fullName>
+                <default>false</default>
+                <label>Clearing Campus Tours 2021 (On campus)</label>
+            </value>
+            <value>
+                <fullName>Clearing Campus Tours 2021 (Online)</fullName>
+                <default>false</default>
+                <label>Clearing Campus Tours 2021 (Online)</label>
+            </value>
+            <value>
+                <fullName>Clearing webinars 2020</fullName>
+                <default>false</default>
+                <label>Clearing webinars 2020</label>
+            </value>
+            <value>
+                <fullName>Conversion Events – China 2020</fullName>
+                <default>false</default>
+                <label>Conversion Events – China 2020</label>
+            </value>
+            <value>
+                <fullName>Dentistry Talks - June 22</fullName>
+                <default>false</default>
+                <label>Dentistry Talks - June 22</label>
+            </value>
+            <value>
+                <fullName>Dentistry Talks - June 23</fullName>
+                <default>false</default>
+                <label>Dentistry Talks - June 23</label>
+            </value>
+            <value>
+                <fullName>Digital Campus Tours</fullName>
+                <default>false</default>
+                <label>Digital Campus Tours</label>
+            </value>
+            <value>
+                <fullName>Discover 2020</fullName>
+                <default>false</default>
+                <label>Discover 2020</label>
+            </value>
+            <value>
+                <fullName>EECS: Academic Taster and Q+A Session</fullName>
+                <default>false</default>
+                <label>EECS: Academic Taster and Q+A Session</label>
+            </value>
+            <value>
+                <fullName>EECS MSc Offer Holder Event 2021</fullName>
+                <default>false</default>
+                <label>EECS MSc Offer Holder Event 2021</label>
+            </value>
+            <value>
+                <fullName>EECS OH 2021/22</fullName>
+                <default>false</default>
+                <label>EECS OH 2021/22</label>
+            </value>
+            <value>
+                <fullName>February Campus Tour (Friday)</fullName>
+                <default>false</default>
+                <label>February Campus Tour (Friday)</label>
+            </value>
+            <value>
+                <fullName>February Campus Tour (Thursday)</fullName>
+                <default>false</default>
+                <label>February Campus Tour (Thursday)</label>
+            </value>
+            <value>
+                <fullName>February Campus Tour (Tuesday)</fullName>
+                <default>false</default>
+                <label>February Campus Tour (Tuesday)</label>
+            </value>
+            <value>
+                <fullName>Geog OH</fullName>
+                <default>false</default>
+                <label>Geog OH</label>
+            </value>
+            <value>
+                <fullName>Geography OH Non OPA</fullName>
+                <default>false</default>
+                <label>Geography OH Non OPA</label>
+            </value>
+            <value>
+                <fullName>Geography OH OPA</fullName>
+                <default>false</default>
+                <label>Geography OH OPA</label>
+            </value>
+            <value>
+                <fullName>Global Health offer holder</fullName>
+                <default>false</default>
+                <label>Global Health offer holder</label>
+            </value>
+            <value>
+                <fullName>Go Abroad Fair October 2017</fullName>
+                <default>false</default>
+                <label>Go Abroad Fair October 2017</label>
+            </value>
+            <value>
+                <fullName>Grouped Events</fullName>
+                <default>false</default>
+                <label>Grouped Events</label>
+            </value>
+            <value>
+                <fullName>Hanisha Test</fullName>
+                <default>false</default>
+                <label>Hanisha Test</label>
+            </value>
+            <value>
+                <fullName>HSS Offer Holder</fullName>
+                <default>false</default>
+                <label>HSS Offer Holder</label>
+            </value>
+            <value>
+                <fullName>HSS Offer Holder Campus Tours</fullName>
+                <default>false</default>
+                <label>HSS Offer Holder Campus Tours</label>
+            </value>
+            <value>
+                <fullName>HSS Panel Discussions</fullName>
+                <default>false</default>
+                <label>HSS Panel Discussions</label>
+            </value>
+            <value>
+                <fullName>Intl Scholars Reception</fullName>
+                <default>false</default>
+                <label>Intl Scholars Reception</label>
+            </value>
+            <value>
+                <fullName>Jess Test</fullName>
+                <default>false</default>
+                <label>Jess Test</label>
+            </value>
+            <value>
+                <fullName>June 2020 Campus Tour (Friday)</fullName>
+                <default>false</default>
+                <label>June 2020 Campus Tour (Friday)</label>
+            </value>
+            <value>
+                <fullName>June 2020 Campus Tour (Thursday)</fullName>
+                <default>false</default>
+                <label>June 2020 Campus Tour (Thursday)</label>
+            </value>
+            <value>
+                <fullName>June 2020 Campus Tour (Tuesday)</fullName>
+                <default>false</default>
+                <label>June 2020 Campus Tour (Tuesday)</label>
+            </value>
+            <value>
+                <fullName>June Open Days</fullName>
+                <default>false</default>
+                <label>June Open Days</label>
+            </value>
+            <value>
+                <fullName>Language Events - HSS</fullName>
+                <default>false</default>
+                <label>Language Events - HSS</label>
+            </value>
+            <value>
+                <fullName>Malta MBBS Open Day 2020</fullName>
+                <default>false</default>
+                <label>Malta MBBS Open Day 2020</label>
+            </value>
+            <value>
+                <fullName>Malta Virtual Open Day</fullName>
+                <default>false</default>
+                <label>Malta Virtual Open Day</label>
+            </value>
+            <value>
+                <fullName>March 2020 Campus Tour (Friday)</fullName>
+                <default>false</default>
+                <label>March 2020 Campus Tour (Friday)</label>
+            </value>
+            <value>
+                <fullName>March 2020 Campus Tour (Thursday)</fullName>
+                <default>false</default>
+                <label>March 2020 Campus Tour (Thursday)</label>
+            </value>
+            <value>
+                <fullName>March Campus Tour (Tuesday)</fullName>
+                <default>false</default>
+                <label>March Campus Tour (Tuesday)</label>
+            </value>
+            <value>
+                <fullName>May 2020 Campus Tour (Friday)</fullName>
+                <default>false</default>
+                <label>May 2020 Campus Tour (Friday)</label>
+            </value>
+            <value>
+                <fullName>May 2020 Campus Tour (Thursday)</fullName>
+                <default>false</default>
+                <label>May 2020 Campus Tour (Thursday)</label>
+            </value>
+            <value>
+                <fullName>May 2020 Campus Tour (Tuesday)</fullName>
+                <default>false</default>
+                <label>May 2020 Campus Tour (Tuesday)</label>
+            </value>
+            <value>
+                <fullName>MBBS Malta Open Day 2020</fullName>
+                <default>false</default>
+                <label>MBBS Malta Open Day 2020</label>
+            </value>
+            <value>
+                <fullName>Medicine Talks - June 22</fullName>
+                <default>false</default>
+                <label>Medicine Talks - June 22</label>
+            </value>
+            <value>
+                <fullName>Medicine Talks - June 23</fullName>
+                <default>false</default>
+                <label>Medicine Talks - June 23</label>
+            </value>
+            <value>
+                <fullName>Meghan&apos;s Canada OH Events</fullName>
+                <default>false</default>
+                <label>Meghan&apos;s Canada OH Events</label>
+            </value>
+            <value>
+                <fullName>MSc and PGCert Burn Care</fullName>
+                <default>false</default>
+                <label>MSc and PGCert Burn Care</label>
+            </value>
+            <value>
+                <fullName>Offer Holder Day WPTB</fullName>
+                <default>false</default>
+                <label>Offer Holder Day WPTB</label>
+            </value>
+            <value>
+                <fullName>On Campus Tours</fullName>
+                <default>false</default>
+                <label>On Campus Tours</label>
+            </value>
+            <value>
+                <fullName>Open Day WPTB</fullName>
+                <default>false</default>
+                <label>Open Day WPTB</label>
+            </value>
+            <value>
+                <fullName>Parent and carer webinar</fullName>
+                <default>false</default>
+                <label>Parent and carer webinar</label>
+            </value>
+            <value>
+                <fullName>Parent and Carer Webinar Series</fullName>
+                <default>false</default>
+                <label>Parent and Carer Webinar Series</label>
+            </value>
+            <value>
+                <fullName>Parent and Teacher events - Malta 2021</fullName>
+                <default>false</default>
+                <label>Parent and Teacher events - Malta 2021</label>
+            </value>
+            <value>
+                <fullName>PASS mentor careers session</fullName>
+                <default>false</default>
+                <label>PASS mentor careers session</label>
+            </value>
+            <value>
+                <fullName>Pass Mentor Training 2019</fullName>
+                <default>false</default>
+                <label>Pass Mentor Training 2019</label>
+            </value>
+            <value>
+                <fullName>PG January 2021 Webinars</fullName>
+                <default>false</default>
+                <label>PG January 2021 Webinars</label>
+            </value>
+            <value>
+                <fullName>PG Law</fullName>
+                <default>false</default>
+                <label>PG Law</label>
+            </value>
+            <value>
+                <fullName>PGOE September 2019</fullName>
+                <default>false</default>
+                <label>PGOE September 2019</label>
+            </value>
+            <value>
+                <fullName>PGOE Sessions Feb 2019</fullName>
+                <default>false</default>
+                <label>PGOE Sessions Feb 2019</label>
+            </value>
+            <value>
+                <fullName>PG Open Eve - S&amp;E Talks</fullName>
+                <default>false</default>
+                <label>PG Open Eve - S&amp;E Talks</label>
+            </value>
+            <value>
+                <fullName>PG Webinar</fullName>
+                <default>false</default>
+                <label>PG Webinar</label>
+            </value>
+            <value>
+                <fullName>Physical Campus- Friday</fullName>
+                <default>false</default>
+                <label>Physical Campus- Friday</label>
+            </value>
+            <value>
+                <fullName>Physical Campus- Monday</fullName>
+                <default>false</default>
+                <label>Physical Campus- Monday</label>
+            </value>
+            <value>
+                <fullName>Physical Campus- Thursday</fullName>
+                <default>false</default>
+                <label>Physical Campus- Thursday</label>
+            </value>
+            <value>
+                <fullName>Physical Campus- Tuesday</fullName>
+                <default>false</default>
+                <label>Physical Campus- Tuesday</label>
+            </value>
+            <value>
+                <fullName>Physical Campus- Wednesday</fullName>
+                <default>false</default>
+                <label>Physical Campus- Wednesday</label>
+            </value>
+            <value>
+                <fullName>Postgraduate Events (enquirer only)</fullName>
+                <default>false</default>
+                <label>Postgraduate Events (enquirer only)</label>
+            </value>
+            <value>
+                <fullName>Postgraduate Research Virtual Event</fullName>
+                <default>false</default>
+                <label>Postgraduate Research Virtual Event</label>
+            </value>
+            <value>
+                <fullName>Pre-departure China Events</fullName>
+                <default>false</default>
+                <label>Pre-departure China Events</label>
+            </value>
+            <value>
+                <fullName>PRiSE Kick-Off Booking form 2021-22</fullName>
+                <default>false</default>
+                <label>PRiSE Kick-Off Booking form 2021-22</label>
+            </value>
+            <value>
+                <fullName>QMUL Offer Holder Days 2018 (UKSR Feb/March)</fullName>
+                <default>false</default>
+                <label>QMUL Offer Holder Days 2018 (UKSR Feb/March)</label>
+            </value>
+            <value>
+                <fullName>Rory Test</fullName>
+                <default>false</default>
+                <label>Rory Test</label>
+            </value>
+            <value>
+                <fullName>S&amp;E Offer Holder</fullName>
+                <default>false</default>
+                <label>S&amp;E Offer Holder</label>
+            </value>
+            <value>
+                <fullName>S&amp;E Offer Holder Campus Tours</fullName>
+                <default>false</default>
+                <label>S&amp;E Offer Holder Campus Tours</label>
+            </value>
+            <value>
+                <fullName>SBCS - &apos;The Air We Breathe&apos; taster lecture</fullName>
+                <default>false</default>
+                <label>SBCS - &apos;The Air We Breathe&apos; taster lecture</label>
+            </value>
+            <value>
+                <fullName>SBCS UG Summer webinar series</fullName>
+                <default>false</default>
+                <label>SBCS UG Summer webinar series</label>
+            </value>
+            <value>
+                <fullName>SBCS - Webinar Series 2021</fullName>
+                <default>false</default>
+                <label>SBCS - Webinar Series 2021</label>
+            </value>
+            <value>
+                <fullName>SBM Event Form 2020</fullName>
+                <default>false</default>
+                <label>SBM Event Form 2020</label>
+            </value>
+            <value>
+                <fullName>SBM OH 2021/22</fullName>
+                <default>false</default>
+                <label>SBM OH 2021/22</label>
+            </value>
+            <value>
+                <fullName>Schools and Outreach Events</fullName>
+                <default>false</default>
+                <label>Schools and Outreach Events</label>
+            </value>
+            <value>
+                <fullName>SED + Central (Non OPA)</fullName>
+                <default>false</default>
+                <label>SED + Central (Non OPA)</label>
+            </value>
+            <value>
+                <fullName>SED + Central (OPA)</fullName>
+                <default>false</default>
+                <label>SED + Central (OPA)</label>
+            </value>
+            <value>
+                <fullName>SED Offer Holder Day</fullName>
+                <default>false</default>
+                <label>SED Offer Holder Day</label>
+            </value>
+            <value>
+                <fullName>SEF: PG Event Form</fullName>
+                <default>false</default>
+                <label>SEF: PG Event Form</label>
+            </value>
+            <value>
+                <fullName>SEF &amp; Central OH Days</fullName>
+                <default>false</default>
+                <label>SEF &amp; Central OH Days</label>
+            </value>
+            <value>
+                <fullName>SEF Banking &amp; Finance</fullName>
+                <default>false</default>
+                <label>SEF Banking &amp; Finance</label>
+            </value>
+            <value>
+                <fullName>SEF Behavioural Finance</fullName>
+                <default>false</default>
+                <label>SEF Behavioural Finance</label>
+            </value>
+            <value>
+                <fullName>SEF Business Finance</fullName>
+                <default>false</default>
+                <label>SEF Business Finance</label>
+            </value>
+            <value>
+                <fullName>SEF Investment Banking</fullName>
+                <default>false</default>
+                <label>SEF Investment Banking</label>
+            </value>
+            <value>
+                <fullName>SEF Skype - China</fullName>
+                <default>false</default>
+                <label>SEF Skype - China</label>
+            </value>
+            <value>
+                <fullName>SEF Taster Events</fullName>
+                <default>false</default>
+                <label>SEF Taster Events</label>
+            </value>
+            <value>
+                <fullName>SEF Wealth Management</fullName>
+                <default>false</default>
+                <label>SEF Wealth Management</label>
+            </value>
+            <value>
+                <fullName>SEMS (APRIL) DICE</fullName>
+                <default>false</default>
+                <label>SEMS (APRIL) DICE</label>
+            </value>
+            <value>
+                <fullName>SEMS 2020 ( FEB, APRIL) biomedical, chemical, material, robotics, sustainable</fullName>
+                <default>false</default>
+                <label>SEMS 2020 ( FEB, APRIL) biomedical, chemical, material, robotics, sustainable</label>
+            </value>
+            <value>
+                <fullName>SEMS 2020 (FEB, MAR, APR) Aerospace+Mechanical</fullName>
+                <default>false</default>
+                <label>SEMS 2020 (FEB, MAR, APR) Aerospace+Mechanical</label>
+            </value>
+            <value>
+                <fullName>SEMS Ask an Academic Q&amp;A</fullName>
+                <default>false</default>
+                <label>SEMS Ask an Academic Q&amp;A</label>
+            </value>
+            <value>
+                <fullName>SEMS Engineering Tours</fullName>
+                <default>false</default>
+                <label>SEMS Engineering Tours</label>
+            </value>
+            <value>
+                <fullName>SEMS Taster Days 2021</fullName>
+                <default>false</default>
+                <label>SEMS Taster Days 2021</label>
+            </value>
+            <value>
+                <fullName>SLLF: Taster Events</fullName>
+                <default>false</default>
+                <label>SLLF: Taster Events</label>
+            </value>
+            <value>
+                <fullName>SLLF OH days</fullName>
+                <default>false</default>
+                <label>SLLF OH days</label>
+            </value>
+            <value>
+                <fullName>SLLF Taster Day events 2020</fullName>
+                <default>false</default>
+                <label>SLLF Taster Day events 2020</label>
+            </value>
+            <value>
+                <fullName>SMD Interview - Feb 18 Kuala Lumpur</fullName>
+                <default>false</default>
+                <label>SMD Interview - Feb 18 Kuala Lumpur</label>
+            </value>
+            <value>
+                <fullName>SMD Interview - Feb 18 Singapore</fullName>
+                <default>false</default>
+                <label>SMD Interview - Feb 18 Singapore</label>
+            </value>
+            <value>
+                <fullName>SMD only UG open day (Thursday 25 June 2020)</fullName>
+                <default>false</default>
+                <label>SMD only UG open day (Thursday 25 June 2020)</label>
+            </value>
+            <value>
+                <fullName>SMD Skype Event 2019</fullName>
+                <default>false</default>
+                <label>SMD Skype Event 2019</label>
+            </value>
+            <value>
+                <fullName>SMD taster</fullName>
+                <default>false</default>
+                <label>SMD taster</label>
+            </value>
+            <value>
+                <fullName>SMD - UCAT Preparation Webinars</fullName>
+                <default>false</default>
+                <label>SMD - UCAT Preparation Webinars</label>
+            </value>
+            <value>
+                <fullName>SMD UG Open Day (Medicine only)</fullName>
+                <default>false</default>
+                <label>SMD UG Open Day (Medicine only)</label>
+            </value>
+            <value>
+                <fullName>SMS &amp; Central OH days</fullName>
+                <default>false</default>
+                <label>SMS &amp; Central OH days</label>
+            </value>
+            <value>
+                <fullName>SMS - Taster Events</fullName>
+                <default>false</default>
+                <label>SMS - Taster Events</label>
+            </value>
+            <value>
+                <fullName>SMS - Taster Events 2021</fullName>
+                <default>false</default>
+                <label>SMS - Taster Events 2021</label>
+            </value>
+            <value>
+                <fullName>SoH Interview</fullName>
+                <default>false</default>
+                <label>SoH Interview</label>
+            </value>
+            <value>
+                <fullName>SoH Offer Holder Day.</fullName>
+                <default>false</default>
+                <label>SoH Offer Holder Day.</label>
+            </value>
+            <value>
+                <fullName>SoL OH event</fullName>
+                <default>false</default>
+                <label>SoL OH event</label>
+            </value>
+            <value>
+                <fullName>SPA Offer Holder - Non OPA</fullName>
+                <default>false</default>
+                <label>SPA Offer Holder - Non OPA</label>
+            </value>
+            <value>
+                <fullName>SPA - Offer Holder OPA</fullName>
+                <default>false</default>
+                <label>SPA - Offer Holder OPA</label>
+            </value>
+            <value>
+                <fullName>SPA - Preparing for University</fullName>
+                <default>false</default>
+                <label>SPA - Preparing for University</label>
+            </value>
+            <value>
+                <fullName>SPA Skype Campaign</fullName>
+                <default>false</default>
+                <label>SPA Skype Campaign</label>
+            </value>
+            <value>
+                <fullName>SPA Taster Days 2020</fullName>
+                <default>false</default>
+                <label>SPA Taster Days 2020</label>
+            </value>
+            <value>
+                <fullName>SPA Taster Days 2021</fullName>
+                <default>false</default>
+                <label>SPA Taster Days 2021</label>
+            </value>
+            <value>
+                <fullName>SPA UG Online Q&amp;A</fullName>
+                <default>false</default>
+                <label>SPA UG Online Q&amp;A</label>
+            </value>
+            <value>
+                <fullName>SPIE: UG VOD</fullName>
+                <default>false</default>
+                <label>SPIE: UG VOD</label>
+            </value>
+            <value>
+                <fullName>SPIR OH + Central</fullName>
+                <default>false</default>
+                <label>SPIR OH + Central</label>
+            </value>
+            <value>
+                <fullName>SPIR PGT OH Q&amp;A</fullName>
+                <default>false</default>
+                <label>SPIR PGT OH Q&amp;A</label>
+            </value>
+            <value>
+                <fullName>SPIR Webinar Events</fullName>
+                <default>false</default>
+                <label>SPIR Webinar Events</label>
+            </value>
+            <value>
+                <fullName>Success in 6th Form Series</fullName>
+                <default>false</default>
+                <label>Success in 6th Form Series</label>
+            </value>
+            <value>
+                <fullName>Taster Day WPTB</fullName>
+                <default>false</default>
+                <label>Taster Day WPTB</label>
+            </value>
+            <value>
+                <fullName>Teachers event</fullName>
+                <default>false</default>
+                <label>Teachers event</label>
+            </value>
+            <value>
+                <fullName>Test: Open Day Form</fullName>
+                <default>false</default>
+                <label>Test: Open Day Form</label>
+            </value>
+            <value>
+                <fullName>Test for Gecko Guests</fullName>
+                <default>false</default>
+                <label>Test for Gecko Guests</label>
+            </value>
+            <value>
+                <fullName>UG Law Open Day rescheduled</fullName>
+                <default>false</default>
+                <label>UG Law Open Day rescheduled</label>
+            </value>
+            <value>
+                <fullName>UG open day (Fri 26 June 2020)</fullName>
+                <default>false</default>
+                <label>UG open day (Fri 26 June 2020)</label>
+            </value>
+            <value>
+                <fullName>UG open day (Thur 25 June 2020)</fullName>
+                <default>false</default>
+                <label>UG open day (Thur 25 June 2020)</label>
+            </value>
+            <value>
+                <fullName>UG Open Days 2020 (June 2020)</fullName>
+                <default>false</default>
+                <label>UG Open Days 2020 (June 2020)</label>
+            </value>
+            <value>
+                <fullName>UG Webinar</fullName>
+                <default>false</default>
+                <label>UG Webinar</label>
+            </value>
+            <value>
+                <fullName>UKSR Campus Tour</fullName>
+                <default>false</default>
+                <label>UKSR Campus Tour</label>
+            </value>
+            <value>
+                <fullName>University of London Swiss School</fullName>
+                <default>false</default>
+                <label>University of London Swiss School</label>
+            </value>
+            <value>
+                <fullName>UoL Languages</fullName>
+                <default>false</default>
+                <label>UoL Languages</label>
+            </value>
+            <value>
+                <fullName>Virtual Roadshow Webinars</fullName>
+                <default>false</default>
+                <label>Virtual Roadshow Webinars</label>
+            </value>
+            <value>
+                <fullName>WP Campus Visits</fullName>
+                <default>false</default>
+                <label>WP Campus Visits</label>
+            </value>
+            <value>
+                <fullName>WP Travel Bursary (group)</fullName>
+                <default>false</default>
+                <label>WP Travel Bursary (group)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

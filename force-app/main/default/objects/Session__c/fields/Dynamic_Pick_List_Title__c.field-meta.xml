@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dynamic_Pick_List_Title__c</fullName>
+    <description>This field is used to display &apos;Session Display name&apos; &amp; &apos;Primary Subject Area Interest&apos;</description>
+    <externalId>false</externalId>
+    <formula>Session_Display_Name__c  + &apos; &amp; &apos; +  TEXT(Primary_Subject_Area_Interest__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This field is used to display &apos;Session Display name&apos; &amp; &apos;Primary Subject Area Interest&apos;</inlineHelpText>
+    <label>Dynamic Pick List Title</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Refund_Requested</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( Refund_Requested__c  = true, ISBLANK( Repayment_Reason__c ) )</errorConditionFormula>
+    <errorDisplayField>Repayment_Reason__c</errorDisplayField>
+    <errorMessage>Please complete the Repayment Reason.</errorMessage>
+</ValidationRule>

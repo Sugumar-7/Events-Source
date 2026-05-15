@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandate_Visible_Social_App_field</fullName>
+    <active>true</active>
+    <description>Select at least one social App when Social App Visibility is On.</description>
+    <errorConditionFormula>AND(
+TEXT(  Social_App_Visibility__c ) = &quot;Visible&quot;,
+ISBLANK( Visible_Social_App__c )
+)</errorConditionFormula>
+    <errorDisplayField>Visible_Social_App__c</errorDisplayField>
+    <errorMessage>Please Select at least one Social App</errorMessage>
+</ValidationRule>

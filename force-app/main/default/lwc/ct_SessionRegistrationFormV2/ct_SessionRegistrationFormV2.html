@@ -1,0 +1,281 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 12-03-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   08-11-2020   Creation Admin   Initial Version
+-->
+<template>
+  <template if:true={spinnerBoolean}>
+    <div class="slds-spinner_container">
+      <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+    </div>
+  </template>
+    <h1 class="slds-text-heading--large headerFont">Session Registration</h1>
+    <hr>
+
+    <div>
+        <!-- <div class={mobileAlignmentStyle}> -->
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-p-around--xx-small">
+              <lightning-input type="text"  id="sessionTitle"  variant="label-hidden" value={sessionTitle}
+                    onchange={handleSessionTitle} class="slds-align_absolute-center  inputFieldPlaceHolder" placeholder="Search by session title"></lightning-input>
+            </div>
+            <!-- <div class="slds-col slds-p-around--xx-small">
+              <lightning-input type="text"  id="trackName" variant="label-hidden"  value={trackName}
+                    onchange={handleTrackName} class="slds-align_absolute-center  inputFieldPlaceHolder" placeholder="Search by track name"></lightning-input>
+            </div> 
+            <div class="slds-col slds-p-around--xx-small">
+              <button type="button" value="Search" style="border-radius: 0px; width: 120px; height: 30px;"
+                  class="slds-align_absolute-center  searchButtonStyle slds-button slds-button_success" onclick={handleSearch}>Search</button>
+            </div>
+            <div class="slds-col slds-p-around--xx-small">
+              <button type="button" value="Search" style="border-radius: 0px; width: 120px; height: 30px;"
+                  class="slds-align_absolute-center  searchButtonStyle slds-button slds-button_brand" onclick={handleClear}>Clear</button>
+            </div>-->
+             
+    </div>
+    </div>
+              
+                    <template if:true={isSessions}>
+                          <div class="slds-tabs_scoped">
+                            <ul class="slds-tabs_scoped__nav" style="align-items: center;display: flex;" role="tablist">
+
+                               <!--DO NOT ALTER BELOW TAG DATA-ID-->
+                               <li class="slds-tabs_scoped__item slds-is-active myTab" title="My Sessions" data-id="mySessions" onclick={handleTabState} role="presentation">
+                                <a class="slds-tabs_scoped__link fieldLabelStyle" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-scoped-1" data-id="mySessions" id="mySessions">My Sessions</a>
+                              </li>
+                              <!--DO NOT ALTER BELOW TAG DATA-ID-->
+                              <li class="slds-tabs_scoped__item allTab" title="All" data-id="allSessions" onclick={handleTabState} role="presentation">
+                                <a class="slds-tabs_scoped__link fieldLabelStyle" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-scoped-1" data-id="allSessions" id="allSessions">All</a>
+                              </li>
+                              <template if:true={trackRecords}>
+                                <template if:false={mobileTabs}>
+                                <template for:each={trackRecords} for:item="track">
+                                  <li key={track.Id} class="slds-tabs_scoped__item" data-id={track.Id} onclick={handleTabState} title={track.Name} role="presentation">
+                                    <a class="slds-tabs_scoped__link fieldLabelStyle" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-scoped-1" data-id={track.Id} id={track.Id}>{track.Name}</a>
+                                  </li>
+                                </template>
+                              </template>
+                                <template if:true={mobileTabs}>
+                                <li class="slds-tabs_scoped__item slds-p-around_x-small dropdownTab" data-id="dropdownTab" title="Tracks" role="presentation">
+                                  <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open" >
+                                    
+                                    <template if:false={showMenus}>
+                                    {selectedTrackName}
+                                    <lightning-button-icon class="slds-p-around_x-small"  icon-name="utility:chevrondown" variant="bare" slot="actions" alternative-text="More Tracks"
+                                      title="click to show Tracks"  onclick={showMenu} ></lightning-button-icon>
+                                    </template>
+                                    <template if:true={showMenus}>
+                                      {selectedTrackName}
+                                      <lightning-button-icon class="slds-p-around_x-small" icon-name="utility:close" variant="bare" slot="actions" alternative-text="More Tracks"
+                                      title="click to show Tracks"  onclick={hideMenu} ></lightning-button-icon>
+                                    </template>
+                                    <template if:true={showMenus}>
+                                    <div class="slds-dropdown slds-dropdown_right">
+                                      <ul class="slds-dropdown__list slds-dropdown_length-with-icon-10" role="menu">
+                                        <template for:each={trackRecords} for:item="track">
+                                          <li key={track.Id} class="slds-dropdown__item" data-id={track.Id} onclick={handleTabState} title={track.Name} role="presentation">
+                                            <a  href="javascript:void(0);" role="menuitem" title={track.Name}  data-id={track.Id} id={track.Id}>{track.Name}</a>
+                                          </li>
+                                        </template>
+                                      </ul>
+                                    </div>
+                                  </template>
+                                  </div>
+                                </li>
+                              </template>
+                              </template>
+                              
+                            </ul>
+                            
+                            <div id="tab-scoped-1" class="slds-tabs_scoped__content slds-show" style="padding-bottom: 0;" role="tabpanel" aria-labelledby="tab-scoped-1__item">
+                              <template if:false={showError}>
+                                <div class="slds-grid slds-wrap" style="background-color: #ededed;">
+                                  <template for:each={recordsToDisplay} for:item="session">
+                                    <!-- <div key={session.session.Id} class="slds-col slds-size_1-of-1" style="background-color: #ededed;"> -->
+                                      <div key={session.session.Id} class={timeStyle}>
+                                        <div class="slds-align_absolute-center fieldLabelStyle slds-p-around_x-small">
+                                          {session.sessionStartTime}
+                                        </div>
+                                      </div>
+                                      <div key={session.session.Id} class={contentStyle} style="border-left: 2px solid #621360;">
+                                        <div class="slds-grid slds-wrap slds-p-around_x-small" >
+                                          <!-- <div key={session.session.Id} class="slds-col slds-size_1-of-12" style="border-right: 2px solid #621360;">
+                                            <div class="slds-align_absolute-center fieldLabelStyle">
+                                              {session.sessionStartTime}
+                                            </div>
+                                          </div> -->
+                                          
+                                          <div class="slds-col slds-size_12-of-12">
+                                            <div class="slds-grid slds-wrap direction">
+                                              <!-- <div class="slds-col slds-size_10-of-12 slds-medium-size_11-of-12 slds-large-size_11-of-12"> -->
+                                                <div class={displayNameStyle}>
+                                                <div class="slds-grid slds-wrap">
+                                                  <div class="slds-col slds-size_1-of-1">
+                                                    <h2 class="slds-card__header-title headingStyle">
+                                                      <p class="slds-text-heading_medium  headingStyle" style="padding-top: 3px;">{session.session.Session_Display_Name__c}</p>
+                                                      <!--Icon Start-->
+                                                    <div class="slds-p-left_small">
+                                                      <template if:true={session.session.Session_Abstract__c}>
+                                                        <template if:false={session.selected}>
+                                                          <!-- <lightning-button-icon icon-name="utility:add" slot="actions" alternative-text="collapsed"
+                                                            title="click to collapse" data-id={session.session.Id} onclick={show_Abstract}></lightning-button-icon> -->
+                                                             <a  onclick={show_Abstract}>
+                                                             <svg class="plus" width="26" height="26" viewBox="0 0 50 50" data-id={session.session.Id}>
+                                                                <path d="M42,25c0-9.4-7.6-17-17-17C15.6,8,8,15.6,8,25c0,9.4,7.6,17,17,17C34.4,42,42,34.4,42,25z M27.4,33.9  c0,0.4-0.3,0.7-0.7,0.7h-3.4c-0.4,0-0.7-0.3-0.7-0.7v-6.5h-6.5c-0.4,0-0.7-0.3-0.7-0.7v-3.4c0-0.4,0.3-0.7,0.7-0.7h6.5v-6.5  c0-0.4,0.3-0.7,0.7-0.7h3.4c0.4,0,0.7,0.3,0.7,0.7v6.5h6.5c0.4,0,0.7,0.3,0.7,0.7v3.4c0,0.4-0.3,0.7-0.7,0.7h-6.5V33.9z" data-id={session.session.Id}></path>
+                                                              </svg>
+                                                            </a> 
+                                                        </template>
+                                                        <template if:true={session.selected}>
+                                                          <!-- <lightning-button-icon icon-name="utility:chevrondown" slot="actions" alternative-text="collapsed"
+                                                            title="click to collapse" data-id={session.session.Id} onclick={hide_Abstract}></lightning-button-icon> -->
+                                                            <a  onclick={hide_Abstract}>
+                                                              <svg class="minus" width="26" height="26" viewBox="0 0 50 50" data-id={session.session.Id}>
+                                                                <path d="M42,25c0-9.4-7.6-17-17-17C15.6,8,8,15.6,8,25c0,9.4,7.6,17,17,17C34.4,42,42,34.4,42,25z M16.1,27.4  c-0.4,0-0.7-0.3-0.7-0.7v-3.4c0-0.4,0.3-0.7,0.7-0.7h17.8c0.4,0,0.7,0.3,0.7,0.7v3.4c0,0.4-0.3,0.7-0.7,0.7H16.1z" data-id={session.session.Id}></path>
+                                                              </svg>
+                                                            </a>
+                                                        </template>
+                                                      </template>
+                                                    </div>
+                                                    <!--Icon End-->
+                                                    </h2>
+                                                    
+                                                  </div>
+                                                  <div class="slds-col slds-size_1-of-1">
+                                                    <!-- <dt  class="slds-dl_inline__label slds-p-left--xxx-small">
+                                                      <lightning-icon icon-name="utility:clock" alternative-text="Duration" title="Duration" size="x-small">
+                                                      </lightning-icon></dt>
+                                                      <dd class="slds-dl_inline__detail slds-p-top--xxx-small fieldLabelStyle">{session.sessionDuration}
+                                                    </dd> -->
+                                                    <div>
+                                                      <span class="slds-p-around_xx-small"><lightning-icon icon-name="utility:clock" alternative-text="Duration" title="Duration" size="x-small">
+                                                      </lightning-icon></span>
+                                                      <span class="slds-p-around_xx-small fieldLabelStyle">
+                                                        {session.sessionDuration}
+                                                      </span>
+                                                    </div>
+                                              
+                                                    
+                                                  </div>
+                                                  <template if:true={session.session.Venue__c}>
+                                                    <div class="slds-col slds-size_1-of-1">
+                                                      <!-- <dt  class="slds-dl_inline__label slds-p-left--xxx-small">
+                                                        <lightning-icon icon-name="utility:target" alternative-text="Location" title="Location" size="x-small">
+                                                        </lightning-icon>
+                                                      </dt>
+                                                      <dd  class="slds-dl_inline__detail slds-p-top--xxx-small fieldLabelStyle">{session.session.Venue__r.Name}</dd> -->
+                                                      <div>
+                                                        <span class="slds-p-around_xx-small"> <lightning-icon icon-name="utility:target" alternative-text="Location" title="Location" size="x-small">
+                                                        </lightning-icon></span>
+                                                        <span class="slds-p-around_xx-small fieldLabelStyle">
+                                                          {session.session.Venue__r.Name}
+                                                        </span>
+                                                      </div>
+                                                    </div>
+                                                </template>
+                                                <template if:true={session.selected}>
+                                                  <div class="slds-col slds-size_1-of-1 fieldLabelStyle slds-p-top_x-small">
+                                                      <!-- <dt  class="slds-dl_inline__label slds-p-around--xxx-small"></dt>
+                                                      <dd  class="slds-dl_inline__detail slds-size_3-of-4 slds-p-around--xx-small fieldLabelStyle">
+                                                          <div style="border: 1px solid silver;padding:3px">{session.session.Session_Abstract__c}</div>
+                                                      </dd> -->
+                                                      <div style="border: 1px solid silver;padding:3px">{session.session.Session_Abstract__c}</div>
+                                              </div>
+                                            </template>
+                                            </div>
+                                          </div>
+                                      <!-- Icon Start-->
+                                          <!-- <div class="slds-col slds-size_1-of-12" >
+                                            <div class="slds-align_absolute-center fieldLabelStyle slds-p-top_xx-small" data-id={session.session.Id}>
+                                            <template if:true={session.session.Session_Abstract__c}>
+                                              <template if:false={session.selected}> -->
+                                                <!-- <lightning-button-icon icon-name="utility:add" slot="actions" alternative-text="collapsed"
+                                                  title="click to collapse" data-id={session.session.Id} onclick={show_Abstract}></lightning-button-icon> -->
+                                                   <!-- <a  onclick={show_Abstract}>
+                                                   <svg class="plus" width="26" height="26" viewBox="0 0 50 50" data-id={session.session.Id}>
+                                                      <path d="M42,25c0-9.4-7.6-17-17-17C15.6,8,8,15.6,8,25c0,9.4,7.6,17,17,17C34.4,42,42,34.4,42,25z M27.4,33.9  c0,0.4-0.3,0.7-0.7,0.7h-3.4c-0.4,0-0.7-0.3-0.7-0.7v-6.5h-6.5c-0.4,0-0.7-0.3-0.7-0.7v-3.4c0-0.4,0.3-0.7,0.7-0.7h6.5v-6.5  c0-0.4,0.3-0.7,0.7-0.7h3.4c0.4,0,0.7,0.3,0.7,0.7v6.5h6.5c0.4,0,0.7,0.3,0.7,0.7v3.4c0,0.4-0.3,0.7-0.7,0.7h-6.5V33.9z"></path>
+                                                    </svg>
+                                                  </a> 
+                                              </template>
+                                              <template if:true={session.selected}> -->
+                                                <!-- <lightning-button-icon icon-name="utility:chevrondown" slot="actions" alternative-text="collapsed"
+                                                  title="click to collapse" data-id={session.session.Id} onclick={hide_Abstract}></lightning-button-icon> -->
+                                                  <!-- <a  onclick={hide_Abstract}>
+                                                    <svg class="minus" width="26" height="26" viewBox="0 0 50 50" data-id={session.session.Id}>
+                                                      <path d="M42,25c0-9.4-7.6-17-17-17C15.6,8,8,15.6,8,25c0,9.4,7.6,17,17,17C34.4,42,42,34.4,42,25z M16.1,27.4  c-0.4,0-0.7-0.3-0.7-0.7v-3.4c0-0.4,0.3-0.7,0.7-0.7h17.8c0.4,0,0.7,0.3,0.7,0.7v3.4c0,0.4-0.3,0.7-0.7,0.7H16.1z"></path>
+                                                    </svg>
+                                                  </a>
+                                              </template>
+                                            </template>
+                                          </div>
+                                          </div> -->
+                                        <!-- Icon End-->
+                                              <!-- <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_1-of-12"> -->
+                                                <div class={buttonStyle}>
+                                                <div class={buttonPosition}>
+                                                  <dd class="slds-dl_inline__detail slds-p-around--xx-small">
+                                                  
+                                                    
+                                                    <template if:false={session.isRegistered}>
+                                                        <template if:false={session.isSessionEnded}>
+                                                            <template if:false={session.isWaitingListEnabled}>
+                                                              <template if:false={session.isOnWaitingList}>
+                                                                    <button type="button" value="Register" data-id={session.session.Id}  style="border-radius: 0px;" class="buttonStyle slds-button slds-button_success"  onclick={handleSessionRegister}>Register</button>
+                                                              </template>
+                                                            </template>
+                                                          </template>
+                                                  </template>
+                                                  <template if:true={session.isSessionEnded}>
+                                                      <button type="button" value="Closed" disabled data-id={session.session.Id}  class="buttonStyle slds-button slds-button_success" style="border-radius: 0px;" >Closed</button>
+                                                  </template>
+                                                  <template if:false={session.isSessionEnded}>
+                                                        <template if:true={session.isWaitingListEnabled}>
+                                                          <button type="button" value="Join Waiting List" data-id={session.session.Id} style="border-radius: 0px;" class="buttonStyle slds-button slds-button_success" onclick={handleWaitingListRegistration}>Join Waiting List</button>
+                                                        </template>
+                                                        <template if:true={session.isOnWaitingList}>
+                                                          <button type="button" value="On Waiting List" disabled data-id={session.session.Id} style="border-radius: 0px;" class="buttonStyle slds-button slds-button_success" >On Waiting List</button>
+                                                        </template>
+                                                        <template if:true={session.isRegistered}>
+                                                            <template if:false={session.isWaitingListEnabled}>
+                                                            <button type="button" value={session.isSessionEnded} data-id={session.session.Id} style="border-radius: 0px;" class="buttonStyle slds-button slds-button_success" onclick={confirmSessionUnregister}>Un-Register</button>
+                                                          </template>
+                                                        </template>
+                                                      </template>
+                                                  </dd>
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  <!-- </div> -->
+                                    <div key={session.session.Id} class="slds-col slds-size_12-of-12" style="background-color: #ffffff;">
+                                      &nbsp;
+                                    </div>
+                                </template>
+                                </div>
+                              
+                        </template>
+                        <template if:true={showError}>
+                          <div class="slds-col slds-p-around_x-small slds-align_absolute-center">
+                            <span class="slds-badge slds-p-around_x-small fieldLabelStyle">No records found!</span>
+                          </div>
+                        </template>
+                          </div>
+                           
+                            
+                          </div>
+                            
+                        <div class="">
+                          <template if:true={rendered}>
+                          <c-ct_lightning-paginator-v2 records={SessionData} total-records={SessionData.length}  onpaginatorchange={handlePaginatorChange}>
+                          </c-ct_lightning-paginator-v2>
+                        </template>
+                        </div>
+                    </template>
+</template>

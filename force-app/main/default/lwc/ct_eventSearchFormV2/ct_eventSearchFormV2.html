@@ -1,0 +1,82 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 07-30-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   07-22-2020   Creation Admin   Initial Version
+-->
+<template>
+  <p class="slds-p-bottom--x-small fieldLabelStyle">Discover upcoming events in our calendar – from public lectures, performances and exhibitions, to conferences, seminars and open days.</p>
+  <article class="slds-card">
+    <div class="slds-card__header slds-grid formHeaderStyle">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate slds-p-bottom--x-small">
+        <div class="slds-media__body slds-p-bottom--x-small">
+          <h2 class="slds-card__header-title headerFont">
+            Search Events
+          </h2>
+        </div>
+        <!-- <div class="slds-no-flex slds-p-bottom--x-small slds-button_icon-border-filled ">
+          <template if:false={showSearch}>
+            <lightning-button-icon icon-name="utility:chevronright" slot="actions" alternative-text="collapsed"
+              title="click to Expand" onclick={show_Search}></lightning-button-icon>
+          </template>
+          <template if:true={showSearch}>
+            <lightning-button-icon icon-name="utility:chevrondown" slot="actions" alternative-text="Expanded"
+              title="click to collapse" onclick={hide_Search} class="slds-button_icon-inverse"></lightning-button-icon>
+          </template>
+        </div> -->
+      </header>
+    </div>
+    <template if:true={showSearch}>
+      <div class="slds-card__body slds-card__body_inner">
+        <lightning-layout horizontal-align="space" multiple-rows="true">
+
+          <lightning-layout-item class="slds-align-middle slds-size_1-of-1">
+            <label class="slds-form-element__label fieldLabelStyle" for="eventName">By Event Name</label>
+            <lightning-input type="text" id="eventName" label="By Event Name" variant="label-hidden" value={eventName}
+              onchange={handleEventName} class="inputFieldPlaceHolder" placeholder="Please enter event web name"></lightning-input>
+          </lightning-layout-item>
+
+          <lightning-layout-item class="slds-align-middle slds-size_1-of-1">
+            <label class="slds-form-element__label fieldLabelStyle" for="eventType">By Event Type</label>
+            <lightning-combobox label="By Event Type" id="eventType" variant="label-hidden" options={eventTypeValues} value={eventType}
+              onchange={handleEventType} class="inputFieldPlaceHolder" placeholder="Please select event type"></lightning-combobox>
+          </lightning-layout-item>
+
+          <!-- <lightning-layout-item class="slds-align-middle slds-size_1-of-1"> -->
+            <!-- <label class="slds-form-element__label fieldLabelStyle" for="eventGroup">By Event Group</label>
+            <lightning-combobox label="By Event Group" id="eventGroup" variant="label-hidden" value=""
+              onchange={handleEventGroup}></lightning-combobox> -->
+              <!-- <c-ct_event-group-lookup-V2 ongroupresults={handleGroupEvent}></c-ct_event-group-lookup-V2 > -->
+          <!-- </lightning-layout-item> -->
+          <lightning-layout-item class="slds-align-middle slds-size_1-of-1" >
+            <div class="slds-grid direction" style="padding-bottom:16px;">
+              <div class="slds-col slds-size_1-of-2" style="padding-top:16px;float: left;">
+                <button type="button" value="Reset all" style="border-radius: 0px;"
+                 class="searchButtonStyle slds-button slds-button_success" onclick={clearSearchTerms}>Reset all</button>
+              </div>
+              <div class={buttonStyle} style="padding-top:16px;float: right;">
+                <button type="button" value="Search" style="border-radius: 0px;"
+                class="searchButtonStyle slds-button slds-button_success" onclick={handleSearch}>Search</button>
+              </div>
+            </div>
+          </lightning-layout-item>
+        </lightning-layout>
+        
+      </div>
+      <footer class="slds-card__footer">
+        <!-- <lightning-layout-item class="slds-float_left " style="padding:1rem;"> -->
+          
+        <!-- </lightning-layout-item> -->
+        <!-- <lightning-layout-item class="slds-align-middle" style="padding:1rem;"> -->
+          <!-- <lightning-button variant="brand" label="Search" title="Search Events" onclick={handleSearch} class="slds-m-left_x-small searchButtonStyle"></lightning-button> -->
+          
+
+        <!-- </lightning-layout-item> -->
+      </footer>
+    </template>
+  </article>
+</template>

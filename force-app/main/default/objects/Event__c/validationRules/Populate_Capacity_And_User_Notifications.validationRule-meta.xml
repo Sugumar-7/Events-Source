@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Populate_Capacity_And_User_Notifications</fullName>
+    <active>true</active>
+    <description>User must populate both Capacity Notification field and User notification field if either one of them is populated. Added For:UOPEM-150</description>
+    <errorConditionFormula>AND(
+  OR(
+    NOT(ISBLANK(Capacity_Notification__c)),
+    NOT(ISBLANK(User_Notification__c ))
+  ),
+  OR(
+    ISBLANK(Capacity_Notification__c),
+    ISBLANK(User_Notification__c )
+  )
+)</errorConditionFormula>
+    <errorMessage>Populate both Capacity Notification and User Notification</errorMessage>
+</ValidationRule>

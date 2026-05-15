@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandate_Field_2</fullName>
+    <active>true</active>
+    <description>Mandate Field 2</description>
+    <errorConditionFormula>AND(
+
+OR(
+AND(
+TEXT( Manual_or_Scheduled_Publishing__c ) = &quot;Manual Publishing&quot;,
+Active__c == True
+),
+AND(
+TEXT( Manual_or_Scheduled_Publishing__c ) = &quot;Scheduled Publishing&quot;,
+NOT(ISBLANK(Event_Publishing_Date_Time__c) )
+)
+)
+,
+OR(
+ISBLANK( Maximum_Registration__c )
+)
+)</errorConditionFormula>
+    <errorMessage>Fill mandatory fields: Maximum Registration</errorMessage>
+</ValidationRule>

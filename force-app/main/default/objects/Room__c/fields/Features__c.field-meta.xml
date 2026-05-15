@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Features__c</fullName>
+    <label>Features</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Conference Option</fullName>
+                <default>false</default>
+                <label>Conference Option</label>
+            </value>
+            <value>
+                <fullName>Food Option</fullName>
+                <default>false</default>
+                <label>Food Option</label>
+            </value>
+            <value>
+                <fullName>Meeting option</fullName>
+                <default>false</default>
+                <label>Meeting option</label>
+            </value>
+            <value>
+                <fullName>Wifi</fullName>
+                <default>false</default>
+                <label>Wifi</label>
+            </value>
+            <value>
+                <fullName>Induction Loop</fullName>
+                <default>false</default>
+                <label>Induction Loop</label>
+            </value>
+            <value>
+                <fullName>Blackout Blinds</fullName>
+                <default>false</default>
+                <label>Blackout Blinds</label>
+            </value>
+            <value>
+                <fullName>Technical Support</fullName>
+                <default>false</default>
+                <label>Technical Support</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

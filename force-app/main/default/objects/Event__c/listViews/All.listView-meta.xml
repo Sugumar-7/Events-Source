@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Is_Complex_Event__c</columns>
+    <columns>Event_Status__c</columns>
+    <columns>Business_Area__c</columns>
+    <columns>Event_Type__c</columns>
+    <columns>Event_Start_Date__c</columns>
+    <columns>Event_End_Date__c</columns>
+    <columns>Event_Manager__c</columns>
+    <columns>Active__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <label>1. All Events</label>
+</ListView>

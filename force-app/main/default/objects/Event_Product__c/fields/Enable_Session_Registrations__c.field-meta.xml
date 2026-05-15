@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enable_Session_Registrations__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Enable Session Registrations after Event order Booking is successfull</description>
+    <inlineHelpText>Enable Session Registrations</inlineHelpText>
+    <label>Enable Session Registrations</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

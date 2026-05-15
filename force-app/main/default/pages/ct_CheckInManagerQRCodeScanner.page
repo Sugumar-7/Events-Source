@@ -1,0 +1,50 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 10-26-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   10-23-2020   Creation Admin   Initial Version
+-->
+<apex:page lightningStylesheets="true" sidebar="false" showHeader="false">
+  <apex:slds />
+  <apex:includeLightning />
+  <div id="LightningComponent"/>
+  <div style="width:100%;height:100px;" id="lexContainer"> 
+  <div style="height:6rem;" id="loadingDiv">
+    <div role="status" class="slds-spinner slds-spinner_medium" >
+    <span class="slds-assistive-text">Loading</span>
+    <div class="slds-spinner__dot-a"></div>
+    <div class="slds-spinner__dot-b"></div> 
+    </div>
+  </div> 
+  </div>
+
+  <head>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <style>
+     .forceBrandBand {
+        padding: 0px !important;
+      }
+      /* @media only screen and (max-width: 600px) {
+        .componentclass {
+         
+        }
+      } */
+    </style>
+    </head>
+
+  <script>
+  $Lightning.use("c:ct_CheckInManagerQRCodeScannerApplication", function() {
+  $Lightning.createComponent("c:ct_CheckInManagerQRCodeScanner",
+  {},
+  "LightningComponent",
+  function(cmp) {
+  document.getElementById("loadingDiv").style.display = 'none'; 
+  });
+  });
+  </script>
+
+</apex:page>

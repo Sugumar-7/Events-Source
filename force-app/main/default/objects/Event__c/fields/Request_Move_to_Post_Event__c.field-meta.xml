@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Move_to_Post_Event__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox based on which the record will be submitted for Approval for moving the Event status to Post Event</description>
+    <inlineHelpText>Request approval from Event Manager to change status to Post Event. On status change Event Registrations will automatically update as follows; ‘Attended / Checked In’ will update to ‘Attended / Checked Out’ AND ‘Registered’ will update to ‘Did Not Attend</inlineHelpText>
+    <label>Request Move to Post Event</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

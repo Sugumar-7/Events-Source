@@ -1,0 +1,82 @@
+<!--
+  @description       : Event Registartion Tile Component for Check In Manager
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 10-20-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   08-31-2020   Creation Admin   Initial Version
+-->
+<template>
+      <template if:true={isUpdating}>
+        <td class="slds-text-align_left slds-cell-wrap" style={tableCellStyle} data-label="Event Order" colspan="6">
+          <div class="customSpinnerContainer slds-align_absolute-center slds-p-vertical_large">
+            <lightning-spinner class="customInnerSpinner" alternative-text="Fetching Event Registration Records" variant="brand" size="small"></lightning-spinner>
+            </div>
+        </td>
+      </template> 
+
+      <template if:false={isUpdating}>
+        <template if:false={isMainEntrance}>
+           <td class="slds-text-align_left slds-cell-wrap" style={tableCellStyle} data-label="status">
+            <div class="slds-truncate slds-p-around_x-small fieldLabelStyle slds-cell-wrap" title="status" style={statusDivStyle}>
+              <lightning-icon icon-name={statusIconStyle} size="x-small" variant={statusIconVariant}  alternative-text="Status" title="Status"></lightning-icon>
+            </div>
+          </td>
+        </template>
+        <td class="slds-text-align_left slds-cell-wrap" style={tableCellStyle} data-label="Name">
+          <div class="slds-truncate fieldLabelStyle" title="Name">
+            <a href="javascript:void(0);" data-recordid={eventRegId} style="cursor: pointer;" onclick={handleRedirectToSobjectRequest}> {eventRegname}</a>
+          </div>
+        </td>
+        <td class="slds-text-align_left slds-cell-wrap" style={tableCellStyle} data-label="Event Order">
+          <div class="slds-truncate fieldLabelStyle" title="Event Order">
+            <a href="javascript:void(0);" data-recordid={eventOrderId} style="cursor: pointer;" onclick={handleRedirectToSobjectRequest}>{orderRefNumber}</a>
+            </div>
+        </td>
+        <td class="slds-text-align_left slds-cell-wrap" style={tableCellStyle} data-label="Registered">
+          <div class="slds-truncate fieldLabelStyle" title="Registered" style={customButtonStyle}>
+            <button class="slds-button slds-button_neutral slds-button_icon slds-is-selected slds-button_icon-border-filled customWidthFull" onclick={handleStatusChanged}  data-booleanname="isRegistered" title="Registered" disabled={isUpdating} style={registeredButtonStyle}>
+              <lightning-icon icon-name="utility:user" size="x-small" variant={registeredIconStyle}  data-booleanname="isRegistered" alternative-text="Registered" title="Registered"></lightning-icon>
+              <span class="slds-assistive-text">Registered</span>
+            </button>
+          </div>
+        </td>
+        <td class="slds-text-align_left slds-cell-wrap" style={tableCellStyle} data-label="Checked In" >
+          <div class="slds-truncate fieldLabelStyle" title="Checked In" style={customButtonStyle}>
+            <button class="slds-button slds-button_neutral slds-button_icon slds-is-selected slds-button_icon-border-filled customWidthFull" onclick={handleStatusChanged} data-booleanname="isCheckedIn" title="Checked In" disabled={isUpdating} style={checkedInButtonStyle}>
+              <lightning-icon icon-name="utility:check" data-booleanname="isCheckedIn" size="x-small" variant={checkedInIconStyle} alternative-text="Checked In" title="Checked In"></lightning-icon>
+              <span class="slds-assistive-text">Checked In</span>
+            </button>
+          </div>
+        </td>
+        <td class="slds-text-align_left slds-cell-wrap" style={tableCellStyle} data-label="Checked Out">
+          <div class="slds-truncate fieldLabelStyle" title="Checked Out" style={customButtonStyle}>
+            <button class="slds-button slds-button_neutral slds-button_icon slds-is-selected slds-button_icon-border-filled customWidthFull" onclick={handleStatusChanged}  data-booleanname="isCheckedOut" title="Checked Out" disabled={isUpdating} style={checkedOutButtonStyle}>
+              <lightning-icon icon-name="utility:logout" data-booleanname="isCheckedOut" size="x-small" variant={checkedOutIconStyle} alternative-text="Checked Out" title="Checked Out"></lightning-icon>
+              <span class="slds-assistive-text">Checked Out</span>
+            </button>
+          </div>
+        </td>
+        <td class="slds-text-align_left slds-cell-wrap" style={tableCellStyle} data-label="Did Not Attend">
+          <div class="slds-truncate fieldLabelStyle" title="Did Not Attend" style={customButtonStyle}>
+            <button class="slds-button slds-button_neutral slds-button_icon slds-is-selected slds-button_icon-border-filled customWidthFull" onclick={handleStatusChanged} data-booleanname="isdidNotAttend" title="Did Not Attend" disabled={isUpdating} style={didNotAttendButtonStyle}>
+              <lightning-icon icon-name="utility:close" data-booleanname="isdidNotAttend" size="x-small" variant={didNotAttendIconStyle} alternative-text="Did Not Attend" title="Did Not Attend"></lightning-icon>
+              <span class="slds-assistive-text">Did Not Attend</span>
+            </button>
+          </div>
+        </td>
+      </template>
+    
+
+
+  <!-- <tr class="slds-hint-parent">
+    <button class="slds-button slds-button_icon slds-is-selected slds-button_icon-border-filled" aria-pressed="true" title="Like">
+  <svg class="slds-button__icon" aria-hidden="true">
+    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#like"></use>
+  </svg>
+  <span class="slds-assistive-text">Like</span>
+</button>
+  </tr> -->
+</template>

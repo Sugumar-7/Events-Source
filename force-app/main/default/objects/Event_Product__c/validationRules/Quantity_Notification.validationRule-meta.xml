@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_Notification</fullName>
+    <active>true</active>
+    <description>The ‘Quantity Notification %’ must be completed with the ‘User Notification’ field &amp; vica versa.</description>
+    <errorConditionFormula>OR( 
+     AND( NOT( ISBLANK( User_Notification__c ) ) , 
+          ISBLANK( Quantity_Notification__c ) ) ,
+     AND( NOT( ISBLANK( Quantity_Notification__c ) ) , 
+          ISBLANK( User_Notification__c ) ) )</errorConditionFormula>
+    <errorMessage>Quantity Notification %  User Notification fields both need to be completed to save.</errorMessage>
+</ValidationRule>

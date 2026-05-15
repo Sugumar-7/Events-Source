@@ -1,0 +1,132 @@
+{
+  "packageDirectories": [
+    {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.2.0.NEXT",
+      "path": "force-app",
+      "default": true,
+      "package": "Events2MP",
+      "versionDescription": ""
+    },
+    {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "force-app",
+      "default": false,
+      "package": "EventsUnlockedPkg",
+      "versionDescription": ""
+    },
+    {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "force-app",
+      "default": false,
+      "package": "EventPackage1",
+      "versionDescription": ""
+    },
+    {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "force-app",
+      "default": false,
+      "package": "EventsPackage2",
+      "versionDescription": ""
+    },
+    {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "force-app",
+      "default": false,
+      "package": "EventsPackage3",
+      "versionDescription": ""
+    },
+    {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "force-app",
+      "default": false,
+      "package": "EventsPackage4",
+      "versionDescription": ""
+    },
+    {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "force-app",
+      "default": false,
+      "package": "EventsPackageUnlocked",
+      "versionDescription": ""
+    },
+    {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.3.0.NEXT",
+      "path": "force-app",
+      "default": false,
+      "package": "EventsPackageManagement",
+      "versionDescription": ""
+    },
+    {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.3.0.NEXT",
+      "path": "force-app",
+      "default": false,
+      "package": "EventsManagement",
+      "versionDescription": ""
+    }
+  ],
+  "name": "EventsPackageTest",
+  "namespace": "EventsPackage",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "65.0",
+  "packageAliases": {
+    "Events2MP": "0HoQy0000000zmfKAA",
+    "Events2MP@0.1.0-1": "04tQy000000IaBVIA0",
+    "Events2MP@0.2.0-1": "04tQy000000M0NxIAK",
+    "Events2MP@0.2.0-2": "04tQy000000MGEDIA4",
+    "Events2MP@0.2.0-3": "04tQy000000MHS1IAO",
+    "Events2MP@0.2.0-4": "04tQy000000NVcbIAG",
+    "Events2MP@0.2.0-5": "04tQy000000OHSjIAO",
+    "EventsUnlockedPkg": "0HoQy0000001RSnKAM",
+    "EventsUnlockedPkg@0.1.0-1": "04tQy000000OYuzIAG",
+    "EventsUnlockedPkg@0.1.0-2": "04tQy000000OwhBIAS",
+    "EventPackage1": "0HoQy0000001T1ZKAU",
+    "EventsPackage2": "0HoQy0000001T6PKAU",
+    "EventsPackage3": "0HoQy0000001THhKAM",
+    "EventsPackage3@0.1.0-1": "04tQy000000S1E5IAK",
+    "EventsPackage4": "0HoQy0000001TO9KAM",
+    "EventsPackage4@0.1.0-1": "04tQy000000S2ZxIAK",
+    "EventsPackage4@0.1.0-3": "04tQy000000S3FtIAK",
+    "EventsPackage4@0.1.0-6": "04tQy000000SEmPIAW",
+    "EventsPackage4@0.1.0-7": "04tQy000000SH7ZIAW",
+    "EventsPackage4@0.1.0-8": "04tQy000000SHIrIAO",
+    "EventsPackage4@0.1.0-9": "04tQy000000SHPJIA4",
+    "EventsPackage4@0.1.0-10": "04tQy000000SHVlIAO",
+    "EventsPackage4@0.1.0-11": "04tQy000000SHXNIA4",
+    "EventsPackage4@0.1.0-12": "04tQy000000SJULIA4",
+    "EventsPackageUnlocked": "0HoQy0000001U0rKAE",
+    "EventsPackageUnlocked@0.1.0-1": "04tQy000000SVSHIA4",
+    "EventsPackageUnlocked@0.1.0-2": "04tQy000000SVnFIAW",
+    "EventsPackageUnlocked@0.1.0-3": "04tQy000000Sa0XIAS",
+    "EventsPackageUnlocked@0.1.0-4": "04tQy000000ShYHIA0",
+    "EventsPackageUnlocked@0.1.0-5": "04tQy000000StHhIAK",
+    "EventsPackageManagement": "0HoQy0000001UqTKAU",
+    "EventsPackageManagement@0.1.0-1": "04tQy000000TDOTIA4",
+    "EventsPackageManagement@0.1.0-2": "04tQy000000TWnhIAG",
+    "EventsPackageManagement@0.1.0-3": "04tQy000000TXrpIAG",
+    "EventsPackageManagement@0.1.0-4": "04tQy000000TYMTIA4",
+    "EventsPackageManagement@0.1.0-5": "04tQy000000TYeDIAW",
+    "EventsPackageManagement@0.1.0-6": "04tQy000000TYkfIAG",
+    "EventsPackageManagement@0.1.0-7": "04tQy000000TYvxIAG",
+    "EventsManagement": "0HoQy0000001UwvKAE",
+    "EventsManagement@0.1.0-1": "04tQy000000TYZNIA4",
+    "EventsManagement@0.1.0-2": "04tQy000000Tc57IAC",
+    "EventsManagement@0.2.0-1": "04tQy000000TcI1IAK",
+    "EventsManagement@0.2.0-2": "04tQy000000TcJdIAK",
+    "EventsManagement@0.2.0-3": "04tQy000000TdFhIAK",
+    "EventsManagement@0.2.0-4": "04tQy000000TqRRIA0",
+    "EventsPackageManagement@0.2.0-1": "04tQy000000TtPJIA0",
+    "EventsManagement@0.3.0-2": "04tQy000000TtU9IAK",
+    "EventsManagement@0.3.0-3": "04tQy000000TtabIAC",
+    "EventsPackageManagement@0.2.0-2": "04tQy000000TtcDIAS",
+    "EventsPackageManagement@0.3.0-1": "04tQy000000UhSXIA0"
+  }
+}

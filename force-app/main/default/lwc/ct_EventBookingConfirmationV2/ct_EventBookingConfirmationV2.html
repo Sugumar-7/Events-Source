@@ -1,0 +1,115 @@
+<!--
+  @description       : Event Booking Confirmation 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 11-24-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   10-27-2020   Creation Admin   Initial Version
+-->
+<template>
+  <template if:true={spinnerBoolean}>
+    <div class="slds-spinner_container">
+      <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+    </div>
+  </template>
+
+  <h1 class="headMessageStyle slds-p-bottom_small">Thank You</h1>
+  
+  <div style="width: 100%;" class="Hero Hero--overlay Hero--negative">
+    <div class="Hero-figure">
+      <img src={bookingConfirmationImage}  alt="Portsmouth Emirates Spinnaker Tower and Harbour " style={bookingConfirmationImageStyle}></img>
+    </div>
+    <div class="Hero-overlayPanel">
+      <div class="Hero-heading">
+        <h2 class="Hero-title slds-text-title_caps">{bookingConfirmationTitle}</h2>
+      </div>
+      <div class="Hero-body">
+        <p>{bookingConfirmationBody}</p>
+      </div>
+    </div>
+  </div>
+  
+  <h2 class="headMessageStyle slds-p-bottom_small" style="font-size: 20px !important;">You have booked</h2>
+
+  <!--DISPLAY EVENT DETAILS-->
+  <template if:true={selectedEvent}>
+      <c-ct_event-summary-box-v2 selected-event={selectedEvent}></c-ct_event-summary-box-v2>
+  </template>
+  <!--DISPLAY EVENT DETAILS-->
+  
+  
+
+  <template if:true={isSessionRegistrationsAvailable}>
+    <div class="Panel">
+      <div class="Panel-body Panel-body--uop">
+        <div class="slds-p-around_x-small SessionRegistrationMessageTitle">
+          {sessionRegistrationTitle}
+        </div>
+        
+        <div class="slds-p-around_x-small SessionRegistrationMessage">
+          {sessionRegistrationMessage}
+        </div>
+      </div>
+    </div>
+
+
+  <!-- <div class="slds-p-vertical_x-small" style={sessionRegistraionInfoStyle}>
+    <div class="slds-p-vertical_x-small SessionRegistrationMessageTitle">
+      {sessionRegistrationTitle}
+    </div>
+    <div class="slds-p-vertical_x-small slds-align_absolute-center SessionRegistrationMessage">
+      {sessionRegistrationMessage}
+    </div>
+    
+  </div> -->
+</template>
+
+  <template for:each={eventRegistrationsRecords} for:item="thisEventRegistration">
+    <c-ct_-event-booking-confirmed-ticket-tile-v2
+    event-registration-record ={thisEventRegistration}
+    is-simple-event = {isSimpleEvent}
+    key={thisEventRegistration.Id} 
+    ></c-ct_-event-booking-confirmed-ticket-tile-v2>
+  </template> 
+
+  <div class="slds-p-top_medium BookingConfirmationMessage">
+    <lightning-formatted-rich-text value={eventRecord.Success_Message__c}></lightning-formatted-rich-text>
+  </div>
+ 
+  <div>
+    <template if:true={isSocialShareLinkEnabled}>
+      <div class="slds-p-bottom_x-small slds-p-top_medium shareEventOnSocialMedia">
+        {shareOnSocialMediaMessage}
+      </div>
+      <div >
+        <template if:true={isFaceBookShareLinkAvailable}>
+          <!-- <img style="height:30px" src={facebook} />-->
+          <a onclick={handleClickFb} target='_blank' style="padding:4px">
+            <svg id="sc-facebook" width="40" height="40" viewBox="0 0 50 50" class="sc-facebook">
+              <path d="M26 20v-3c0-1.3.3-2 2.4-2H31v-5h-4c-5 0-7 3.3-7 7v3h-4v5h4v15h6V25h4.4l.6-5h-5z"></path>
+            </svg>
+          </a>
+        </template>
+        <template if:true={isLinkedInShareLinkAvailable}>
+          <a  target='_blank' onclick={handleClickLn} style="padding:4px">
+            <!-- <img style="height:30px" class="slds-p-left_small" src={linkedin}> -->
+            <svg id="sc-linkedin" width="40" height="40" viewBox="0 0 50 50" class="sc-linkedin">
+              <path d="M36.1 12H13.9c-1.1 0-1.9.8-1.9 1.9v22.2c0 1 .9 1.9 1.9 1.9h22.2c1.1 0 1.9-.8 1.9-1.9V13.9c0-1.1-.9-1.9-1.9-1.9zM20 34h-4V22h4v12zm-2-13.6c-1.3 0-2.4-1.1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.4 1.1 2.4 2.4 0 1.3-1.1 2.4-2.4 2.4zM34 34h-4v-6c0-1.6-.4-3.2-2-3.2s-2 1.6-2 3.2v6h-4V22h4v1.4h.2c.5-1 1.8-1.8 3.3-1.8 3.7 0 4.5 2.4 4.5 5.4v7z"></path>
+            </svg>
+          </a>
+        </template>
+        <template if:true={isTwitterShareLinkAvailable}>
+          <a  target='_blank' onclick={handleClickTw} style="padding:4px">
+            <!-- <img style="height:30px" class="slds-p-left_small" src={twitter}> -->
+            <svg id="sc-twitter" width="40" height="40" viewBox="0 0 50 50" class="sc-twitter">
+              <path d="M39.2 16.8c-1.1.5-2.2.8-3.5 1 1.2-.8 2.2-1.9 2.7-3.3-1.2.7-2.5 1.2-3.8 1.5-1.1-1.2-2.7-1.9-4.4-1.9-3.3 0-6.1 2.7-6.1 6.1 0 .5.1.9.2 1.4-5-.2-9.5-2.7-12.5-6.3-.5.7-.8 1.7-.8 2.8 0 2.1 1.1 4 2.7 5-1 0-1.9-.3-2.7-.8v.1c0 2.9 2.1 5.4 4.9 5.9-.5.1-1 .2-1.6.2-.4 0-.8 0-1.1-.1.8 2.4 3 4.2 5.7 4.2-2.1 1.6-4.7 2.6-7.5 2.6-.5 0-1 0-1.4-.1 2.4 1.9 5.6 2.9 9 2.9 11.1 0 17.2-9.2 17.2-17.2V20c1.2-.9 2.2-1.9 3-3.2z"></path>
+            </svg>
+          </a>
+        </template>
+        </div>
+    </template>
+    
+  </div>
+</template>

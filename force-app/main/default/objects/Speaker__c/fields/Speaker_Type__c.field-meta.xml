@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Speaker_Type__c</fullName>
+    <label>Speaker Type</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Academic Speaker</fullName>
+                <default>false</default>
+                <label>Academic Speaker</label>
+            </value>
+            <value>
+                <fullName>Alumni Speaker</fullName>
+                <default>false</default>
+                <label>Alumni Speaker</label>
+            </value>
+            <value>
+                <fullName>Analyst Speaker</fullName>
+                <default>false</default>
+                <label>Analyst Speaker</label>
+            </value>
+            <value>
+                <fullName>Career Speaker</fullName>
+                <default>false</default>
+                <label>Career Speaker</label>
+            </value>
+            <value>
+                <fullName>Celebrity Speaker</fullName>
+                <default>false</default>
+                <label>Celebrity Speaker</label>
+            </value>
+            <value>
+                <fullName>Customer Speaker</fullName>
+                <default>false</default>
+                <label>Customer Speaker</label>
+            </value>
+            <value>
+                <fullName>Industry Speaker</fullName>
+                <default>false</default>
+                <label>Industry Speaker</label>
+            </value>
+            <value>
+                <fullName>Internal</fullName>
+                <default>false</default>
+                <label>Internal</label>
+            </value>
+            <value>
+                <fullName>Keynote Speaker</fullName>
+                <default>false</default>
+                <label>Keynote Speaker</label>
+            </value>
+            <value>
+                <fullName>Panel Member</fullName>
+                <default>false</default>
+                <label>Panel Member</label>
+            </value>
+            <value>
+                <fullName>Panel Speaker</fullName>
+                <default>false</default>
+                <label>Panel Speaker</label>
+            </value>
+            <value>
+                <fullName>Partner Speaker</fullName>
+                <default>false</default>
+                <label>Partner Speaker</label>
+            </value>
+            <value>
+                <fullName>Session Speaker</fullName>
+                <default>false</default>
+                <label>Session Speaker</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

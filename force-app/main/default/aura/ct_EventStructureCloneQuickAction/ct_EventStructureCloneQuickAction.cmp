@@ -1,0 +1,15 @@
+<!--
+  @description       : Internal Event And Event Structure Quick Action created to hold LWC because LWC Component cannot be referred in Quick action (Upto 22/09/2020)
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 09-22-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   08-13-2020   Creation Admin   Initial Version
+-->
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName">
+  <aura:attribute name="recordId" type="String" />
+  <aura:attribute name="sObjectName" type="String" />
+    <c:ct_EventStructureClone eventRecordId="{!v.recordId}"/>
+</aura:component>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Requirements__c</fullName>
+    <description>This identifies any additional requirements (e.g. dietary / access / etc).</description>
+    <inlineHelpText>Additional requirements information populated further to event question set</inlineHelpText>
+    <label>Additional Requirements</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

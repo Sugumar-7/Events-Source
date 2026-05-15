@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Subject_Area_Interest__c</fullName>
+    <description>This field is used to store the Primary Subject Area for this Session</description>
+    <inlineHelpText>Please choose an appropriate subject area for this Session</inlineHelpText>
+    <label>Primary Subject Area Interest</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Course_Options</valueSetName>
+    </valueSet>
+</CustomField>

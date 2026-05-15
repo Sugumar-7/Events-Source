@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fields__c</fullName>
+    <description>This is to track the fields details</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Fields</label>
+    <metadataRelationshipControllingField>Event_Clone_Setting__mdt.Object__c</metadataRelationshipControllingField>
+    <referenceTo>FieldDefinition</referenceTo>
+    <relationshipLabel>Event_Clone_Settings</relationshipLabel>
+    <relationshipName>Event_Clone_Settings</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

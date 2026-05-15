@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Question_Fields_Should_Not_Blank</fullName>
+    <active>true</active>
+    <description>User should populate the values in the Question field mapping section when the Data type is Dependent picklist.</description>
+    <errorConditionFormula>AND(
+ ISPICKVAL(Data_Type__c, &apos;Dependent Picklist&apos;),
+ OR(
+  LEN(Dependent_Field_Question__c) = 0,
+  ISBLANK(Dependent_Question_Setup__c)
+  ))</errorConditionFormula>
+    <errorMessage>Both the dependent question and dependent question setup field should be required.</errorMessage>
+</ValidationRule>

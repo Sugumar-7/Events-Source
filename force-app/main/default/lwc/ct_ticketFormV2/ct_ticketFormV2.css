@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "'Encode Sans Expanded', sans-serif";
+  src: url(/s/sfsites/c/resource/ct_Font_Encode_Sans_Expanded);
+}
+
+@font-face {
+  font-family: "'Open Sans', sans-serif";
+  src: url(/s/sfsites/c/resource/font_Open_Sans);
+}
+
+.headingStyle{
+  font-family: "'Encode Sans Expanded', sans-serif" !important;
+  color:#027119;
+}
+
+.fieldLabelStyle{
+  font-family: "'Open Sans', sans-serif" !important;
+  font-size: 14px !important;
+  font-weight: normal;
+  color:#505457;
+}
+
+.customErrorMessage{
+  color: rgb(194, 57, 52) !important;
+}

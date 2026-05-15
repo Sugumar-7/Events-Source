@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Type__c</fullName>
+    <description>Used to store the event type values</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Event Type</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Applicant Experience Day</fullName>
+                <default>true</default>
+                <label>Applicant Experience Day</label>
+            </value>
+            <value>
+                <fullName>Campus Visit</fullName>
+                <default>false</default>
+                <label>Campus Visit</label>
+            </value>
+            <value>
+                <fullName>Career Cafe</fullName>
+                <default>false</default>
+                <label>Career Cafe</label>
+            </value>
+            <value>
+                <fullName>Clearing Visit</fullName>
+                <default>false</default>
+                <label>Clearing Visit</label>
+            </value>
+            <value>
+                <fullName>Collaboration Event</fullName>
+                <default>false</default>
+                <label>Collaboration Event</label>
+            </value>
+            <value>
+                <fullName>Community</fullName>
+                <default>false</default>
+                <label>Community</label>
+            </value>
+            <value>
+                <fullName>Dinner</fullName>
+                <default>false</default>
+                <label>Dinner</label>
+            </value>
+            <value>
+                <fullName>Faculty Conference</fullName>
+                <default>false</default>
+                <label>Faculty Conference</label>
+            </value>
+            <value>
+                <fullName>Major Community</fullName>
+                <default>false</default>
+                <label>Major Community</label>
+            </value>
+            <value>
+                <fullName>Networking</fullName>
+                <default>false</default>
+                <label>Networking</label>
+            </value>
+            <value>
+                <fullName>Open Day</fullName>
+                <default>false</default>
+                <label>Open Day</label>
+            </value>
+            <value>
+                <fullName>PG Open Visit</fullName>
+                <default>false</default>
+                <label>PG Open Visit</label>
+            </value>
+            <value>
+                <fullName>Reunion</fullName>
+                <default>false</default>
+                <label>Reunion</label>
+            </value>
+            <value>
+                <fullName>Stewardship</fullName>
+                <default>false</default>
+                <label>Stewardship</label>
+            </value>
+            <value>
+                <fullName>Talk / Lecture</fullName>
+                <default>false</default>
+                <label>Talk / Lecture</label>
+            </value>
+            <value>
+                <fullName>Taster Day</fullName>
+                <default>false</default>
+                <label>Taster Day</label>
+            </value>
+            <value>
+                <fullName>Teacher &amp; Advisor Event</fullName>
+                <default>false</default>
+                <label>Teacher &amp; Advisor Event</label>
+            </value>
+            <value>
+                <fullName>Training / Workshop</fullName>
+                <default>false</default>
+                <label>Training / Workshop</label>
+            </value>
+            <value>
+                <fullName>Vice-Chancellor</fullName>
+                <default>false</default>
+                <label>Vice-Chancellor</label>
+            </value>
+            <value>
+                <fullName>Workshop</fullName>
+                <default>false</default>
+                <label>Workshop</label>
+            </value>
+            <value>
+                <fullName>Virtual Helpdesk</fullName>
+                <default>false</default>
+                <label>Virtual Helpdesk</label>
+            </value>
+            <value>
+                <fullName>In Conversation With</fullName>
+                <default>false</default>
+                <label>In Conversation With</label>
+            </value>
+            <value>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+                <label>Webinar</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

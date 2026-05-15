@@ -1,0 +1,225 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 01-08-2021
+  @last modified by  : Umashankar Creation
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   09-14-2020   Creation Admin   Initial Version
+-->
+<template>
+  <!--BAR CODE SCANNER-->
+  <!-- <c-barcode-scanner-example></c-barcode-scanner-example> -->
+  <!--BAR  CODE SCANNER-->
+
+
+  <c-ct_-custom-toast title ={customToastTitle} message ={customToastMessage}  variant={customMessageVariant} auto-close="true" auto-close-error-warning="true"></c-ct_-custom-toast>
+
+  <div>
+    <div class={topPaddingaround} style={defaultBackgroundStyle}>
+      <template if:true={spinnerBoolean}>
+        <div class="slds-spinner_container">
+          <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+        </div>
+      </template>
+
+      <!-- <p class="fieldLabelStyle">
+        Configured SESSION ID : {configSessionId}
+      </p>
+      <p class="fieldLabelStyle">
+        Configured SESSION Name : {configSessionName}
+      </p> 
+      <p class="fieldLabelStyle">
+        Event Registration Id : {eventRegId}
+      </p> -->
+      <!-- <template if:true={showTitleText}>
+        <div class="slds-p-vertical_small tileText">
+          {checkSetupTitleText}
+        </div>
+      </template> -->
+      
+      <template if:false={showReconfigurationForm}>
+        <div class ={topPaddingVertical}>
+          <div class ={isSldsBoxNeeded}>
+            <div class={gridDivClass}>
+              <div class={gridSizeTwoDivClass}>Event</div>
+              <div class={gridSizeFourDivClass}>
+                <lightning-formatted-text value={configuredEventName} ></lightning-formatted-text> <template if:true={isMobileDevice}>&nbsp; <a href={checkInQRCodeURL} target="_self">Re-configure</a></template>
+              </div>
+              <div class={gridSizeTwoDivClass}>Current Location</div>
+              <div class={gridSizeFourDivClass}>
+                <lightning-formatted-text value={configuredSessionName} ></lightning-formatted-text>
+              </div> 
+            </div>
+             
+          </div>
+        </div>
+        <div class={updateButtonDiv}>
+          <button type="button" value="Re-configure Session Id" style="border-radius: 0px;"
+              class="activeButton slds-m-left_x-small  slds-button slds-button_success" onclick={getUserConfigurations}>{configButtonLabel}</button>
+        </div>
+      </template> 
+
+      <!-- <lightning-button variant="brand" label="Re-configure Session Id" title="Re-configure Session Id" onclick={handleReconfigurationRequest} class="slds-m-left_x-small"></lightning-button> -->
+      
+      <template if:true={showReconfigurationForm}>
+
+        <template if:true={isMobileDevice}>
+          <div class ={topPaddingVertical}>
+            <div class ={isSldsBoxNeeded}>
+              <div class={gridDivClass}>
+                <div class={gridSizeTwoDivClass}>Event</div>
+                <div class={gridSizeFourDivClass}>
+                  <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                      <div class="slds-select_container">
+                        <select class="slds-select" id="eventMobileOptions" data-id="eventMobileOptions" name="selectedEventId" onchange={handleComboxValueChange}>
+                          <template for:each={eventOptions} for:item="thisEvent">
+                            <template if:true={thisEvent.isSelected}>
+                              <option key={thisEvent.value} selected value={thisEvent.value}>{thisEvent.label}</option>
+                            </template>
+                            <template if:false={thisEvent.isSelected}>
+                              <option key={thisEvent.value} value={thisEvent.value}>{thisEvent.label}</option>
+                            </template>
+                          </template>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class={gridSizeTwoDivClass}>Session</div>
+                <div class={gridSizeFourDivClass}>
+
+                  <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                      <div class="slds-select_container">
+                        <select class="slds-select" id="sessionMobileOptions" data-id="sessionMobileOptions"  name="configuredSessionId" onchange={handleComboBoxMobile} multiple>
+                          <template for:each={sessionOptions} for:item="thisSession">
+                            <template if:true={thisSession.isSelected}>
+                              <option key={thisSession.value} selected value={thisSession.value}>{thisSession.label}</option>
+                            </template>
+                            <template if:false={thisSession.isSelected}>
+                              <option key={thisSession.value} value={thisSession.value}>{thisSession.label}</option>
+                            </template>
+                          </template>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class={gridSizeTwoDivClass}>Current QR Scan Location</div>
+                <div class={gridSizeFourDivClass}>
+
+                  <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                      <div class="slds-select_container">
+                        <select class="slds-select" name="selectedSessionId" onchange={handleComboxValueChange} id="currentSessionMobileOptions" data-id="currentSessionMobileOptions">
+                          <template for:each={configuredSession} for:item="thisSession">
+                            <template if:true={thisSession.isCurrentSession}>
+                              <option key={thisSession.value} selected value={thisSession.value}>{thisSession.label}</option>
+                            </template>
+                            <template if:false={thisSession.isCurrentSession}>
+                              <option key={thisSession.value} value={thisSession.value}>{thisSession.label}</option>
+                            </template>
+                          </template>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  
+                  <!-- <lightning-combobox
+                    name="selectedSessionId"
+                    label="Session"
+                    value={comboBoxValuesObject.selectedSessionId}
+                    variant = "label-hidden"
+                    placeholder="Select Session"
+                    options={configuredSession}
+                    onchange={handleComboxValueChange} ></lightning-combobox> -->
+                </div>
+                </div>
+
+              </div>
+              </div>
+        </template>
+        
+        <template if:false={isMobileDevice}>
+          <div class ={topPaddingVertical}>
+            <div class ={isSldsBoxNeeded}>
+              <div class={gridDivClass}>
+                <div class={gridSizeTwoDivClass}>Event</div>
+                <div class={gridSizeFourDivClass}>
+                  <lightning-combobox
+                    name="selectedEventId"
+                    label="Event"
+                    value={comboBoxValuesObject.selectedEventId}
+                    variant = "label-hidden"
+                    placeholder="Select Event"
+                    options={eventOptions}
+                    onchange={handleComboxValueChange} ></lightning-combobox>
+                  </div>
+                
+                <div class={gridSizeTwoDivClass}>Session</div>
+                <div class={gridSizeFourDivClass}>
+                  <lightning-dual-listbox id="selectOptions"
+                    name="configuredSessionId"
+                    variant="label-hidden"
+                    label="Session"
+                    source-label="Available Options"
+                    selected-label="Selected Options"
+                    class="inputFieldPlaceHolder" 
+                    options={sessionOptions}
+                    value={configuredSessionValues}
+                    onchange={handleDualBoxValueChange}>
+                  </lightning-dual-listbox>
+                </div>
+                
+    
+                <div class={gridSizeTwoDivClass}>Current QR Scan Location</div>
+                <div class={gridSizeFourDivClass}>
+                  <lightning-combobox
+                    name="selectedSessionId"
+                    label="Session"
+                    value={comboBoxValuesObject.selectedSessionId}
+                    variant = "label-hidden"
+                    placeholder="Select Session"
+                    options={configuredSession}
+                    onchange={handleComboxValueChange} ></lightning-combobox>
+                </div>
+                </div>
+    
+                
+    
+            </div>
+          </div>
+        </template>
+        <div class={updateButtonDiv}>
+          <button type="button" value="Cancel" style="border-radius: 0px;"
+          class="activeButton slds-p-right_x-small  slds-button slds-button_success" onclick={handleCancelRecongif}>Cancel</button>
+          <span class="slds-m-left_x-small"></span>
+          <button type="button" value="Update" style="border-radius: 0px;"
+          class="activeButton slds-button slds-button_success" onclick={handleUpdateConfigurationRequest}>Update</button>
+        </div>
+      </template>
+    </div>
+  </div>
+  <!-- <div class="slds-p-top_xx-large">
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="select-01">Select Label</label>
+      <div class="slds-form-element__control">
+        <div class="slds-select_container">
+          <select class="slds-select" data-id="multissss" onchange={changeHandler}>
+            <option  value="One">Option One</option>
+            <option selected="selected" value="Two">Option Two</option>
+            <option value="Three">Option Three</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  
+</template>

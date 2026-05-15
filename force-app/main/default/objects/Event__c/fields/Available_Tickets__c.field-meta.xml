@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Available_Tickets__c</fullName>
+    <inlineHelpText>The number of Event Product Tickets still available for allocation. NOTE - This may not be the case if Maximum Registrations are less than total tickets</inlineHelpText>
+    <label>Total Quantity Remaining</label>
+    <summarizedField>Event_Product__c.Quantity_Remaining__c</summarizedField>
+    <summaryForeignKey>Event_Product__c.Event__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Faculty of Technology</fullName>
+        <default>false</default>
+        <label>Faculty of Technology</label>
+    </customValue>
+    <customValue>
+        <fullName>Faculty of Engineering</fullName>
+        <default>false</default>
+        <label>Faculty of Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>Faculty of Science</fullName>
+        <default>false</default>
+        <label>Faculty of Science</label>
+    </customValue>
+    <customValue>
+        <fullName>Faculty of Medicine</fullName>
+        <default>false</default>
+        <label>Faculty of Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>Faculty of Business and Law</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Faculty of Business and Law</label>
+    </customValue>
+    <customValue>
+        <fullName>Faculty of Science and Health (S&amp;H)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Faculty of Science and Health (S&amp;H)</label>
+    </customValue>
+    <customValue>
+        <fullName>Faculty of Humanities and Social Sciences (HSS)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Faculty of Humanities and Social Sciences (HSS)</label>
+    </customValue>
+    <customValue>
+        <fullName>Faculty of Technology (TEC)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Faculty of Technology (TEC)</label>
+    </customValue>
+    <customValue>
+        <fullName>Faculty of Business and Law (BaL)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Faculty of Business and Law (BaL)</label>
+    </customValue>
+    <customValue>
+        <fullName>Faculty of Science and Health</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Faculty of Science and Health</label>
+    </customValue>
+    <customValue>
+        <fullName>Faculty of Creative and Cultural Industries (CCI)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Faculty of Creative and Cultural Industries (CCI)</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Support Department</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Professional Support Department</label>
+    </customValue>
+    <customValue>
+        <fullName>Faculty of Humanities and Social Sciences</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Faculty of Humanities and Social Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>Faculty of Creative and Cultural Industries</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Faculty of Creative and Cultural Industries</label>
+    </customValue>
+    <masterLabel>Faculties</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

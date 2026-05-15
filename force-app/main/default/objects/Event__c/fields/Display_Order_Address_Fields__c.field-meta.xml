@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Display_Order_Address_Fields__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>This field is used to display address fields during event registration</description>
+    <inlineHelpText>Check this field if address fields need to be displayed during web registration</inlineHelpText>
+    <label>Display Order Address Fields</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

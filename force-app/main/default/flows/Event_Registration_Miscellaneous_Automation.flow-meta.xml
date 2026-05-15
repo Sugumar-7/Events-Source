@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Event_Registration_Confirmation_Email</name>
+        <label>Event Registration Confirmation Email</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>ct_EventEmailService</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>contactId</name>
+            <value>
+                <elementReference>$Record.Contact__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateAPIName</name>
+            <value>
+                <stringValue>EventsCt_Event_Registration_Confirmation</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>eventEmail</name>
+            <value>
+                <elementReference>$Record.Event_Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>eventType</name>
+            <value>
+                <elementReference>$Record.Event__r.Event_Type__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>leadId</name>
+            <value>
+                <elementReference>$Record.Enquirer__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>personContactId</name>
+            <value>
+                <elementReference>$Record.Account_Name__r.PersonContactId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>ct_EventEmailService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>ManualRegistration_Alert</name>
+        <label>ManualRegistration Alert</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>ct_EventEmailService</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>contactId</name>
+            <value>
+                <elementReference>$Record.Contact__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateAPIName</name>
+            <value>
+                <stringValue>Manual_Event_Registration_Template</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>eventEmail</name>
+            <value>
+                <elementReference>$Record.Event_Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>eventType</name>
+            <value>
+                <elementReference>$Record.Event__r.Event_Type__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>leadId</name>
+            <value>
+                <elementReference>$Record.Enquirer__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>ct_EventEmailService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Is_Event_Order_Active_and_Send_Event_Order</name>
+        <label>Is Event Order Active and Send Event Order</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Send_Event_Order</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Is_Registration_Confirmation_Criteria</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Event_Registration_Confirmation_Email</targetReference>
+            </connector>
+            <label>Yes Send Event Order</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Send_Manual_Registration_Alert</name>
+        <label>Send Manual Registration Alert</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Is_Event_Order_Active_and_Send_Event_Order</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Send_Manual_Registration</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Is_Invited_Registration_Valid</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ManualRegistration_Alert</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes Send Manual Registration</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>Is_Invited_Registration_Valid</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(NOT(ISBLANK(TEXT({!$Record.Event_Registration_Status__c}))),
+ISPICKVAL({!$Record.Event_Registration_Status__c},&apos;Invited&apos;),NOT(ISBLANK({!$Record.Event_Email__c})),
+NOT(ISBLANK({!$Record.Event__c})),ISPICKVAL({!$Record.Event_Product__r.Event__r.Manual_Event_Registration_Template__c},&apos;On&apos;),
+OR(NOT(ISBLANK({!$Record.Enquirer__c})),NOT(ISBLANK({!$Record.Contact__c}))))</expression>
+    </formulas>
+    <formulas>
+        <name>Is_Registration_Confirmation_Criteria</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+  OR(
+        ISNEW(),
+        ISCHANGED({!$Record.QR_Code_URL__c}),
+        ISCHANGED({!$Record.Event_Registration_Status__c} ),
+        ISCHANGED({!$Record.Enquirer__c}),
+        ISCHANGED({!$Record.Contact__c}),
+       ISCHANGED({!$Record.Account_Name__c})
+ ),
+  {!$Record.Event_Email__c} &lt;&gt; null,
+  {!$Record.QR_Code_URL__c} &lt;&gt; null,
+  ISPICKVAL({!$Record.Event_Registration_Status__c}, &apos;Registered&apos;),
+  NOT(ISBLANK({!$Record.Event__c} )),
+  ISPICKVAL({!$Record.Event__r.Event_Registration_Confirmation_Email__c}, &apos;On&apos;),
+  OR(
+    NOT(ISBLANK({!$Record.Enquirer__c})),
+    NOT(ISBLANK({!$Record.Contact__c})),
+    NOT(ISBLANK({!$Record.Account_Name__c}))
+  )  
+)</expression>
+    </formulas>
+    <interviewLabel>Event Registration - Miscellaneous Automation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Event Registration - Miscellaneous Automation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_Manual_Registration_Alert</targetReference>
+        </connector>
+        <object>Event_Registration__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>sessionIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Maximum_Registration</fullName>
+    <active>true</active>
+    <description>MAximum Registration Available should be less than or equal to Total tickets available.</description>
+    <errorConditionFormula>AND( ISCHANGED(Maximum_Registration__c) , 
+  OR(Maximum_Registration__c  &gt;  Total_Tickets__c,
+   NOT(ISBLANK( Venue__c ))&amp;&amp; Maximum_Registration__c  &gt;  Maximum_Venue_Capacity__c  ) 
+)</errorConditionFormula>
+    <errorMessage>Maximum Registration Should not be blank or greater than Total Tickets Available or Maximum Venue Capacity..</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cancelled__c</fullName>
+    <label>Cancelled</label>
+    <summaryFilterItems>
+        <field>Session_Registration__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Cancelled</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Session_Registration__c.Session__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

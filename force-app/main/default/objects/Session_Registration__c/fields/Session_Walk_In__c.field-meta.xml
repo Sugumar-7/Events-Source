@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Session_Walk_In__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox to indicate that the session was registered during Event Walk In</description>
+    <inlineHelpText>Checkbox to indicate that the session was registered during Event Walk In</inlineHelpText>
+    <label>Session Walk In</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

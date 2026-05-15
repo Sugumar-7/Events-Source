@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Notification__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This field used to store the user who needs to be notified when the capacity limit is reached</description>
+    <inlineHelpText>The recipient of the capacity notification message</inlineHelpText>
+    <label>User Notification</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>NotificationSessions</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

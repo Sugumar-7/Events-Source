@@ -1,0 +1,54 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 09-08-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   07-23-2020   Creation Admin   Initial Version
+-->
+<template>
+  
+  <template if:true={spinnerBoolean}>
+    <div class="slds-spinner_container">
+      <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+    </div>
+  </template>
+
+  <template if:true={paymentSuccess}>
+     <div class="slds-p-bottom--small" style="width: 100%;">
+      <div class="slds-align_absolute-center">
+        <!--<img src={uopLOGO} style={getUopLogoStyle}></img>-->
+      </div>
+    </div>
+
+    <h1 class="slds-align_absolute-center thankYouFont" style={thankYouFontStyle}>
+      Thank you for your order
+    </h1>
+    <div class="uopBrandLabel slds-p-around--small" style="text-align: center;">
+      <lightning-formatted-rich-text value={successMessage} read-only="true"></lightning-formatted-rich-text>
+    </div>
+  </template>
+<template if:false={paymentSuccess}>
+  <div class="slds-p-around_small">
+  <template if:true={isHeaderShow}>
+    <h1 class="slds-card__header-title slds-p-bottom_x-small mainHeadingStyle">EVENTS</h1>
+  </template>
+
+    <div onselectedevent={handleEventSelection}>
+      <template if:false={eventSelected}>
+            <template if:true={showSearchForm}>
+              <c-ct_event-search-form-v2 onsearch={handleSearch} evtgroup={grpId}></c-ct_event-search-form-v2>
+            </template>
+      <c-ct_event-search-results-v2></c-ct_event-search-results-v2>
+    
+</template>
+<template if:true={eventSelected}> 
+              <!-- <c-ct_ticket-selection-v2  selected-event-id={selectedEventId} ></c-ct_ticket-selection-v2> -->
+              <c-ct_ticket-selection-v2-clone  selected-event-id={selectedEventId} ></c-ct_ticket-selection-v2-clone>
+          </template>
+</div>
+</div>
+</template>
+</template>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Manager_Req_for_Open_Day_and_AED</fullName>
+    <active>true</active>
+    <description>This Event Manager field should be populated for an Open Day / AED event (Eventbrite events)</description>
+    <errorConditionFormula>AND(
+    OR(
+				    ISPICKVAL(Event_Type__c, &quot;Open Day&quot;),
+								ISPICKVAL(Event_Type__c, &quot;AED&quot;)
+				),
+				ISBLANK(Event_Manager__c)
+)</errorConditionFormula>
+    <errorDisplayField>Event_Manager__c</errorDisplayField>
+    <errorMessage>Please enter an Event Manager for this type of Event</errorMessage>
+</ValidationRule>

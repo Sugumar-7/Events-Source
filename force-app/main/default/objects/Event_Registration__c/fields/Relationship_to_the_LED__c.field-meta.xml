@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship_to_the_LED__c</fullName>
+    <description>This field is used to identify the relationship to the University</description>
+    <inlineHelpText>LED relationship information populated further to event question set</inlineHelpText>
+    <label>Relationship to the LED</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Current Student of the Launch ED</fullName>
+                <default>false</default>
+                <label>Current Student of the Launch ED</label>
+            </value>
+            <value>
+                <fullName>Graduate of the Launch ED</fullName>
+                <default>false</default>
+                <label>Graduate of the Launch ED</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

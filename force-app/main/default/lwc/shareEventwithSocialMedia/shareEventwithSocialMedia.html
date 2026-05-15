@@ -1,0 +1,66 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 11-03-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   09-28-2020   Creation Admin   Initial Version
+-->
+<template>
+    <lightning-card title="Share on Social Media" icon-name="custom:custom50">
+            <div class="slds-m-around_medium">
+                <template if:true={evt}>
+                    
+                        <p key={evt.Id}>Event Name: {evt.Name}</p>
+                        <p key={evt.Id}>Event Description: {evt.Event_Description__c}</p>
+                </template>
+                <template if:true={error}>
+                    {error}
+                </template>
+            </div>
+            <!-- <div>
+                <lightning-button label="Facebook" title="Non-primary action" onclick={handleClickFb} class="slds-m-left_x-small"></lightning-button>
+                <lightning-button label="Twitter" title="Non-primary action" onclick={handleClickTw} class="slds-m-left_x-small"></lightning-button>
+                <lightning-button label="Linkedin" title="Non-primary action" onclick={handleClickLn} class="slds-m-left_x-small"></lightning-button> 
+            </div> -->
+            <div class="slds-m-around_medium">
+              <!-- <a href={facebookUrl} target='_blank'><img src={facebook}></a>
+              <a href='https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2F//creationed-dev-ed.my.salesforce.com/ledevents/s/event-listing%3Fv%3Dpr-4GbR4DpQ%26feature%3Dshare'><img src={linkedin}></a>
+              <a href='https://twitter.com/intent/tweet?url=https%3A//creationed-dev-ed.my.salesforce.com/ledevents/s/event-listing'><img src={twitter}></a> -->
+              <template if:true={isVisible}>
+                  <div class="slds-m-around_medium" style='margin: -2px;'>
+                    <!-- <a href='https://www.facebook.com/dialog/share?app_id=87741124305&href=https%3A%2F%2Fcreationed-dev-ed.my.salesforce.com/%2Fevent%2Fs%2Fevent-listing&display=page&redirect_uri=https://www.facebook.com/' target='_blank'><img src={facebookIcon} /></a> -->
+                    <template if:true={isVisibleFB}>
+                      <a onclick={handleClickFb} target='_blank'><img src={facebook} /></a>
+                    </template>
+                    <template if:true={isVisibleLn}>
+                      <a onclick={handleClickLn} target='_blank'><img src={linkedin}></a>
+                    </template>
+                    <template if:true={isVisibleTw}>
+                      <a onclick={handleClickTw} target='_blank'><img src={twitter}></a>
+                    </template>
+                  </div>
+              </template>
+          </div>
+            <!-- <div class="fb-share-button" data-href="https://creationed-dev-ed.my.salesforce.com" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcreationed-dev-ed.my.salesforce.com/%2Fs%2Fevent-details&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div> -->
+            <!-- <div class="social share--horizontal">
+                <p><a href="#" class="social share--link twitter">
+                  <span class="icon-twitter" aria-hidden="true"></span>
+                  Tweet
+                </a></p>
+                <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                <p><a href="#" class="social share--link facebook">
+                <span class="icon-facebook" aria-hidden="true"></span>
+                  Share
+                </a></p> 
+        
+                <p><a href="#" class="social share--link google-plus">
+                <span class="icon-google-plus" aria-hidden="true"></span>
+                  +1
+                </a></p>        
+              </div> -->
+              
+        </lightning-card>
+</template>

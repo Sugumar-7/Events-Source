@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Accounting and Financial Management</fullName>
+        <default>false</default>
+        <label>Accounting and Financial Management</label>
+    </customValue>
+    <customValue>
+        <fullName>American Studies</fullName>
+        <default>false</default>
+        <label>American Studies</label>
+    </customValue>
+    <customValue>
+        <fullName>Architecture</fullName>
+        <default>false</default>
+        <label>Architecture</label>
+    </customValue>
+    <customValue>
+        <fullName>Art &amp; Design</fullName>
+        <default>false</default>
+        <label>Art &amp; Design</label>
+    </customValue>
+    <customValue>
+        <fullName>Biological Sciences</fullName>
+        <default>false</default>
+        <label>Biological Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>Building Surveying, Property Development and Quantity Surveying</fullName>
+        <default>false</default>
+        <label>Building Surveying, Property Development and Quantity Surveying</label>
+    </customValue>
+    <customValue>
+        <fullName>Business and Management</fullName>
+        <default>false</default>
+        <label>Business and Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Childhood Studies</fullName>
+        <default>false</default>
+        <label>Childhood Studies</label>
+    </customValue>
+    <customValue>
+        <fullName>Civil Engineering and Construction Engineering Management</fullName>
+        <default>false</default>
+        <label>Civil Engineering and Construction Engineering Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Computing</fullName>
+        <default>false</default>
+        <label>Computing</label>
+    </customValue>
+    <customValue>
+        <fullName>Computing &amp; ICT</fullName>
+        <default>false</default>
+        <label>Computing &amp; ICT</label>
+    </customValue>
+    <customValue>
+        <fullName>Creative &amp; Digital Technologies</fullName>
+        <default>false</default>
+        <label>Creative &amp; Digital Technologies</label>
+    </customValue>
+    <customValue>
+        <fullName>Creative Writing</fullName>
+        <default>false</default>
+        <label>Creative Writing</label>
+    </customValue>
+    <customValue>
+        <fullName>Criminology</fullName>
+        <default>false</default>
+        <label>Criminology</label>
+    </customValue>
+    <customValue>
+        <fullName>Dental Hygiene, Therapy and Nursing</fullName>
+        <default>false</default>
+        <label>Dental Hygiene, Therapy and Nursing</label>
+    </customValue>
+    <customValue>
+        <fullName>Earth and Environmental Sciences</fullName>
+        <default>false</default>
+        <label>Earth and Environmental Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>Economics</fullName>
+        <default>false</default>
+        <label>Economics</label>
+    </customValue>
+    <customValue>
+        <fullName>Energy &amp; Electronic Engineering</fullName>
+        <default>false</default>
+        <label>Energy &amp; Electronic Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>Engineering and Technology - Other</fullName>
+        <default>false</default>
+        <label>Engineering and Technology - Other</label>
+    </customValue>
+    <customValue>
+        <fullName>English Language and Linguistics</fullName>
+        <default>false</default>
+        <label>English Language and Linguistics</label>
+    </customValue>
+    <customValue>
+        <fullName>English Literature</fullName>
+        <default>false</default>
+        <label>English Literature</label>
+    </customValue>
+    <customValue>
+        <fullName>Film and Media</fullName>
+        <default>false</default>
+        <label>Film and Media</label>
+    </customValue>
+    <customValue>
+        <fullName>Games &amp; Animation</fullName>
+        <default>false</default>
+        <label>Games &amp; Animation</label>
+    </customValue>
+    <customValue>
+        <fullName>Geography</fullName>
+        <default>false</default>
+        <label>Geography</label>
+    </customValue>
+    <customValue>
+        <fullName>Graphics, Design &amp; Art</fullName>
+        <default>false</default>
+        <label>Graphics, Design &amp; Art</label>
+    </customValue>
+    <customValue>
+        <fullName>History</fullName>
+        <default>false</default>
+        <label>History</label>
+    </customValue>
+    <customValue>
+        <fullName>Human Resources Management</fullName>
+        <default>false</default>
+        <label>Human Resources Management</label>
+    </customValue>
+    <customValue>
+        <fullName>International Development</fullName>
+        <default>false</default>
+        <label>International Development</label>
+    </customValue>
+    <customValue>
+        <fullName>International Relations and Politics</fullName>
+        <default>false</default>
+        <label>International Relations and Politics</label>
+    </customValue>
+    <customValue>
+        <fullName>Journalism</fullName>
+        <default>false</default>
+        <label>Journalism</label>
+    </customValue>
+    <customValue>
+        <fullName>Languages</fullName>
+        <default>false</default>
+        <label>Languages</label>
+    </customValue>
+    <customValue>
+        <fullName>Law</fullName>
+        <default>false</default>
+        <label>Law</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing</fullName>
+        <default>false</default>
+        <label>Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Mathematics &amp; Physics</fullName>
+        <default>false</default>
+        <label>Mathematics &amp; Physics</label>
+    </customValue>
+    <customValue>
+        <fullName>Mechanical and Design Engineering</fullName>
+        <default>false</default>
+        <label>Mechanical and Design Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>Modern Foreign Languages</fullName>
+        <default>false</default>
+        <label>Modern Foreign Languages</label>
+    </customValue>
+    <customValue>
+        <fullName>Nursing</fullName>
+        <default>false</default>
+        <label>Nursing</label>
+    </customValue>
+    <customValue>
+        <fullName>Operating Department Practice</fullName>
+        <default>false</default>
+        <label>Operating Department Practice</label>
+    </customValue>
+    <customValue>
+        <fullName>Optometry</fullName>
+        <default>false</default>
+        <label>Optometry</label>
+    </customValue>
+    <customValue>
+        <fullName>Paramedic Science</fullName>
+        <default>false</default>
+        <label>Paramedic Science</label>
+    </customValue>
+    <customValue>
+        <fullName>Performing Arts</fullName>
+        <default>false</default>
+        <label>Performing Arts</label>
+    </customValue>
+    <customValue>
+        <fullName>Pharmacy and Biomedical Sciences</fullName>
+        <default>false</default>
+        <label>Pharmacy and Biomedical Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>Psychology</fullName>
+        <default>false</default>
+        <label>Psychology</label>
+    </customValue>
+    <customValue>
+        <fullName>Radiography</fullName>
+        <default>false</default>
+        <label>Radiography</label>
+    </customValue>
+    <customValue>
+        <fullName>Social Work</fullName>
+        <default>false</default>
+        <label>Social Work</label>
+    </customValue>
+    <customValue>
+        <fullName>Sociology</fullName>
+        <default>false</default>
+        <label>Sociology</label>
+    </customValue>
+    <customValue>
+        <fullName>Sport Science</fullName>
+        <default>false</default>
+        <label>Sport Science</label>
+    </customValue>
+    <customValue>
+        <fullName>Undecided</fullName>
+        <default>false</default>
+        <label>Undecided</label>
+    </customValue>
+    <customValue>
+        <fullName>STEM</fullName>
+        <default>false</default>
+        <label>STEM</label>
+    </customValue>
+    <customValue>
+        <fullName>Maritime Studies BSc (Hons)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Maritime Studies BSc (Hons)</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Studies BA (Hons)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Professional Studies BA (Hons)</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Studies BSc (Hons)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Professional Studies BSc (Hons)</label>
+    </customValue>
+    <customValue>
+        <fullName>Mechanical and Petroleum Engineering</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Mechanical and Petroleum Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>Product Design and Industrial Design</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Product Design and Industrial Design</label>
+    </customValue>
+    <customValue>
+        <fullName>Film &amp; Media</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Film &amp; Media</label>
+    </customValue>
+    <customValue>
+        <fullName>Engineering &amp; Technology - Other</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Engineering &amp; Technology - Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Applied Computing BSc (Hons)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Applied Computing BSc (Hons)</label>
+    </customValue>
+    <customValue>
+        <fullName>Politics and International Relations</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Politics and International Relations</label>
+    </customValue>
+    <customValue>
+        <fullName>Hospitality Management</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Hospitality Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Applied Science BSc (Hons)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Applied Science BSc (Hons)</label>
+    </customValue>
+    <customValue>
+        <fullName>Business BA (Hons)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business BA (Hons)</label>
+    </customValue>
+    <customValue>
+        <fullName>Business and Computer Studies BA (Hons)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business and Computer Studies BA (Hons)</label>
+    </customValue>
+    <customValue>
+        <fullName>Creative Technologies and Enterprise BSc (Hons)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Creative Technologies and Enterprise BSc (Hons)</label>
+    </customValue>
+    <customValue>
+        <fullName>Engineering Project Management BSc (Hons)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Engineering Project Management BSc (Hons)</label>
+    </customValue>
+    <customValue>
+        <fullName>Engineering Studies BSc (Hons)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Engineering Studies BSc (Hons)</label>
+    </customValue>
+    <customValue>
+        <fullName>Engineering and Management Studies BSc (Hons)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Engineering and Management Studies BSc (Hons)</label>
+    </customValue>
+    <description>Provides a list of all available subject area options</description>
+    <masterLabel>Subject Areas</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

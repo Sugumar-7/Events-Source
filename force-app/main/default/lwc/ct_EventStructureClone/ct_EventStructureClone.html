@@ -1,0 +1,93 @@
+<!--
+  @description       : LWC Componennt to clone an EVent with its related Tracks and Sessions
+  @author            : Creation Admin
+  @last modified on  : 09-25-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   09-22-2020   Creation Admin   Initial Version
+-->
+<template>
+  <div>
+    <div class="slds-is-relative">
+      <template if:true={showSpinnerBoolean}>
+        <div class="slds-m-vertical--xx-large">
+          <lightning-spinner alternative-text="Loading" variant="brand" size="medium"></lightning-spinner>
+        </div>
+      </template>
+      <div class="slds-p-top--small headingStyle slds-text-heading_small slds-align_absolute-center" style={mainHeadingStyle}>
+        Clone Event &amp; Event Structure
+      </div>
+      <h2 class="slds-p-top--small slds-p-bottom--small headingStyle">
+        <b>Enter the details</b>
+      </h2>
+
+
+      <div class="slds-grid slds-wrap">
+        <div class="slds-col--padded slds-size_1-of-2">
+            <label class="slds-form-element__label fieldLabelStyle" for="startDate">Start Date<abbr class="slds-required" title="required">*</abbr></label>
+              <lightning-input
+              id="startDate"
+              type="date" 
+              class="cloneEventRequiredFields inputFieldPlaceHolder"
+              name="Event_Start_Date__c" 
+              label="Event Start Date" 
+              variant = "label-hidden"
+              placeholder="Select Start Date"
+              onchange={handleEventDetailValueChange}
+              value={eventDetails.Event_Start_Date__c}
+              required></lightning-input>
+        </div>
+        <div class="slds-col--padded slds-size_1-of-2">
+          <label class="slds-form-element__label fieldLabelStyle" for="startTime">Start Time<abbr class="slds-required" title="required">*</abbr></label>
+          <lightning-input 
+            type="time" 
+            id="startTime"
+            class="cloneEventRequiredFields inputFieldPlaceHolder"
+            name="Start_Time__c" 
+            label="Event Start Time" 
+            variant = "label-hidden"
+            placeholder="Select Start Time"
+            onchange={handleEventDetailValueChange}
+            value={eventDetails.Start_Time__c}
+            required></lightning-input>
+        </div>
+
+        <div class="slds-p-top_medium slds-col--padded slds-size_1-of-2">
+          <label class="slds-form-element__label fieldLabelStyle" for="endDate">End Date</label>
+            <lightning-input 
+              id="endDate"
+              type="date" 
+              class="inputFieldPlaceHolder"
+              name="Event_End_Date__c" 
+              label="Event End  Date" 
+              variant = "label-hidden"
+              placeholder="Select End Date"
+              onchange={handleEventDetailValueChange}
+              value={eventDetails.Event_End_Date__c}></lightning-input>
+        </div>
+        <div class="slds-p-top_medium slds-col--padded slds-size_1-of-2">
+          <label class="slds-form-element__label fieldLabelStyle" for="endTime">End Time</label>
+          <lightning-input 
+            id ="endTime"
+            type="time" 
+            class="inputFieldPlaceHolder"
+            name="End_Time__c" 
+            label="Event End Time" 
+            variant = "label-hidden"
+            onchange={handleEventDetailValueChange}
+            placeholder="Select End Time"
+            value={eventDetails.End_Time__c}></lightning-input>
+        </div>
+        </div>
+        <div class="slds-grid slds-grid--pull-padded slds-p-vertical_medium slds-align_absolute-center">
+          <div>
+              <button type="button" name="Cancel" value="Cancel" onclick={redirectToEventRecord} class="inactiveButton slds-button slds-button_destructive">Cancel</button>
+          </div>
+          <div class="slds-p-left--x-small">
+              <button type="button" name="Clone" value="Clone" onclick={handleCloneConfiramtion} class="activeButton slds-button slds-button_success">Clone</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</template>

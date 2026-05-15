@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Data_Type__c</fullName>
+    <description>This field is used to determine the data type for the answer entered in the web form</description>
+    <inlineHelpText>Please choose the appropriate value based on the question value entered</inlineHelpText>
+    <label>Data Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Text</fullName>
+                <default>true</default>
+                <label>Text Field (Max 255 Single Line)</label>
+            </value>
+            <value>
+                <fullName>Text Area</fullName>
+                <default>false</default>
+                <label>Text Area (Max 255 Multi Line)</label>
+            </value>
+            <value>
+                <fullName>Long Text Area</fullName>
+                <default>false</default>
+                <label>Long Text Area (Max 32,768)</label>
+            </value>
+            <value>
+                <fullName>Rich Text Area</fullName>
+                <default>false</default>
+                <label>Rich Text Area (Max 32,768)</label>
+            </value>
+            <value>
+                <fullName>Number</fullName>
+                <default>false</default>
+                <label>Number Field</label>
+            </value>
+            <value>
+                <fullName>Currency</fullName>
+                <default>false</default>
+                <label>Currency Field</label>
+            </value>
+            <value>
+                <fullName>Date</fullName>
+                <default>false</default>
+                <label>Date Field</label>
+            </value>
+            <value>
+                <fullName>Phone</fullName>
+                <default>false</default>
+                <label>Phone Field</label>
+            </value>
+            <value>
+                <fullName>Picklist</fullName>
+                <default>false</default>
+                <label>Picklist Field</label>
+            </value>
+            <value>
+                <fullName>Picklist with Radio Options</fullName>
+                <default>false</default>
+                <label>Picklist Field with Radio Options</label>
+            </value>
+            <value>
+                <fullName>Dependent Picklist</fullName>
+                <default>false</default>
+                <label>Dependent Picklist</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

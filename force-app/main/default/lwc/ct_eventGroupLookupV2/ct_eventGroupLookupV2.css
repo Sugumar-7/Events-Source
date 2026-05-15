@@ -1,0 +1,39 @@
+/* @font-face {
+  font-family: 'Encode Sans';
+  src: url(/resource/font_Encode_Sans);
+} */
+@font-face {
+  font-family: "'Encode Sans Expanded', sans-serif";
+  src: url(/s/sfsites/c/resource/ct_Font_Encode_Sans_Expanded);
+}
+@font-face {
+  font-family: "'Open Sans', sans-serif";
+  src: url(/s/sfsites/c/resource/font_Open_Sans);
+}
+
+.activeButton {
+  font-family: "'Encode Sans Expanded', sans-serif";
+  font-size: 15px !important;
+  /* font: inherit; */
+  height: 30px;
+  width: 100px;
+  background-color: #00A0FF !important;
+  border-color: #FFFFFF!important;
+  color: #FFFFFF;
+  border-radius: 3px;
+  padding: 0%;
+}
+
+.uopInputFieldLable {
+  font-family: "'Open Sans', sans-serif" !important;
+  font-size: 14px !important;
+  font-weight: normal;
+  color:#505457;
+}
+
+.inputFieldPlaceHolder {
+  font-family: "'Open Sans', sans-serif";
+  font-weight: normal;
+  font-size: 14px !important;
+  color:#505457;
+}

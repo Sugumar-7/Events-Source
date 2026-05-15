@@ -1,0 +1,92 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 02-01-2021
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   07-22-2020   Creation Admin   Initial Version
+-->
+<template>
+  <template if:false={isAnonymousOnlyTicket}>
+  <div class=" slds-p-vertical--xx-small"></div>
+  <h2 class="slds-p-top--xx-small slds-card__header-title headingStyle">
+    Ticket {ticket.ticketNumber} - {ticket.name}
+  </h2>
+  <div>
+    <label class="slds-form-element__label fieldLabelStyle" for="attendee">Who is this ticket for?<abbr class="slds-required" title="required">*</abbr></label>
+    <lightning-combobox name="attendeeType" required class="dropdown ticketOrderField fieldLabelStyle" options={attendees} variant="label-hidden" value={attendeeType} onchange={handleAttehndeeType}>
+    </lightning-combobox>
+  </div>
+  <template if:true={renderForm}>
+  <template if:false={isGuest}>
+    <div>
+      <label class="slds-form-element__label fieldLabelStyle" for="firstName">First Name<abbr class="slds-required" title="required">*</abbr></label>
+      <lightning-input placeholder="Enter first name" disabled={registeringMyself} type="text" id="firstName" variant="label-hidden" name="firstName" label="First Name" class="ticketOrderField fieldLabelStyle" value={firstName} onchange={handleFirstName} required>
+      </lightning-input>
+    </div>
+    <div>
+      <label class="slds-form-element__label fieldLabelStyle" for="lastName">Last Name<abbr class="slds-required" title="required">*</abbr></label>
+      <lightning-input placeholder="Enter last name" disabled={registeringMyself} type="text" id="lastName" variant="label-hidden" name="lastName" label="Last Name" class="ticketOrderField fieldLabelStyle" value={lastName} onchange={handleLastName} required>
+      </lightning-input>
+    </div>
+    <div>
+      <label class="slds-form-element__label fieldLabelStyle" for="email">Email<abbr class="slds-required" title="required">*</abbr></label>
+      <lightning-input placeholder="Enter email address" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,15})$" message-when-pattern-mismatch="Please enter a valid email address" onblur={fireSibilingEventRegistrationEventEmailCheck} disabled={registeringMyself} type="email" id="email" variant="label-hidden" name="email" data-id ="emailaddressinput" label="Email" class="ticketOrderField fieldLabelStyle" value={email} onchange={handleEmail} required>
+      </lightning-input>
+      <template if:true={showCustomEmailErrorMessage}>
+        <div lightning-input_input="" id="help-message-48" data-help-message="true" role="alert" class="slds-form-element__help customErrorMessage">{customEmailErrorMessage}</div>
+      </template>
+    </div>
+    <!-- <div>
+      <label class="slds-form-element__label fieldLabelStyle" for="Mobile">Mobile </label>
+      <lightning-input  placeholder="Enter mobile number" class="fieldLabelStyle" type="text" pattern="[0-9-+()]*$" message-when-pattern-mismatch="Please provide a valid mobile number" min-length="11" disabled={registeringMyself} variant="label-hidden" id="Mobile" name="Mobile" value={mobile} onchange={handleMobile} ></lightning-input>
+    </div> -->
+    <!-- <div>
+      <label class="slds-form-element__label fieldLabelStyle" for="birthdate">Birthdate
+       
+      </label>
+      <lightning-input placeholder="Enter  birthdate" type="date" date-style="short" id="bithdate"  variant="label-hidden" class="fieldLabelStyle" label="birthdate" value={birthdate}  onchange={handleBirthdate}></lightning-input>
+    </div>
+    <div>
+      <label class="slds-form-element__label fieldLabelStyle" for="street">Street
+       
+      </label>
+      <lightning-input placeholder="Enter  street" type="text" id="street" disabled={registeringMyself} variant="label-hidden" class="fieldLabelStyle" label="street" value={street}  onchange={handleStreet}></lightning-input>
+    </div>
+    <div>
+      <label class="slds-form-element__label fieldLabelStyle" for="street">Address Line 2
+       
+      </label>
+      <lightning-input placeholder="Enter  street" type="text" id="addressLine"  variant="label-hidden" class="fieldLabelStyle" label="street" value={addressLine2}  onchange={handleAddressLine}></lightning-input>
+    </div>
+    <div>
+      <label class="slds-form-element__label fieldLabelStyle" for="city">City
+      
+      </label>
+      <lightning-input placeholder="Enter  city" type="text" id="city" disabled={registeringMyself} variant="label-hidden" class="fieldLabelStyle" label="city" value={city}   onchange={handleCity}></lightning-input>
+    </div>
+    <div>
+      <label class="slds-form-element__label fieldLabelStyle" for="state">County / State
+       
+      </label>
+      <lightning-input placeholder="Enter  county / state"  type="text" id="state" disabled={registeringMyself} variant="label-hidden" class="fieldLabelStyle" label="state" value={state}   onchange={handleState} ></lightning-input>
+    </div>
+    <div>
+      <c-ct_-country-picklist is-disabled={registeringMyself} is-event-registration="true" data-id="countryElement" onselectedcountry={handleCountrySelect} selected-country-string ={country}></c-ct_-country-picklist>
+     <label class="slds-form-element__label fieldLabelStyle" for="country">Country<abbr class="slds-required" title="required">*</abbr></label>
+      <lightning-input type="text" id="country" disabled={registeringMyself} variant="label-hidden" class=" label="country" value={country}   onchange={handleCountry} required></lightning-input> -->
+    <!-- </div>
+    <div>
+      <label class="slds-form-element__label fieldLabelStyle" for="postcode">Post code / ZIP
+      </label>
+      <lightning-input  placeholder="Enter your post code / zip" type="text" id="postcode"  disabled={registeringMyself} variant="label-hidden" class="fieldLabelStyle" label="postcode" value={postcode}   onchange={handlePostCode}></lightning-input>
+    </div> -->
+    <div class="slds-col"> 
+      <c-ct_-event-questions-form-v2 onanswergiven={handleQuestionsAnswers} event-registration={ticket.eventRegistration} campaign-member={ticket.campaignMember} onsessionselection={handleSessionSelection} onquestionrendered={handleRenderValue} ticket-name={ticket.ticketName} record-id={ticket.ticketId} dynamic-session-data={dynamicSessionData} ticket={ticket} event-order={orderValues}></c-ct_-event-questions-form-v2>
+    </div>
+  </template>
+</template>
+</template>
+</template>

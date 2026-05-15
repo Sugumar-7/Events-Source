@@ -1,0 +1,34 @@
+<!--
+  @description       : 
+  @author            : Creation Admin  - Creation Technology Solutions
+  @group             : 
+  @last modified on  : 12-10-2020
+  @last modified by  : Creation Admin  - Creation Technology Solutions
+  Modifications Log 
+  Ver   Date         Author                                            Modification
+  1.0   12-09-2020   Creation Admin  - Creation Technology Solutions   Initial Version
+-->
+<template>
+    <lightning-button-menu label="Add to Calendar" alternative-text="Add to calendar"
+    icon-name="standard:event" variant="border" class="menuStyle">
+        <template if:true={enddate}>
+           <lightning-menu-item value="google" label="Google Calendar" onclick={addToCalendar}> 
+            </lightning-menu-item>
+            <lightning-menu-item value="outlook" label="Outlook Calendar" onclick={addToCalendar}>
+            </lightning-menu-item>
+            <lightning-menu-item value="apple" label="Apple Calendar" onclick={addToCalendar}>
+            </lightning-menu-item>
+            <lightning-menu-item value="yahoo" label="Yahoo Calendar" onclick={addToCalendar}>
+            </lightning-menu-item>
+        </template>
+    </lightning-button-menu>
+    <template if:false={enddate}>
+        <div style= 'padding-top: 1rem;'>
+            <lightning-icon icon-name="utility:warning" alternative-text="warning" title="Warning" size="x-small" style="margin-bottom: 5px;">
+            </lightning-icon>
+            <span style ='padding-left: 5px'>Make sure event has Start Date and End Date information</span>
+        </div>
+        <!-- <div><p style= 'color: darkgoldenrod;padding-top: 1rem;'>Make Sure Event Has a Start Date and End Date, Start Time and End Time Information</p></div> -->
+        
+    </template>
+</template>

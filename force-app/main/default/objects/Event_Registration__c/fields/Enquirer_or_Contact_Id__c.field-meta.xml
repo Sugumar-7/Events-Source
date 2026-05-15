@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enquirer_or_Contact_Id__c</fullName>
+    <description>Case Insensitive ID of Lead or Contact</description>
+    <externalId>false</externalId>
+    <formula>/* If Contact lookup is blank, use Lead ID */
+IF(ISBLANK(Contact__c),  
+
+     /* Get 18 character Lead ID*/
+     CASESAFEID(Enquirer__c), 
+
+
+     /* Otherwise get 18 character Contact ID*/
+     CASESAFEID(Contact__c)
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Enquirer or Contact Id</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

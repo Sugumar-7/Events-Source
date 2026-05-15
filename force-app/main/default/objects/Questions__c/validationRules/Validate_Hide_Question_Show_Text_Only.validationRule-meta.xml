@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Hide_Question_Show_Text_Only</fullName>
+    <active>true</active>
+    <description>Validation to select either &quot;Hide Question&quot; or &quot;Show Text Only&quot; fields</description>
+    <errorConditionFormula>AND(Hide_Question__c = true,  Show_Only_Text__c = true)</errorConditionFormula>
+    <errorMessage>Cannot check both Hide Question &amp; Show Text Only fields</errorMessage>
+</ValidationRule>

@@ -1,0 +1,110 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 11-17-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   11-17-2020   Creation Admin   Initial Version
+-->
+<template>
+ <template if:false={orderSuccess}>
+    <h2 class="slds-card__header-title slds-p-top--small slds-p-bottom--x-small mainHeadingStyle">
+        <b>{formTitle}</b>
+    </h2>
+    <p class="slds-card__header-title fieldLabelStyle">
+        {subFormTitle}
+    </p>
+    <div style="width: 50%;">
+    <div>
+        <label class="slds-form-element__label fieldLabelStyle" for="firstName">First Name<abbr class="slds-required" title="required">*</abbr></label>
+        <lightning-input type="text" id="firstName" class="ticketOrderField fieldLabelStyle" variant="label-hidden" label="First Name"
+        value={firstName} onchange={handleFirstName} required></lightning-input>
+        
+      </div>
+      <div>
+        <label class="slds-form-element__label fieldLabelStyle" for="lastName">Last Name<abbr class="slds-required" title="required">*</abbr></label>
+        <lightning-input type="text" id="lastName" variant="label-hidden" class="ticketOrderField fieldLabelStyle" label="Last Name" value={lastName}
+          onchange={handleLastName} required></lightning-input>
+      </div>
+      <div>
+        <label class="slds-form-element__label fieldLabelStyle" for="email">Email<abbr class="slds-required" title="required">*</abbr></label>
+        <lightning-input type="email" id="email" variant="label-hidden" class="ticketOrderField fieldLabelStyle" label="Email" value={email} onchange={handleEmail}
+          required></lightning-input>
+      </div>
+
+      
+      <!-- <div>
+        <label class="slds-form-element__label fieldLabelStyle" for="ReceiveSMSnotification">Receive SMS notification</label>
+        <lightning-input type="checkbox" id="ReceiveSMSnotification" name="ReceiveSMSnotification" onchange={handleReceiveSMSnotification} ></lightning-input>
+      </div>
+
+      <template if:true={receiveSMSnotification}>
+      <div>
+        <label class="slds-form-element__label fieldLabelStyle" for="Mobile">Mobile <abbr class="slds-required" title="required">*</abbr></label>
+        <lightning-input type="tel" variant="label-hidden" id="Mobile" class="ticketOrderField" name="Mobile" placeholder="" value={mobile} pattern="^[0-9_ ]*$"
+        message-when-pattern-mismatch="Only numbers are allowed" onchange={handleMobile} required></lightning-input>
+      </div>
+    </template> -->
+
+    <!-- <template if:false={receiveSMSnotification}> -->
+      <div>
+        <label class="slds-form-element__label fieldLabelStyle" for="mobile">Mobile</label>
+        <lightning-input type="text" variant="label-hidden" class="fieldLabelStyle" id="mobile"  name="mobile" placeholder="" value={mobile} pattern="[0-9-+()]*$"
+        message-when-pattern-mismatch="Please provide a valid mobile number" max-length="11" onchange={handleMobile}></lightning-input>
+      </div>
+    <!-- </template> -->
+
+      <div>
+        <label class="slds-form-element__label fieldLabelStyle" for="numberofTicketsRequired">Number of Tickets Required<abbr class="slds-required" title="required">*</abbr></label>
+        <lightning-input type="number" variant="label-hidden" class="ticketOrderField fieldLabelStyle" id="numberofTicketsRequired" label="Number of Tickets Required" value={numberofTicketsRequired} onchange={handleNumberofTicketsRequired} required></lightning-input>
+      </div>
+    </div>
+
+    <!-- <h2 class="slds-card__header-title slds-p-top--small slds-p-bottom--x-small mainHeadingStyle" style="color:black">
+      <b>Web Registration</b>
+    </h2> -->
+    <div>
+      <h2 class="slds-card__header-title slds-p-top--small slds-p-bottom--x-small mainHeadingStyle">
+        <b>{statementTitle}</b>
+      </h2>
+    </div>
+    <div class="slds-p-vertical_small fieldLabelStyle">
+      <lightning-formatted-rich-text  value={statementTextAboveDeclaration}></lightning-formatted-rich-text>
+    </div>
+    <div class="slds-p-vertical_small fieldLabelStyle">
+      <lightning-formatted-rich-text value={declarationText}></lightning-formatted-rich-text>
+    </div>
+      <div class="fieldLabelStyle">
+        <template for:each={consentCaptureOptions} for:item="consentOption">
+          <fieldset key={consentOption.value} style="display: inline;">
+              <div class="slds-form-element__control">
+                  <span class="slds-radio radioButton">
+                      <input name="radiogroup" id={consentOption.value} type="radio" value={consentOption.value} onchange={handleAgreerToConsent}/>
+                      <label class="slds-radio__label" for={consentOption.value}>
+                          <span class="slds-radio_faux"></span>
+                          <span class="slds-form-element__label fieldLabelStyle">{consentOption.label}</span>
+                      </label>
+                  </span>
+              </div>
+          </fieldset>
+        </template>
+      </div>
+
+    <div class="slds-p-vertical_small fieldLabelStyle">
+      <lightning-formatted-rich-text value={statementTextBelowDeclaration}></lightning-formatted-rich-text>
+    </div>
+    <!-- <div>
+      <label class="slds-form-element__label fieldLabelStyle" for="AgreeForGDPRTerms"></label>
+      <lightning-input type="checkbox" label=" I agree to the University's GDPR terms." id="AgreeForGDPRTerms" name="AgreeForGDPRTerms" onchange={handleAgreeForGDPRTerms}></lightning-input>
+    </div> -->
+    <template if:true={showPlaceOrderButton}>
+       <div class="slds-p-vertical--small ">
+        <!-- <button type="button" name="Back" value="Back" onclick={handlePrevPage} class="activeButton slds-button slds-button_success">Back</button>  -->
+          <button type="button" name="Next" value="Next" onclick={handleSubmit} class="activeButton slds-button slds-button_success">Submit</button>
+      
+      </div>
+    </template>
+    </template>
+</template>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Includes_BAL__c</fullName>
+    <description>If faculty pick list contains Faculty of Business and Law will be checked. For reporting purposes.</description>
+    <formula>INCLUDES( Faculty__c, &quot;Faculty of Business and Law&quot;)</formula>
+    <label>Includes BAL</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

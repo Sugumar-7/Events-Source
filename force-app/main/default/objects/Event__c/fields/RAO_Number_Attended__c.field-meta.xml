@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RAO_Number_Attended__c</fullName>
+    <inlineHelpText>This field totals the number attended on the Event Registrations</inlineHelpText>
+    <label>RAO Number Attended</label>
+    <summarizedField>Event_Registration__c.RAO_Number_Attended__c</summarizedField>
+    <summaryForeignKey>Event_Registration__c.Event__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

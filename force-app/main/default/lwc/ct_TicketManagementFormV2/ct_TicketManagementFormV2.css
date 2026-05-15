@@ -1,0 +1,156 @@
+@font-face {
+  font-family: "'Encode Sans Expanded', sans-serif";
+  src: url(/s/sfsites/c/resource/ct_Font_Encode_Sans_Expanded);
+}
+
+@font-face {
+  font-family: "'Open Sans', sans-serif";
+  src: url(/s/sfsites/c/resource/font_Open_Sans);
+}
+
+@media screen and (min-width: 769px) {
+  .mobileMenus {display: none;}
+  .desktopMenus {display: block;}
+  
+}
+
+@media screen and (max-width: 768px) {
+  .mobileMenus {display: block;}
+  .desktopMenus {display: none;}
+
+}
+
+.formHeaderStyle{
+  background-color: #351c75;
+}
+
+.headerFont{
+  color: #027119;
+  font-family: "'Encode Sans Expanded', sans-serif" !important;
+  font-size: 15px !important;
+  font-weight: bold; 
+}
+
+.registerButtonStyle{
+  background-color:  #027119;
+  font-family: "'Encode Sans Expanded', sans-serif";
+  height: 30px;
+  width: 120px;
+  border-color: #FFFFFF!important;
+  color: #FFFFFF;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  transition-duration: 0.3s;
+  transition-property: background-color, color;
+  padding: 0px;
+}
+
+.unRegisterButtonStyle{
+  background-color:  #009e0f;
+  font-family: "'Encode Sans Expanded', sans-serif";
+  height: 30px;
+  width: 120px;
+  border-color: #FFFFFF!important;
+  color: #FFFFFF;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  transition-duration: 0.3s;
+  transition-property: background-color, color;
+  padding: 0px;
+}
+
+.fieldLabelStyle{
+  font-family: "'Open Sans', sans-serif" !important;
+  font-size: 14px !important;
+  font-weight: normal;
+  color:#505457;
+}
+
+.inputFieldPlaceHolder {
+  font-family: "'Open Sans', sans-serif";
+  font-size: 14px !important;
+  color:#505457;
+  font-weight: normal;
+}
+
+.searchButtonStyle{
+  /* background-color:  #351c75; */
+  background-color: #05884a !important;
+  font-family: "'Encode Sans Expanded', sans-serif";
+  /* height: 30px;
+  width: 80px; */
+  height: 50px;
+  width: 200px;
+  border-color: #FFFFFF!important;
+  color: #FFFFFF;
+  font-size: 15px !important;
+  padding: 1rem;
+  /* font-weight: 600 !important; */
+  transition-duration: 0.3s;
+  transition-property: background-color, color;
+}
+
+.cancelButtonStyle{
+  font-family: "'Encode Sans Expanded', sans-serif" !important;
+  font-size: 15px !important;
+  height: 50px;
+  width: 200px;           
+  padding: 1rem;
+  background-color: #05884a !important;
+  border-color: #FFFFFF!important;
+  color: #FFFFFF;
+  /* font-weight: 600; */
+  border-radius: 0;
+  /* padding: 0px;
+  margin: 0px; */
+  transition-duration: 0.3s;
+  transition-property: background-color, color;
+}
+
+.cancelButtonStyle:hover {
+  background-color: #069f56 !important;
+  color: white;
+  /* font-weight: 600; */
+}
+.searchButtonStyle:hover {
+  background-color: #069f56 !important;
+  color: white;
+  /* font-weight: 600; */
+}
+.linkStyle{
+  font-family: "'Open Sans', sans-serif";
+  font-weight: normal;
+  font-size: 18px !important;
+  line-height: 22px;
+}
+
+.textStyle{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color:#027119 !important;
+  font-weight: 600;
+  border-left: 2px solid #505457;
+}
+.textStyle:hover{
+  color:#069f56 !important;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+
+svg{
+  fill:#ffffff !important;
+}
+.listStyle{
+  padding: 1rem; 
+  border-bottom:1px solid #027119;
+}
+.listItemStyle{
+  color:#ffffff;
+  text-transform: uppercase;
+  font-size: 14px !important;
+  font-family: "'Open Sans', sans-serif" !important;
+}

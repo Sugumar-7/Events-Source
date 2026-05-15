@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_Type_for_New_Attendees__c</fullName>
+    <inlineHelpText>This selection governs the record type to use in relation to the object selected - further to new attendees who are not presently in Salesforce.</inlineHelpText>
+    <label>Record Type for New Attendees</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Object_for_New_Attendees__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LED_Contact</fullName>
+                <default>false</default>
+                <label>LED Contact</label>
+            </value>
+            <value>
+                <fullName>PersonAccount</fullName>
+                <default>false</default>
+                <label>PersonAccount</label>
+            </value>
+            <value>
+                <fullName>Employer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Employer</label>
+            </value>
+            <value>
+                <fullName>Influencer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Influencer</label>
+            </value>
+            <value>
+                <fullName>Student</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Student</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Create New Person Accounts</controllingFieldValue>
+            <valueName>PersonAccount</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

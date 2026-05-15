@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dietary_Needs__c</fullName>
+    <label>Dietary Needs</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Diabetic</fullName>
+                <default>false</default>
+                <label>Diabetic</label>
+            </value>
+            <value>
+                <fullName>Gluten-Free</fullName>
+                <default>false</default>
+                <label>Gluten-Free</label>
+            </value>
+            <value>
+                <fullName>Low Cholesterol / Low Fat</fullName>
+                <default>false</default>
+                <label>Low Cholesterol / Low Fat</label>
+            </value>
+            <value>
+                <fullName>Low Sodium</fullName>
+                <default>false</default>
+                <label>Low Sodium</label>
+            </value>
+            <value>
+                <fullName>Non-Lactose</fullName>
+                <default>false</default>
+                <label>Non-Lactose</label>
+            </value>
+            <value>
+                <fullName>Nut or Peanut Allergies</fullName>
+                <default>false</default>
+                <label>Nut or Peanut Allergies</label>
+            </value>
+            <value>
+                <fullName>Vegetarian</fullName>
+                <default>false</default>
+                <label>Vegetarian</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

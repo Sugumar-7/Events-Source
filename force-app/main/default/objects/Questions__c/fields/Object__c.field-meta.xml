@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Object__c</fullName>
+    <description>When entering the values as
+Picklist Value Label = Object Label
+Picklist Value API Name = Object API Name</description>
+    <label>Object</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Event_Registration__c</fullName>
+                <default>false</default>
+                <label>Event Registration</label>
+            </value>
+            <value>
+                <fullName>CampaignMember</fullName>
+                <default>false</default>
+                <label>Campaign Member</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

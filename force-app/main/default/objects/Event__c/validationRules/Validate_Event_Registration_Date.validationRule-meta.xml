@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Event_Registration_Date</fullName>
+    <active>true</active>
+    <description>Final Event Registration Date Cannot Be Greater Then Event End Date Or Lesser Than Event Start Date</description>
+    <errorConditionFormula>Final_Event_Registration_Date__c &gt;  Event_End_Date__c</errorConditionFormula>
+    <errorMessage>Final Event Registration Date cannot be greater than the Event End Date</errorMessage>
+</ValidationRule>

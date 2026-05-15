@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Product_Description__c</fullName>
+    <description>This is the information about the Event Product which will be shown up on Event Web Page.</description>
+    <inlineHelpText>Please provide a description of this event product. The value entered will be visible to people via the web event registration process.</inlineHelpText>
+    <label>Event Product Description</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

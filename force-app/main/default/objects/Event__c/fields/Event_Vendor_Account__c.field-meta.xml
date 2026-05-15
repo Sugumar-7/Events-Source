@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Vendor_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The Primary Account for this Event (e.g. School/College / Faculty / University / etc.)</description>
+    <inlineHelpText>Please provide the Primary Account for this Event (e.g. School/College / Faculty / University / etc.)</inlineHelpText>
+    <label>Primary Event Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Events</relationshipLabel>
+    <relationshipName>Events</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Day_Primary_Session__c</fullName>
+    <description>Holds list of sessions available for an Open Day</description>
+    <label>Open Day Primary Session</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Open_Day_Sessions</valueSetName>
+    </valueSet>
+</CustomField>

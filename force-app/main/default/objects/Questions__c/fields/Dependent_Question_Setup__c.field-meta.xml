@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dependent_Question_Setup__c</fullName>
+    <description>Used to store the Dependent picklist values with respect to the controlling field value</description>
+    <inlineHelpText>WARNING: This field must be configured by your Salesforce Administrator. Please contact LED team for more details</inlineHelpText>
+    <label>Dependent Question Setup</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Dynamic_Session_Information</fullName>
+    <active>true</active>
+    <description>Require &apos;Session Display Name&apos; &amp; &apos;Primary Subject Area Interest&apos; when &apos;Include in Dynamic Session Field&apos; is checked</description>
+    <errorConditionFormula>AND(
+    OR(ISNEW(), ISCHANGED( Include_in_Dynamic_Session_Field__c )),
+      Include_in_Dynamic_Session_Field__c  = true,
+    OR( ISBLANK( Session_Display_Name__c ), ISBLANK( TEXT(Primary_Subject_Area_Interest__c) ) )
+)</errorConditionFormula>
+    <errorMessage>Please complete Session Display Name &amp; Primary Subject Area Interest fields</errorMessage>
+</ValidationRule>

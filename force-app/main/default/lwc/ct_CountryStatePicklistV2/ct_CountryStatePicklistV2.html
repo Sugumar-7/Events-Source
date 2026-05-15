@@ -1,0 +1,40 @@
+<template>
+
+        <!-- Country -->
+        <label class="fieldLabelStyle slds-form-element__label">
+            Country
+            <template if:true={isRequired}>
+                <abbr class="slds-required" title="required">*</abbr>
+            </template>
+        </label>
+        <lightning-combobox
+            placeholder="Select your country"
+            variant="label-hidden"
+            class="fieldLabelStyle"
+            value={selectedCountry}
+            options={countryOptions}
+            onchange={handleCountryChange}
+            read-only={isDisabled}
+            required={isRequired}>
+        </lightning-combobox>
+
+        <!-- State -->
+        <label class="fieldLabelStyle slds-form-element__label">
+            State
+            <template if:true={isRequired}>
+            <abbr class="slds-required" title="required">*</abbr>
+            </template>
+        </label>
+
+        <lightning-combobox
+            placeholder="Select your state"
+            variant="label-hidden"
+            class="fieldLabelStyle"
+            value={selectedState}
+            options={stateOptions}
+            onchange={handleStateChange}
+            read-only={isDisabled}
+            required={isRequired}>
+        </lightning-combobox>
+        
+</template>

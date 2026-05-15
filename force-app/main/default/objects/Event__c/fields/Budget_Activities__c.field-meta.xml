@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Budget_Activities__c</fullName>
+    <inlineHelpText>Common expenses in this category include the A/V equipment, Guest speakers, Nightlife, Golf, and other entertainment expenses.</inlineHelpText>
+    <label>Activities &amp; Entertainment Budget</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

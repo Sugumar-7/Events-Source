@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Worthwhile__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>If event was worthwhile for student recruitment, outreach and relationship building</inlineHelpText>
+    <label>Event Worthwhile</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

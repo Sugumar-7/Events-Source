@@ -1,0 +1,36 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 09-27-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div data-id="topElement" id="topElem" class="topElement"></div>
+    <template if:false={showSearch}>
+        <c-ct_event-search-v2 onselectedeventdisplay={handleSelectedEventDisplay}></c-ct_event-search-v2>
+    </template>
+    <template if:true={showSelectedEvent}>
+        <!-- <c-ct_ticket-selection-v2 selected-event-id={selectedeventId} oneventorderdisplay={handleEventOrderDisplay} onbackeventsearchisplay={handleClickBackEventSearchDisplay} set-back-redirection-values={setBackValues} onscrolltotop={customScrollToTop}></c-ct_ticket-selection-v2> -->
+        <c-ct_ticket-selection-v2-clone selected-event-id={selectedeventId} oneventorderdisplay={handleEventOrderDisplay} oneventorderconfirmationdisplay={handleEventOrderConfirmationDisplay} onbackeventsearchisplay={handleClickBackEventSearchDisplay} set-back-redirection-values={setBackValues} onscrolltotop={customScrollToTop}></c-ct_ticket-selection-v2-clone>
+    </template>
+    <template if:true={showEventOrder}>
+        <c-ct_-event-order-details-v2 redirection-state={redirectionState} oneventordersummarydisplay={handleEventOrderSummaryDisplay} oneventbackticketselectiondisplay={handleClickBackTicketSelectionDisplay} onscrolltotop={customScrollToTop}></c-ct_-event-order-details-v2>
+    </template>
+    <template if:true={showEventOrderSummaryDisplay}>
+        <c-ct_ticket-order-summary-v2 redirection-order-state={redirectionOrderState} oneventorderconfirmationdisplay={handleEventOrderConfirmationDisplay} oneventbackorderdetailsdisplay={handleClickBackOrderDetailsDisplay} onscrolltotop={customScrollToTop}></c-ct_ticket-order-summary-v2>
+    </template>
+   <template if:true={showOrderConfirmation}>
+        <c-ct_-event-booking-confirmation-v2 ticket-order-id={ticketConfirmationOrderId} oneventticketmanagementdisplay={handleTicketManagementDisplay} oneventsessionmanagementdisplay={handleSessionManagementDisplay} onscrolltotop={customScrollToTop}></c-ct_-event-booking-confirmation-v2>
+    </template>
+
+     <template if:true={showTicketManagement}>
+        <c-ct_-ticket-management-form-v2 event-registration-id={eventRegistrationRecordId} show-back-button={showBackButton} is-simple-event={isSimpleEvent} onbackeventorderconfirmationdisplay={handleClickBackEventOrderConfirmationDisplay} onscrolltotop={customScrollToTop} ></c-ct_-ticket-management-form-v2>
+    </template>
+   <!-- <template if:true={showQRScanner}>
+         <c-ct_-check-in-manager-q-r-code-scanner ontabchangerequest={handleTabChangeRequest}></c-ct_-check-in-manager-q-r-code-scanner>
+    </template>  -->
+    <template if:true={showSessionManagement}>
+        <c-ct_-ticket-management-form-v2 event-registration-id={eventRegistrationRecordId} session-reg={sessionRegister} onbackeventorderconfirmationdisplay={handleClickBackEventOrderConfirmationDisplay} onscrolltotop={customScrollToTop}></c-ct_-ticket-management-form-v2>
+    </template>
+</template>

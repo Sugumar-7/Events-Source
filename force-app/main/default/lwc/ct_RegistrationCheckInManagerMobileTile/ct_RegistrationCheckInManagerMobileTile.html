@@ -1,0 +1,152 @@
+<!--
+   @description       : Event Registartion Tile Component for Check In Manager
+   @author            : Creation Admin
+   @group             : 
+   @last modified on  : 01-22-2021
+   @last modified by  : Creation Admin
+   Modifications Log 
+   Ver   Date         Author           Modification
+   1.0   08-31-2020   Creation Admin   Initial Version
+   -->
+   <template>
+      <c-ct_-custom-toast title ={customToastTitle} message ={customToastMessage}  variant={customMessageVariant} auto-close="true" auto-close-error-warning="true"></c-ct_-custom-toast>
+
+    <!--Event Registration Edit form -->
+    <template if:true={showRecordForm}>
+      <!-- Modal/Popup Box LWC starts here -->
+      <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+          <div class="slds-modal__container">
+            
+              <!-- Modal/Popup Box LWC body starts here -->
+              <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <!-- <c-ct_-internal-event-registration-form event-record-id={comboBoxValuesObject.selectedEventId} oneventregistered={closeInternalEventRegModal} sobject-a-p-i-name="Event__c" is-check-in-manager-component="true"  selected-session-id={comboBoxValuesObject.selectedSessionId}>
+                </c-ct_-internal-event-registration-form> -->
+
+                <lightning-record-edit-form record-id={recordEditFormRecordId}
+                object-api-name={recordEditFormObjectApiName} onsuccess={handleSuccess} >
+                           <lightning-messages>
+                           </lightning-messages>
+                           <lightning-input-field  required field-name="First_Name__c">
+                           </lightning-input-field>
+                           <lightning-input-field  required field-name="Last_Name__c">
+                           </lightning-input-field>
+                           <lightning-input-field  required field-name="Event_Email__c">
+                           </lightning-input-field>
+                           
+                           <div class="slds-m-top_medium slds-align_absolute-center">
+                              <lightning-button
+                                 class="slds-m-top_small slds-p-right_x-small"
+                                 onclick={closeShowRecordEditForm}
+                                 name="cancel"
+                                 label="Cancel">
+                           </lightning-button>
+                           <lightning-button
+                           class="slds-m-top_small"
+                           variant="brand"
+                           type="submit"
+                           name="update"
+                           label="Update">
+                     </lightning-button>
+                          </div>
+                           
+                              
+                        </lightning-record-edit-form>
+
+                <!-- <lightning-record-form
+                  record-id={recordEditFormRecordId}
+                  object-api-name={recordEditFormObjectApiName}
+                  fields={recordEditFormFields}
+                  columns="1"
+                  mode="edit"
+                  onsuccess={handleSuccess}
+                  oncancel={closeShowRecordEditForm}>
+               </lightning-record-form> -->
+                
+              </div>
+          </div>
+      </section>
+      <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>
+<!-- 
+      <template if:true={showRecordForm}>
+         <lightning-record-form
+            record-id="a0I1x000001aLO1EAM"
+            object-api-name="Event_Registration__c"
+            layout-type="Full"
+            columns="1"
+            mode="view">
+      </lightning-record-form>
+      </template> -->
+      
+     
+    <template if:true={isUpdating}>
+       <div class="slds-text-align_left slds-cell-wrap" style={tableCellStyle} data-label="Event Order">
+          <div class="customSpinnerContainer slds-align_absolute-center slds-p-vertical_large">
+             <lightning-spinner class="customInnerSpinner" alternative-text="Fetching Event Registration Records" variant="brand" size="small"></lightning-spinner>
+          </div>
+       </div>
+    </template>
+    <template if:false={isUpdating}>
+       <div class="slds-grid slds-grid_vertical-align-center  slds-p-vertical_x-small">
+          <!-- <template if:false={isMainEntrance}>
+             <div class="slds-col--padded  slds-cell-wrap slds-p-around_x-small fieldLabelStyle" title="status" style={parentIconDiv}>
+                <div class="slds-p-around_x-small" style={statusDivStyle}>
+                   <lightning-icon icon-name={statusIconStyle} size="x-small" variant={statusIconVariant}  alternative-text="Status" title="Status"></lightning-icon>
+                </div>
+             </div>
+          </template> -->
+          <div class="slds-col">
+             <table>
+                <tr>
+                  <template if:false={isMainEntrance}>
+                   <td>
+                     <div class="slds-p-around_x-small" style={statusDivStyle}>
+                        <lightning-icon icon-name={statusIconStyle} size="x-small" variant={statusIconVariant}  alternative-text="Status" title="Status"></lightning-icon>
+                     </div>
+                   </td>
+                   </template>
+                   <td class="fieldLabelStyle slds-p-left_xx-small" style="width: 30%;">
+                     <a href="javascript:void(0);" data-recordid={eventRegId} style="cursor: pointer;word-break: break-all !important;" onclick={handleRedirectToSobjectRequest}> {eventRegname}</a> 
+                   </td>
+                   <td class="fieldLabelStyle" style="width: 30%;">
+                     {orderRefNumber}
+                   </td>
+                   <td class="fieldLabelStyle">
+                     <button type="button" value={nextStatusName} disabled={isUpdating}  style={statusButtonStyle}
+                     class="slds-button slds-button_neutral" onclick={handleShowConfirmationPanel}> {nextStatusName}</button>
+                   </td>
+                </tr>
+             </table>
+          </div>
+       </div>
+       <template if:true={showConfirmationPanel}>
+          <div class="slds-grid">
+             <template if:false={isMainEntrance}>
+                <div class="slds-col--padded slds-size_2-of-12 slds-p-around_x-small">
+                </div>
+             </template>
+             <div class="slds-col--padded">
+                <div class="slds-grid slds-grid_vertical-align-center slds-grid_reverse slds-grid_pull-padded-x-small slds-p-vertical_x-small">
+                   <div class="slds-col--padded slds-size_1-of-2 slds-cell-wrap fieldLabelStyle">
+                      <div class="slds-grid slds-grid_vertical-align-center slds-grid_pull-padded-x-small">
+                         <div class="slds-col--padded">
+                            <span><button type="button" value="Yes" disabled={isUpdating}  style={confirmationButtonStyle}
+                               class="slds-button slds-button_neutral" data-booleanname={databooleanname} onclick={handleStatusChanged}>Yes</button> </span>
+                         </div>
+                         <div class="slds-col--padded">
+                            <span><button type="button" value="No" disabled={isUpdating}  style={confirmationButtonStyle}
+                               class="slds-button slds-button_neutral" onclick={hideConfirmationPanel}>No</button></span>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="slds-col slds-size_1-of-2 slds-cell-wrap fieldLabelStyle">
+                      Are you sure you want to {nextStatusName} this attendee?
+                      <!-- <button type="button" value={nextStatusName} disabled={isUpdating}  style={statusButtonStyle}
+                         class="slds-button slds-button_neutral" onclick={showConfirmationPanel}> {nextStatusName}</button> -->
+                   </div>
+                </div>
+             </div>
+          </div>
+       </template>
+    </template>
+ </template>

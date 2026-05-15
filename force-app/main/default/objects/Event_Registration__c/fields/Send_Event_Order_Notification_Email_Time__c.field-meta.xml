@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Event_Order_Notification_Email_Time__c</fullName>
+    <description>Data and time at which we needs to send Event Registration confirmation Notification</description>
+    <inlineHelpText>Data and time at which we needs to send Event Registration confirmation Notification</inlineHelpText>
+    <label>Send Event Order Notification Email Time</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

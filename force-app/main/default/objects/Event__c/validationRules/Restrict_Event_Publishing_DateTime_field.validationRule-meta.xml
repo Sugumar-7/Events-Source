@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Event_Publishing_DateTime_field</fullName>
+    <active>true</active>
+    <description>Restrict_Event_Publishing_DateTime_field for Manual Publishing.</description>
+    <errorConditionFormula>AND(
+TEXT( Manual_or_Scheduled_Publishing__c )  =  &quot;Manual Publishing&quot;,
+NOT(ISBLANK( Event_Publishing_Date_Time__c )))</errorConditionFormula>
+    <errorMessage>You can not set the Date Time for Manual Publishing.</errorMessage>
+</ValidationRule>

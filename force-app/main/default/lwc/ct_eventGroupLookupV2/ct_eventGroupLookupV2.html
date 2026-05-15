@@ -1,0 +1,58 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 08-10-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   07-29-2020   Creation Admin   Initial Version
+-->
+
+<template>
+  <!--Start-->
+  <div>
+    <div class="slds-form-element">
+      <label class="uopInputFieldLable slds-form-element__label">Search group</label>
+      <lightning-combobox label="By Event Type" id="eventType" variant="label-hidden" options={groupList} value={selectedGroup}
+              onchange={handleSelectedGroup} class="inputFieldPlaceHolder" placeholder="Please select event type"></lightning-combobox>
+              
+        <!-- <div class="slds-grid slds-form-element__control">
+            <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+              <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                <lightning-input
+                name="enter-search"
+                label="Search Groups"
+                type="search"
+                onchange={onInputValueChange}
+                placeholder="Please enter valid group"
+                value={searchString}
+                variant="label-hidden"
+                class="inputFieldPlaceHolder" 
+                is-loading={isLoading}
+            ></lightning-input>
+
+            </div>
+              <div>
+                <template if:true={isGroup}>
+                  <div id="listbox-unique-id" role="listbox">
+                    <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation" style="height: 10rem; overflow-y: scroll; display: block; min-width: auto; max-width: 100% ; width: 100%;"  >
+                      <template for:each={groupList} for:item="group" for:index="index">
+                        <li key={group.value} title={group.label} role="presentation" class="slds-listbox__item" data-selected-index={group.value} onclick={handleSelectedGroup}>
+                          <div class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                            <span class="slds-listbox__option-text slds-listbox__option-text_entity" name={index}>{group.label}</span>      
+                          </div>
+                        </li>  
+                      </template>
+                    </ul>
+                  </div>
+                </template>           
+              </div>
+            </div>
+        </div> -->
+      </div>
+    </div>
+<!--End-->
+
+    
+</template>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Registration_Source__c</fullName>
+    <description>Source from where Event Registration  was registered</description>
+    <inlineHelpText>Source from where Event Registration  was registered</inlineHelpText>
+    <label>Event Registration Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Web Order</fullName>
+                <default>false</default>
+                <label>Web Order</label>
+            </value>
+            <value>
+                <fullName>Internal Order</fullName>
+                <default>false</default>
+                <label>Internal Order</label>
+            </value>
+            <value>
+                <fullName>Manual Creation</fullName>
+                <default>false</default>
+                <label>Manual Creation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

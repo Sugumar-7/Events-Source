@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Post_Event_Approval_Status</fullName>
+    <active>true</active>
+    <description>The event must be approved to move the status to Post Event</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(Event_Status__c, &apos;Post Event&apos;),
+NOT(ISPICKVAL(Post_Event_Approval_Status__c, &apos;Approved&apos;))
+)</errorConditionFormula>
+    <errorMessage>The status of this event can only be changed to Post Event if the Post Event Approval Status is Approved. A batch process will run to update Event Registration status to Did Not Attend for registered attendees who did not attend when the status is changed</errorMessage>
+</ValidationRule>

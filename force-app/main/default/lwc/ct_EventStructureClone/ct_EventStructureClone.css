@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "'Encode Sans Expanded', sans-serif";
+  src: url(/s/sfsites/c/resource/ct_Font_Encode_Sans_Expanded);
+}
+
+@font-face {
+  font-family: "'Open Sans', sans-serif";
+  src: url(/s/sfsites/c/resource/font_Open_Sans);
+}
+
+.uopHeading {
+  color: #3C023C;
+  font-family: "'Encode Sans Expanded', sans-serif";
+  font-size: 15px !important;
+  font-weight: bold !important;
+}
+
+.titleHeading {
+  color: #3C023C;
+  font-family: "'Encode Sans Expanded', sans-serif";
+}
+
+.borderLine {
+  border-color: #3c023c;
+}
+
+.thankYouClass {
+  font-family: "'Encode Sans Expanded', sans-serif";
+  font-weight: bold !important;
+  color: #621360;
+}
+
+.completeButton {
+  width: 80% !important;
+  font-family: "'Encode Sans Expanded', sans-serif";
+  height: 30px;
+}
+
+.activeButton {
+  font-family: "'Encode Sans Expanded', sans-serif" !important;
+  font-size: 15px !important;
+  /* font: inherit; */
+  width: 150px;
+  background-color: #05884a !important;
+  color: #FFFFFF;
+  font-weight: 600;
+  /* border-radius: 3px; */
+  padding: 0px;
+  margin: 0px;
+  transition-duration: 0.3s;
+  transition-property: background-color, color;
+}
+
+.inactiveButton {
+  font-family: "'Encode Sans Expanded', sans-serif" !important;
+  font-size: 15px !important;
+  /* font: inherit; */
+  width: 150px;
+  font-weight: 600;
+  /* border-radius: 3px; */
+  padding: 0px;
+  margin: 0px;
+  transition-duration: 0.3s;
+  transition-property: background-color, color;
+}
+
+.spinnerContainer {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.uopInputFieldLabel {
+  color: #3C023C !important;
+  font-size: 14px !important;
+  font-family: "'Open Sans', sans-serif" !important;
+}
+
+.activeButton:hover {
+  background-color: #05884a !important;
+  color: white;
+  font-weight: 600;
+}
+
+.inputFiledPlaceHolder {
+  font-family: "'Open Sans', sans-serif" !important;
+}
+
+.activeButton:disabled {
+  background: #c9c7c5 !important;
+  border-color: #c9c7c5 !important;
+  color: #fff !important;
+}
+
+.headingStyle {
+  font-family: "'Encode Sans Expanded', sans-serif" !important;
+}

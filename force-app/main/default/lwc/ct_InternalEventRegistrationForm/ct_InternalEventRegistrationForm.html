@@ -1,0 +1,86 @@
+<!--
+  @description       : ct_InternalEventRegistrationForm.html
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 02-12-2021
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   08-13-2020   Creation Admin   Initial Version
+-->
+<template>
+  <div data-id="topElement" id="topElem" class="topElement"></div>
+  <div>
+    <div class="slds-is-relative">
+      <template if:true={showSpinnerBoolean}>
+        <div class="slds-m-vertical--xx-large">
+          <lightning-spinner alternative-text="Loading" variant="brand" size="medium"></lightning-spinner>
+        </div>
+      </template>
+
+      <template if:true={showForm}>
+        <template if:true={showTicketSelection}>
+          <c-ct_ticket-selection-v2 oncancelcheckineventregistration={triggerEventregisteredCustomEvent} onticketselectionextevent={showOrderDetails} is-internal-component="true" is-check-in-manager-component={isCheckInManagerComponent} selected-event-id={eventRecordId} order-by={ticket_Selection_orderBy} selected-tickets={ticket_Selection_selectedTickets}></c-ct_ticket-selection-v2>
+         <div class="slds-p-vertical_medium">
+          <!-- <button class="uopButtonStyle slds-button slds-button_destructive"
+            style="border-radius: 0px;" onclick={showOrderDetails}>Next</button> -->
+         </div>
+          
+        </template>
+
+        <template if:true={showEventOrderDetails}>
+          <c-ct_-event-order-details-v2 oneventorderpreviousevent={handleEventOrderDetailPreviousButton} selected-event={selectedEventRec} oneventordernextevent={handleEventOrderDetailNextButton} order-by={ticket_Selection_orderBy} selected-tickets={ticket_Selection_selectedTickets} tickets={event_Order_Details_ticket} ordered-tickets={event_Order_Details_OrderedTickets} is-internal-component="true" is-backfrom-order-summary={isBackfromOrderSummary} ></c-ct_-event-order-details-v2>
+        </template>
+
+        <template if:true={showTicketOrderSummary}>
+          <c-ct_ticket-order-summary-v2 data-id="ticketordersummarylwc" onordersummaryscrolltop={ticketOrderSummaryTop} oneventregistered={triggerEventregisteredCustomEvent} is-check-in-manager-component={isCheckInManagerComponent}  internal-registration-form-data={internalRegistrationFormData} onordersummarybackevent={handleTicketSummaryBackButton} tickets={event_Order_Details_ticket} ordered-by={ticket_Selection_orderBy} ordered-tickets={event_Order_Details_OrderedTickets} is-internal-component="true" ></c-ct_ticket-order-summary-v2>
+        </template>
+
+      </template>
+
+      <template if:true={showForceCheckinStatusOption}>
+        <div class="slds-p-top_x-small" style="display:flex; flex-direction: row; align-items: center">
+          <lightning-input type="checkbox" checked={internalRegistrationFormData.setEventRegCheckedIn} variant="label-hidden" id="setEventRegWalkIN" name="setEventRegCheckedIn" onchange={handleInternalRegFormData} ></lightning-input>
+          <label class="slds-form-element__label fieldLabelStyle" for="setEventRegWalkIN">Set Event Registrations to Checked In</label>
+        </div>
+      </template>
+<!-- <template if:true={showForm}>
+  <template if:false={showTicketOrderForm}>
+        <div class="slds-p-top--small headingStyle slds-text-heading_small slds-align_absolute-center" style={mainHeadingStyle}>
+          Event Registration
+        </div>
+
+        <h2 class="slds-p-top--small slds-p-bottom--small headingStyle">
+          Select Tickets:
+        </h2>
+        <template for:each={eventTickets} for:item="eachTicket">
+          <c-ct_ticket-tile event-ticket={eachTicket} key={eachTicket.Id}></c-ct_ticket-tile>
+        </template>
+  
+  <template if:true={isCheckInManagerComponent}>
+    <div class="slds-p-top_x-small" style="display:flex; flex-direction: row; align-items: center">
+      <lightning-input type="checkbox" checked={internalRegistrationFormData.setEventRegCheckedIn} variant="label-hidden" id="setEventRegWalkIN" name="setEventRegCheckedIn" onchange={handleInternalRegFormData} ></lightning-input>
+      <label class="slds-form-element__label fieldLabelStyle" for="setEventRegWalkIN">Set Event Registrations to Checked In</label>
+    </div>
+  </template>
+<div class="slds-grid slds-grid--pull-padded slds-p-vertical_small slds-align_absolute-center">
+
+    <div>
+        <button type="button" name="Cancel" value="Cancel" onclick={redirectToEventRecord} class="inactiveButton slds-button slds-button_destructive">Cancel</button>
+    </div>
+
+
+    <div class="slds-p-left--x-small">
+        <button type="button" name="Next" value="Next" onclick={handleTicketConfirm} class="activeButton slds-button slds-button_success">Next</button>
+    </div>
+
+</div>
+</template>
+<template if:true={showTicketOrderForm}>
+  <c-ct_ticket-order-form internal-registration-form-data={internalRegistrationFormData} event-id={eventRecordId} onticketorderformback={handleTicketOrderFormBack} oneventregistered={triggerEventregisteredCustomEvent} is-internal-component="true" is-check-in-manager-component={isCheckInManagerComponent} selected-tickets={selectedTickets}></c-ct_ticket-order-form>    
+</template>
+
+</template> -->
+</div>
+</div>
+</template>

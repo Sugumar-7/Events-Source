@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Includes_CCI__c</fullName>
+    <description>If faculty pick list contains Faculty of Creative and Cultural Industries will be checked. For reporting purposes.</description>
+    <formula>INCLUDES( Faculty__c, &quot;Faculty of Creative and Cultural Industries&quot;)</formula>
+    <label>Includes CCI</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

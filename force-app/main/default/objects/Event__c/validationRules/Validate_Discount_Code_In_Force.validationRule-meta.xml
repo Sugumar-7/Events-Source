@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Discount_Code_In_Force</fullName>
+    <active>true</active>
+    <description>Validation to prevent selecting Discount Codes which are expired or not started yet</description>
+    <errorConditionFormula>OR(
+    AND(
+      OR(
+          ISNEW(),
+          ISCHANGED( Discount_Code__c )
+        ),
+        Discount_Code__r.Valid_To__c  &lt;  TODAY()
+    ),
+    AND(
+          ISCHANGED(Discount_Code_In_Force__c),
+	  Discount_Code_In_Force__c = True,
+          Discount_Code__r.valid_From__c &gt;  TODAY()
+    )
+  )</errorConditionFormula>
+    <errorMessage>1. Past discount code can&apos;t be accepted.
+2. For selected future discount you can&apos;t set &apos;Discount Code In Force&apos; to True.</errorMessage>
+</ValidationRule>

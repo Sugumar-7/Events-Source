@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GDPR_Statement_Used__c</fullName>
+    <inlineHelpText>Each university business area has its own consent message / statement. The below consent capture fields will be auto populated further to the values in the custom settings. To change values contact the Salesforce Administrator.</inlineHelpText>
+    <label>Consent Statement</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Consent 1</fullName>
+                <default>false</default>
+                <label>Consent 1</label>
+            </value>
+            <value>
+                <fullName>Consent 2</fullName>
+                <default>false</default>
+                <label>Consent 2</label>
+            </value>
+            <value>
+                <fullName>Alumni &amp; Advancement</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Alumni &amp; Advancement</label>
+            </value>
+            <value>
+                <fullName>Marketing (RAO)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marketing (RAO)</label>
+            </value>
+            <value>
+                <fullName>Marketing (Student Recruitment)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marketing (Student Recruitment)</label>
+            </value>
+            <value>
+                <fullName>R&amp;I / B2B</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>R&amp;I / B2B</label>
+            </value>
+            <value>
+                <fullName>Student Recruitment &amp; RAO</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Student Recruitment &amp; RAO</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

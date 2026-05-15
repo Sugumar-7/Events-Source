@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Resitrict_Event_Activation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( Finance_Approval_Required__c = true,
+OR(
+  ISBLANK(TEXT( Finance_Approval_Status__c)),
+  ISPICKVAL(Finance_Approval_Status__c,&quot;Requested&quot;),
+  ISPICKVAL( Finance_Approval_Status__c ,&quot;Rejected&quot;),
+  ISPICKVAL( Event_Type__c, &apos;&apos;)
+),
+ISPICKVAL( PRIORVALUE(Event_Status__c) ,&quot;Planning&quot; ), ISCHANGED(Event_Status__c) , NOT(ISPICKVAL( Event_Status__c ,&quot;Cancelled&quot;)) )</errorConditionFormula>
+    <errorMessage>Event Status cannot be set to “Activation” as “Finance Approval Status” is not Approved ‘Sign Off Status’ must be ‘Approved’ in order to move to any other status except Cancelled</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Session__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Current Session in which the user is allocated for Check In Management</description>
+    <inlineHelpText>Current Session in which the user is allocated for Check In Management</inlineHelpText>
+    <label>Current Session</label>
+    <referenceTo>Session__c</referenceTo>
+    <relationshipLabel>QR Scanner User Configurations</relationshipLabel>
+    <relationshipName>QR_Scanner_User_Configurations</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

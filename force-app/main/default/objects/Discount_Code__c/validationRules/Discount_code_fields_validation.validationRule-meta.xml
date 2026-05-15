@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_code_fields_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND
+(  NOT( ISBLANK( Discount_Code__c ) ) ,
+   NOT( ISBLANK(  Discount_Code_Amount__c ) )
+)</errorConditionFormula>
+    <errorMessage>Discount Code % and a Discount Code Amount fields can not be populated at the same time</errorMessage>
+</ValidationRule>

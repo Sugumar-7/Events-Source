@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Finance_Approval_Status</fullName>
+    <active>true</active>
+    <description>If Finance Approval Required is not True, then restrict this field to be edited.</description>
+    <errorConditionFormula>AND( Finance_Approval_Required__c  = false, ISCHANGED( Finance_Approval_Status__c ) )</errorConditionFormula>
+    <errorDisplayField>Finance_Approval_Status__c</errorDisplayField>
+    <errorMessage>Finance Approval Required needs to be True for setting the Finance Approval Status.</errorMessage>
+</ValidationRule>

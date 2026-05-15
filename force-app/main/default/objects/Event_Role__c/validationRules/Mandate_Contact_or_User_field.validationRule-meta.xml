@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandate_Contact_or_User_field</fullName>
+    <active>false</active>
+    <description>Mandate Role and Contact Or User Field</description>
+    <errorConditionFormula>OR (ISBLANK(Text(Role__c) ),
+      AND( ISBLANK( Contact__c ), ISBLANK( User__c )),
+      AND( NOT(ISBLANK( Contact__c )), NOT(ISBLANK( User__c )))
+    )</errorConditionFormula>
+    <errorMessage>You must add Role and populate either a Contact or a User but not both</errorMessage>
+</ValidationRule>

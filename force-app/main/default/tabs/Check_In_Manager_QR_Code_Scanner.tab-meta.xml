@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This tab is used to host ct_CheckInManagerQRCodeScanner LWC</description>
+    <label>Check In Setup</label>
+    <motif>Custom29: PDA</motif>
+    <page>ct_CheckInManagerQRCodeScanner</page>
+</CustomTab>

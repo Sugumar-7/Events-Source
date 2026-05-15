@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Role__c</fullName>
+    <label>Role</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Chair</fullName>
+                <default>false</default>
+                <label>Chair</label>
+            </value>
+            <value>
+                <fullName>Event Organiser</fullName>
+                <default>false</default>
+                <label>Event Organiser</label>
+            </value>
+            <value>
+                <fullName>Event staff</fullName>
+                <default>false</default>
+                <label>Event staff</label>
+            </value>
+            <value>
+                <fullName>External Speaker</fullName>
+                <default>false</default>
+                <label>External Speaker</label>
+            </value>
+            <value>
+                <fullName>Technician</fullName>
+                <default>false</default>
+                <label>Technician</label>
+            </value>
+            <value>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+                <label>Volunteer</label>
+            </value>
+            <value>
+                <fullName>Advancement and Alumni</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Advancement and Alumni</label>
+            </value>
+            <value>
+                <fullName>Careers and Employability</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Careers and Employability</label>
+            </value>
+            <value>
+                <fullName>Catering</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Catering</label>
+            </value>
+            <value>
+                <fullName>Degree Apprenticeships</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Degree Apprenticeships</label>
+            </value>
+            <value>
+                <fullName>Faculty Staff</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Faculty Staff</label>
+            </value>
+            <value>
+                <fullName>Faculty Student Guides</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Faculty Student Guides</label>
+            </value>
+            <value>
+                <fullName>Front of House</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Front of House</label>
+            </value>
+            <value>
+                <fullName>Host</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Host</label>
+            </value>
+            <value>
+                <fullName>Marketing &amp; Communications</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marketing &amp; Communications</label>
+            </value>
+            <value>
+                <fullName>Marketing Campaigns Team</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marketing Campaigns Team</label>
+            </value>
+            <value>
+                <fullName>Media/communications team</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Media/communications team</label>
+            </value>
+            <value>
+                <fullName>Postgraduate Recruitment Team</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Postgraduate Recruitment Team</label>
+            </value>
+            <value>
+                <fullName>Recruitment and Outreach</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Recruitment and Outreach</label>
+            </value>
+            <value>
+                <fullName>Speaker liaison</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Speaker liaison</label>
+            </value>
+            <value>
+                <fullName>Sport and Recreation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sport and Recreation</label>
+            </value>
+            <value>
+                <fullName>Student Ambassador</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Student Ambassador</label>
+            </value>
+            <value>
+                <fullName>Student Finance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Student Finance</label>
+            </value>
+            <value>
+                <fullName>Venue contact</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Venue contact</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

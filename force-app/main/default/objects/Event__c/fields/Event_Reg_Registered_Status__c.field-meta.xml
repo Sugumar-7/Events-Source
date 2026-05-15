@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Reg_Registered_Status__c</fullName>
+    <description>Please enter the Campaign Member Status (on the related Campaign) that you would like to map this Event Registration Status to. Please note that the text used must be identical</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please enter the Campaign Member Status (on the related Campaign) that you would like to map this Event Registration Status to. Please note that the text used must be identical</inlineHelpText>
+    <label>Event Reg &apos;Registered&apos; Status</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

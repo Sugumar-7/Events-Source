@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "'Encode Sans Expanded', sans-serif";
+  src: url(/s/sfsites/c/resource/ct_Font_Encode_Sans_Expanded);
+}
+
+@font-face {
+  font-family: "'Open Sans', sans-serif";
+  src: url(/s/sfsites/c/resource/font_Open_Sans);
+}
+
+.formHeaderStyle{
+  background-color: #351c75;
+}
+
+.headerFont{
+  color: white;
+  font-family: "'Encode Sans Expanded', sans-serif" !important;
+  font-size: 15px !important;
+
+}
+
+.searchButtonStyle{
+  background-color:  #351c75;
+  font-family: "'Encode Sans Expanded', sans-serif";
+  height: 30px;
+  width: 120px;
+  border-color: #FFFFFF!important;
+  color: #FFFFFF;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  transition-duration: 0.3s;
+  transition-property: background-color, color;
+}
+
+.fieldLabelStyle{
+  font-family: "'Open Sans', sans-serif" !important;
+  font-size: 14px !important;
+  font-weight: normal;
+  color: #505457;
+}
+@media screen and (min-width: 769px) {
+  .arrowStyle{
+    background-color: #027119;
+    width: 43px; 
+    height: 50px;
+    padding:5px;
+    margin: 5px;
+    font-weight: 600;
+    border-radius: 3px !important;
+    font-size: 13px;
+    font-family: "'Encode Sans Expanded', sans-serif" !important;
+  }
+  .pageStyle{
+    background-color: #069f56;
+    width: 43px; 
+    height: 50px;
+    margin: 5px;
+    font-weight: 600;
+    border-radius: 3px !important;
+    font-size: 13px;
+    font-family: "'Encode Sans Expanded', sans-serif" !important;
+  }
+  .licolor{
+    color:#ffffff;
+    width: 43px; 
+    height: 50px;
+    box-shadow: none;
+    font-weight: 600;
+    border-radius: 3px !important;
+    font-size: 13px;
+    font-family: "'Encode Sans Expanded', sans-serif" !important;
+  }
+  svg{
+    fill: #ffffff;
+    height: 40px;
+    font-weight: 600 !important;
+    padding-top: 5px;
+  }
+  .direction{
+    flex-direction: row !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .arrowStyle{
+    background-color: #027119;
+    width: 40px; 
+    height: 40px;
+    padding:5px;
+    margin: 5px;
+    font-weight: 600;
+    border-radius: 3px !important;
+    font-size: 13px;
+    font-family: "'Encode Sans Expanded', sans-serif" !important;
+  }
+  .pageStyle{
+    background-color: #069f56;
+    width: 40px; 
+    height: 40px;
+    margin: 5px;
+    font-weight: 600;
+    border-radius: 3px !important;
+    font-size: 13px;
+    font-family: "'Encode Sans Expanded', sans-serif" !important;
+  }
+  .licolor{
+    color:#ffffff;
+    width: 40px; 
+    height: 40px;
+    box-shadow: none;
+    font-weight: 600;
+    border-radius: 3px !important;
+    font-size: 13px;
+    font-family: "'Encode Sans Expanded', sans-serif" !important;
+  }
+  svg{
+    fill: #ffffff;
+    height: 40px;
+    font-weight: 600 !important;
+    padding-top: 5px;
+  }
+  .direction{
+    flex-direction: column !important;
+  }
+  .boxStyle{
+    padding-top: 12px;
+  }
+}
+
+.arrowStyle:hover {
+  background-color: #f75409 !important;
+  color: white;
+}
+.pageStyle:hover {
+  background-color: #069f56 !important;
+  color: white;
+}
+/* [id|="1"] {
+  background: #abaaaa;
+} */
+
+.class1{
+  background-color: #abaaaa !important;
+}
+a{
+  text-decoration: none;
+}
+.customSelect select {
+  padding-right: 1.25rem;
+  min-height: inherit;
+  line-height: normal;
+  min-width: 10rem;  
+}
+.customSelect label {
+  margin-top: .1rem;
+}
+.customSelect .slds-select_container::before {
+  border-bottom: 0;
+}
+.customInput {
+  width: 3rem;
+  height: 1.4rem;
+  text-align: center;
+  border: 1px solid #dddbda;
+  border-radius: 3px;
+  background-color:#fff;
+}
+.slds-select_container:after{
+  bottom: calc(0.875rem - 1px);
+}

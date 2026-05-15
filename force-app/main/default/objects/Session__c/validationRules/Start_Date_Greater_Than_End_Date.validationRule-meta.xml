@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Date_Greater_Than_End_Date</fullName>
+    <active>true</active>
+    <description>Session End date and time should not be before the Session Start date and time</description>
+    <errorConditionFormula>IF(Session_End_Date__c  == Session_Start_Date__c,
+End_Time__c  &lt; Start_Time__c,
+Session_End_Date__c &lt; Session_Start_Date__c )</errorConditionFormula>
+    <errorMessage>Session End date and time should not be before the Session Start date and time</errorMessage>
+</ValidationRule>

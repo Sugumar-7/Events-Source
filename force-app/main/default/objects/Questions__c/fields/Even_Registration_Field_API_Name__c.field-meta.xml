@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Even_Registration_Field_API_Name__c</fullName>
+    <description>This field is used to identify API Name of the field in Event Registration used map the answer given through the web form</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please choose a appropriate field API from Event Registration object for this question</inlineHelpText>
+    <label>Field API Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

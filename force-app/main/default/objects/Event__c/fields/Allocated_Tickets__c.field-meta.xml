@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allocated_Tickets__c</fullName>
+    <inlineHelpText>The number of Event Product Tickets allocated further to Event Registrations</inlineHelpText>
+    <label>Total Quantity Allocated</label>
+    <summarizedField>Event_Product__c.Quantity_Allocated__c</summarizedField>
+    <summaryForeignKey>Event_Product__c.Event__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Statement_Text_above_dec__c</fullName>
+    <description>Statement Text according to picklist value.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Statement Text (above dec)</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

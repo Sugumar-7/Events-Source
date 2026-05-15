@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Registration_Status__c</fullName>
+    <description>Event Registration Status</description>
+    <inlineHelpText>Event Registration Status</inlineHelpText>
+    <label>Event Registration Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>false</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>Invited</fullName>
+                <default>false</default>
+                <label>Invited</label>
+            </value>
+            <value>
+                <fullName>Registered</fullName>
+                <default>true</default>
+                <label>Registered</label>
+            </value>
+            <value>
+                <fullName>Attended / Checked In</fullName>
+                <default>false</default>
+                <label>Attended / Checked In</label>
+            </value>
+            <value>
+                <fullName>Attended / Checked Out</fullName>
+                <default>false</default>
+                <label>Attended / Checked Out</label>
+            </value>
+            <value>
+                <fullName>Did Not Attend</fullName>
+                <default>false</default>
+                <label>Did Not Attend</label>
+            </value>
+            <value>
+                <fullName>Declined</fullName>
+                <default>false</default>
+                <label>Declined</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

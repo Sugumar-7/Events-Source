@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cancellation_Reason__c</fullName>
+    <description>This field is used to determine the ticket cancellation reason from the web form</description>
+    <inlineHelpText>Please choose the appropriate reason for the cancellation of this registration</inlineHelpText>
+    <label>Cancellation Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Provided</fullName>
+                <default>false</default>
+                <label>Not Provided</label>
+            </value>
+            <value>
+                <fullName>Event no longer relevant</fullName>
+                <default>false</default>
+                <label>Event no longer relevant</label>
+            </value>
+            <value>
+                <fullName>Cannot make the date</fullName>
+                <default>false</default>
+                <label>Cannot make the date</label>
+            </value>
+            <value>
+                <fullName>Too far to travel</fullName>
+                <default>false</default>
+                <label>Too far to travel</label>
+            </value>
+            <value>
+                <fullName>Do not want to say</fullName>
+                <default>false</default>
+                <label>Do not want to say</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Date Conflict</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Date Conflict</label>
+            </value>
+            <value>
+                <fullName>Event Not Relevant</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Event Not Relevant</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

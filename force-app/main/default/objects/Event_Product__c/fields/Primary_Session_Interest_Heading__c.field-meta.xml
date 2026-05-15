@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Session_Interest_Heading__c</fullName>
+    <description>Rich text field to hold the heading configuration for the Primary session Interest Heading in the Registration form</description>
+    <inlineHelpText>Heading configured Primary session Interest Heading</inlineHelpText>
+    <label>Primary Session Interest Heading</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

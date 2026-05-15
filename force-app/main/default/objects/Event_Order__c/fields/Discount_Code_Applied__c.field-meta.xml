@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Code_Applied__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is used to store whether the discount is applied for this order</description>
+    <inlineHelpText>This field is automated</inlineHelpText>
+    <label>Discount Code Applied</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

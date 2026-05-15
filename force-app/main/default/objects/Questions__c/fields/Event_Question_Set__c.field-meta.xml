@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Question_Set__c</fullName>
+    <description>This field is to relate question record to Event Question Set record</description>
+    <inlineHelpText>Please choose appropriate Event Question Set for this record</inlineHelpText>
+    <label>Event Question Set</label>
+    <referenceTo>Event_Question_Set__c</referenceTo>
+    <relationshipLabel>Questions</relationshipLabel>
+    <relationshipName>Questions</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

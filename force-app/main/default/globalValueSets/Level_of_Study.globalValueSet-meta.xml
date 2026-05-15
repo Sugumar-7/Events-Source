@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Continuous Professional Development (CPD)</fullName>
+        <default>false</default>
+        <label>Continuous Professional Development (CPD)</label>
+    </customValue>
+    <customValue>
+        <fullName>CPD</fullName>
+        <default>false</default>
+        <label>CPD</label>
+    </customValue>
+    <customValue>
+        <fullName>Degree Apprenticeship</fullName>
+        <default>false</default>
+        <label>Degree Apprenticeship</label>
+    </customValue>
+    <customValue>
+        <fullName>Distance Learning</fullName>
+        <default>false</default>
+        <label>Distance Learning</label>
+    </customValue>
+    <customValue>
+        <fullName>Foundation</fullName>
+        <default>false</default>
+        <label>Foundation</label>
+    </customValue>
+    <customValue>
+        <fullName>HNC</fullName>
+        <default>false</default>
+        <label>HNC</label>
+    </customValue>
+    <customValue>
+        <fullName>HND</fullName>
+        <default>false</default>
+        <label>HND</label>
+    </customValue>
+    <customValue>
+        <fullName>Learning at work</fullName>
+        <default>false</default>
+        <label>Learning at work</label>
+    </customValue>
+    <customValue>
+        <fullName>PGCE</fullName>
+        <default>false</default>
+        <label>PGCE</label>
+    </customValue>
+    <customValue>
+        <fullName>Postgraduate Research</fullName>
+        <default>false</default>
+        <label>Postgraduate Research</label>
+    </customValue>
+    <customValue>
+        <fullName>Postgraduate Taught</fullName>
+        <default>false</default>
+        <label>Postgraduate Taught</label>
+    </customValue>
+    <customValue>
+        <fullName>Postgraduate Taught cert/dip</fullName>
+        <default>false</default>
+        <label>Postgraduate Taught cert/dip</label>
+    </customValue>
+    <customValue>
+        <fullName>Short Course</fullName>
+        <default>false</default>
+        <label>Short Course</label>
+    </customValue>
+    <customValue>
+        <fullName>Undergraduate</fullName>
+        <default>false</default>
+        <label>Undergraduate</label>
+    </customValue>
+    <customValue>
+        <fullName>Undergraduate cert/dip</fullName>
+        <default>false</default>
+        <label>Undergraduate cert/dip</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>No comms</fullName>
+        <default>false</default>
+        <label>No comms</label>
+    </customValue>
+    <customValue>
+        <fullName>Postgraduate</fullName>
+        <default>false</default>
+        <label>Postgraduate</label>
+    </customValue>
+    <customValue>
+        <fullName>Work-based learning at work - undergraduate (level 6)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Work-based learning at work - undergraduate (level 6)</label>
+    </customValue>
+    <customValue>
+        <fullName>Work-based learning at work - postgraduate (level 7)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Work-based learning at work - postgraduate (level 7)</label>
+    </customValue>
+    <customValue>
+        <fullName>Degree apprenticeship - postgraduate (level 7)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Degree apprenticeship - postgraduate (level 7)</label>
+    </customValue>
+    <customValue>
+        <fullName>Degree apprenticeship - undergraduate (level 6)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Degree apprenticeship - undergraduate (level 6)</label>
+    </customValue>
+    <masterLabel>Level of Study</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

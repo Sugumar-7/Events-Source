@@ -1,0 +1,66 @@
+<!--
+  @description       : Toast message for Components inside Lightning out
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 10-23-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   10-23-2020   Creation Admin   Initial Version
+-->
+<template>
+   <div data-id="toastModel" style="height: 4rem;" class="slds-hide">
+      <div class="slds-notify_container slds-is-relative">
+          <div class={mainDivClass} role="status">
+              <span class="slds-assistive-text">{variant}</span>
+              <span class={messageDivClass} title={message}>
+                <lightning-icon icon-name={iconName} size="small" variant="inverse"></lightning-icon>
+              </span>
+              <div class="slds-notify__content">
+                  <h2 class="slds-text-heading_small ">{message}</h2>
+              </div>
+              <div class="slds-notify__close">
+                  <button class="slds-button slds-button_icon slds-button_icon-inverse" title="Close" onclick={closeModel}>
+                      <lightning-icon icon-name="utility:close" size="small" variant="inverse"> </lightning-icon>
+                      <span class="slds-assistive-text">Close</span>
+                  </button>
+              </div> 
+          </div>
+      </div>
+  </div> 
+
+  <!-- <div data-id="toastModel" style="height: 4rem;" class="slds-hide">
+    <div class="slds-notify_container slds-notify_container--inline slds-notify_container--mobile slds-toast_container--inline">
+      <div class={mainDivClass} role="alert">
+         <span class="slds-assistive-text">{variant}</span>
+
+         <div class="slds-grid slds-wrap">
+          <div class="slds-col slds-size_1-of-12">
+            <span></span>
+          </div>
+          <div class="slds-col slds-size_8-of-12">
+            <span>
+              {message}
+            </span>
+          </div>
+          <div class="slds-col slds-size_3-of-12">
+            <span>
+              <button class="slds-button slds-button_icon slds-button_icon-inverse" title="Close" onclick={closeModel}>
+                <lightning-icon icon-name="utility:close" size="small" variant="inverse"> </lightning-icon>
+                <span class="slds-assistive-text">Close</span>
+            </button>
+            </span>
+          </div>
+          </div>
+
+
+
+
+      
+        
+      </div>
+    </div>
+    </div> -->
+
+
+</template>

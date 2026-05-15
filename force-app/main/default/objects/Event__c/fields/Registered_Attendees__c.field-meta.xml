@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registered_Attendees__c</fullName>
+    <inlineHelpText>Running total of Event Registrations for this Event</inlineHelpText>
+    <label>Registered</label>
+    <summaryFilterItems>
+        <field>Event_Registration__c.Event_Registration_Status__c</field>
+        <operation>equals</operation>
+        <value>Registered</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Event_Registration__c.Event__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

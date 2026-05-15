@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Session_Display_Name__c</fullName>
+    <description>This field is used to store the Session Display</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Session Display name is shown to prospective attendees via Session Registration UI &amp; also on the dynamic session picklist</inlineHelpText>
+    <label>Session Display Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

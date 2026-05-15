@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Vendor_Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Primary vendor contact for this event.</description>
+    <inlineHelpText>This is the primary vendor contact for this event, filtered by list of available contacts for this vendor account.</inlineHelpText>
+    <label>Primary Vendor Contact</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Contact.AccountId</field>
+            <operation>equals</operation>
+            <valueField>$Source.Event_Vendor_Account__c</valueField>
+        </filterItems>
+        <infoMessage>Please select the primary vendor contact for this event. Choose from the list of available contacts for this vendor</infoMessage>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Events</relationshipLabel>
+    <relationshipName>Events</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

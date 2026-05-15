@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Area__c</fullName>
+    <label>Business Area</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MBA</fullName>
+                <default>false</default>
+                <label>MBA</label>
+            </value>
+            <value>
+                <fullName>Executive Degrees</fullName>
+                <default>false</default>
+                <label>Executive Degrees</label>
+            </value>
+            <value>
+                <fullName>Executive Diplomas</fullName>
+                <default>false</default>
+                <label>Executive Diplomas</label>
+            </value>
+            <value>
+                <fullName>On-Campus Open Programmes</fullName>
+                <default>false</default>
+                <label>On-Campus Open Programmes</label>
+            </value>
+            <value>
+                <fullName>Open Online Programmes</fullName>
+                <default>false</default>
+                <label>Open Online Programmes</label>
+            </value>
+            <value>
+                <fullName>Custom Programmes</fullName>
+                <default>false</default>
+                <label>Custom Programmes</label>
+            </value>
+            <value>
+                <fullName>Student Marketing</fullName>
+                <default>false</default>
+                <label>Student Marketing</label>
+            </value>
+            <value>
+                <fullName>Student Services</fullName>
+                <default>false</default>
+                <label>Student Services</label>
+            </value>
+            <value>
+                <fullName>Alumni &amp; Advancement</fullName>
+                <default>false</default>
+                <label>Alumni &amp; Advancement</label>
+            </value>
+            <value>
+                <fullName>Business Services</fullName>
+                <default>false</default>
+                <label>Business Services</label>
+            </value>
+            <value>
+                <fullName>Marketing &amp; Communications</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marketing &amp; Communications</label>
+            </value>
+            <value>
+                <fullName>Marketing (RAO)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marketing (RAO)</label>
+            </value>
+            <value>
+                <fullName>Marketing (Student Recruitment)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marketing (Student Recruitment)</label>
+            </value>
+            <value>
+                <fullName>R&amp;I / B2B</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>R&amp;I / B2B</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

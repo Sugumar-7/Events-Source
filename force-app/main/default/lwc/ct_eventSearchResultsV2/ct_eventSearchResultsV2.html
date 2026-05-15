@@ -1,0 +1,66 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 09-11-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   07-22-2020   Creation Admin   Initial Version
+-->
+<template>
+  <template if:true={IdParam}>
+    <div class="slds-p-bottom--small" style="width: 100%;">
+      <div class="slds-align_absolute-center">
+       <!-- <img src={uopLOGO} style={getUopLogoStyle}></img>-->
+      </div>
+    </div> 
+    <div class="slds-align_absolute-center fieldLabelStyle">
+      <p>
+        {noEventRegistrationPage}
+      </p>
+    </div>
+  </template>
+    <template if:true={eventSearchResults}>
+      <template if:false={existingEventRegistration}>
+      <div class="slds-grid slds-p-around--small ">
+        <div class="slds-col">
+          <div class="slds-float_right">
+            <label class="slds-form-element__label  fieldLabelStyle" for="eventType">Sort by</label>
+          <lightning-combobox label="By Event Type" class="fieldLabelStyle" id="eventType" variant="label-hidden" options={options} value={sortValue}
+            onchange={sortSearchResults} placeholder="Name"></lightning-combobox>
+          </div>
+        </div>
+     </div>
+    </template>
+      
+      <!-- <lightning-layout>
+      
+        <lightning-layout-item class="slds-p-around--x-small slds-size_1-of-6">
+         
+        </lightning-layout-item>
+      </lightning-layout> -->
+
+      <div class="slds-grid slds-grid_vertical">
+        <template for:each={recordsToDisplay} for:item="eachEvent">
+          <template if:true={selectedEvent}>
+            <div key={eachEvent.Id}>
+              <!-- <c-ct_ticket-selection-v2 selected-event-id={eachEvent.Id} ></c-ct_ticket-selection-v2> -->
+              <c-ct_ticket-selection-v2-clone selected-event-id={eachEvent.Id} ></c-ct_ticket-selection-v2-clone>
+            </div>
+          </template>
+          <template if:false={selectedEvent}>
+            <div class="slds-col" key={eachEvent.Id}>
+              <span>
+                <c-ct_event-tile-v2 event-detail={eachEvent}></c-ct_event-tile-v2>
+              </span>
+            </div>
+          </template>
+        </template>
+      </div>
+      <template if:false={selectedEvent}>          
+      <c-ct_lightning-paginator-v2 records={eventSearchResults} total-records={eventSearchResults.length} show-search-box="true" onpaginatorchange={handlePaginatorChange}>
+      </c-ct_lightning-paginator-v2>
+    </template>
+      </template>
+    </template>

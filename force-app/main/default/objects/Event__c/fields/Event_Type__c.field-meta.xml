@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Type__c</fullName>
+    <label>Event Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Business_Area__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Open Day</fullName>
+                <default>false</default>
+                <label>Open Day</label>
+            </value>
+            <value>
+                <fullName>Virtual Helpdesk</fullName>
+                <default>false</default>
+                <label>Virtual Helpdesk</label>
+            </value>
+            <value>
+                <fullName>In Conversation With</fullName>
+                <default>false</default>
+                <label>In Conversation With</label>
+            </value>
+            <value>
+                <fullName>Applicant Experience Day</fullName>
+                <default>false</default>
+                <label>Applicant Experience Day</label>
+            </value>
+            <value>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+                <label>Webinar</label>
+            </value>
+            <value>
+                <fullName>Partner Event</fullName>
+                <default>false</default>
+                <label>Partner Event</label>
+            </value>
+            <value>
+                <fullName>Graduation Event</fullName>
+                <default>false</default>
+                <label>Graduation Event</label>
+            </value>
+            <value>
+                <fullName>PG Student Event</fullName>
+                <default>false</default>
+                <label>PG Student Event</label>
+            </value>
+            <value>
+                <fullName>Alumni Networking</fullName>
+                <default>false</default>
+                <label>Alumni Networking</label>
+            </value>
+            <value>
+                <fullName>Alumni Dinner</fullName>
+                <default>false</default>
+                <label>Alumni Dinner</label>
+            </value>
+            <value>
+                <fullName>Conference</fullName>
+                <default>false</default>
+                <label>Conference</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>MBA</controllingFieldValue>
+            <controllingFieldValue>Executive Degrees</controllingFieldValue>
+            <controllingFieldValue>Executive Diplomas</controllingFieldValue>
+            <controllingFieldValue>On-Campus Open Programmes</controllingFieldValue>
+            <controllingFieldValue>Open Online Programmes</controllingFieldValue>
+            <controllingFieldValue>Custom Programmes</controllingFieldValue>
+            <controllingFieldValue>Student Marketing</controllingFieldValue>
+            <valueName>Open Day</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MBA</controllingFieldValue>
+            <controllingFieldValue>Executive Degrees</controllingFieldValue>
+            <controllingFieldValue>Executive Diplomas</controllingFieldValue>
+            <controllingFieldValue>On-Campus Open Programmes</controllingFieldValue>
+            <controllingFieldValue>Open Online Programmes</controllingFieldValue>
+            <controllingFieldValue>Custom Programmes</controllingFieldValue>
+            <valueName>Virtual Helpdesk</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MBA</controllingFieldValue>
+            <controllingFieldValue>Executive Degrees</controllingFieldValue>
+            <controllingFieldValue>Executive Diplomas</controllingFieldValue>
+            <controllingFieldValue>On-Campus Open Programmes</controllingFieldValue>
+            <controllingFieldValue>Open Online Programmes</controllingFieldValue>
+            <controllingFieldValue>Custom Programmes</controllingFieldValue>
+            <valueName>In Conversation With</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student Marketing</controllingFieldValue>
+            <valueName>Applicant Experience Day</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student Marketing</controllingFieldValue>
+            <valueName>Webinar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student Marketing</controllingFieldValue>
+            <valueName>Partner Event</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student Services</controllingFieldValue>
+            <valueName>Graduation Event</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student Services</controllingFieldValue>
+            <valueName>PG Student Event</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alumni &amp; Advancement</controllingFieldValue>
+            <valueName>Alumni Networking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alumni &amp; Advancement</controllingFieldValue>
+            <valueName>Alumni Dinner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
+            <valueName>Conference</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

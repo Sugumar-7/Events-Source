@@ -1,0 +1,349 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-11-2021
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   07-23-2020   Creation Admin   Initial Version
+-->
+<template>
+  <template if:true={spinnerBoolean}>
+    <div class="slds-spinner_container">
+      <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+    </div>
+  </template>
+
+  <!-- QR CODE DIV START  -->
+  <!-- A div For QR Code Generation purpose which will be hidden -->
+    <div class="slds-align_absolute-center" style="width:100%; display:none" data-id="QRCard" >
+      <canvas data-id="QRCode" lwc:dom="manual"></canvas>
+    </div>
+  <!-- QR CODE DIV END  -->
+<h1 class="slds-p-top_x-small slds-card__header-title headingStyle capsStyle">{orderSummaryTitle}</h1>
+<div class="slds-p-vertical_small fieldLabelStyle">
+  {orderSummaryMessage}
+</div>
+    <!--DISPLAY EVENT DETAILS START-->
+    <c-ct_event-summary-box-v2 selected-event={selectedEvent}></c-ct_event-summary-box-v2>
+    <!--DISPLAY EVENT DETAILS END-->
+
+<h2 class="slds-p-top_small slds-card__header-title headingStyle">Ordered By</h2>
+<!-- <div class="fieldLabelStyle" >
+  <label class="slds-form-element__label fieldLabelStyle" for="firstName">First Name<abbr class="slds-required" title="required">*</abbr></label>
+  <lightning-input type="text" id="firstName" variant="label-hidden" label="First Name" value={orderedBy.firstName}
+     read-only="true" class="fieldLabelStyle"></lightning-input>
+  
+</div>
+<div class="fieldLabelStyle" >
+  <label class="slds-form-element__label fieldLabelStyle" for="lastName">Last Name<abbr class="slds-required" title="required">*</abbr></label>
+  <lightning-input type="text" id="lastName" variant="label-hidden"  label="Last Name" value={orderedBy.lastName}
+   read-only="true"></lightning-input>
+</div>
+<div class="fieldLabelStyle" >
+  <label class="slds-form-element__label fieldLabelStyle" for="email">Email<abbr class="slds-required" title="required">*</abbr></label>
+  <lightning-input type="email" id="email" variant="label-hidden"  label="Email" value={orderedBy.email} read-only="true"></lightning-input>
+</div> -->
+<div class="fieldLabelStyle" style="padding-top:12px;">
+  {orderedBy.firstName} {orderedBy.lastName}
+</div>
+<div class="fieldLabelStyle" style="padding-top:12px;">
+  Email: {orderedBy.email}
+</div>
+<template if:true={orderedBy.mobile}>
+  <div class="fieldLabelStyle" style="padding-top:12px;">
+    Mobile number: {orderedBy.mobile}
+    <!-- <label class="slds-form-element__label fieldLabelStyle" for="Mobile">Mobile number<abbr class="slds-required" title="required">*</abbr></label>
+    <lightning-input type="tel" variant="label-hidden" id="Mobile" name="Mobile" placeholder="" value={orderedBy.mobile} read-only="true" required></lightning-input> -->
+  </div>
+</template>
+
+<template if:true={paymentSuccess}>
+    <div class="slds-p-bottom--small" style="width: 100%;">
+      <div class="slds-align_absolute-center">
+       <!-- <img src={uopLOGO} style={getUopLogoStyle}></img>-->
+      </div>
+    </div>
+
+    <h1 class="slds-align_absolute-center thankYouFont" style={thankYouFontStyle}>
+      Thank you
+    </h1>
+    <div class="uopBrandLabel slds-p-around--small" style="text-align: justify;">
+      Event registered Successfully!!
+    </div>
+  </template>
+<template if:false={paymentSuccess}>
+  <div class="fieldLabelStyle">
+    <!-- <lightning-datatable key-field="id" data={tickets} columns={columns} hide-checkbox-column>
+    </lightning-datatable> -->
+    <h2 class="slds-p-bottom_xx-small slds-p-top_small slds-card__header-title headingStyle">Tickets</h2>
+    <template for:each={tickets} for:item="eachTicket">
+      <div class="slds-p-vertical_x-small" key={eachTicket.ticketNumber}>
+        <c-ct_ticket-tile-v2 event-ticket={eachTicket} is-order-summary="true" key={eachTicket.Id} ></c-ct_ticket-tile-v2>
+      </div>
+    </template>
+    
+  </div>
+  <!--Discount Input-->
+  <template if:true={showPaymentButton}>
+    <div class="slds-p-vertical--xx-small slds-border_bottom"></div>
+    <template if:true={isDiscountCodeInForce}>
+      <div>
+        <div class="slds-form-element">
+           <label class="slds-form-element__label fieldLabelStyle">Discount code</label>
+           <div class={getStyleClass}>
+            <div class={getContainerClass}>
+              <lightning-input type="text" placeholder="Enter a discount code if you have one" class="slds-var-p-bottom_small fieldLabelStyle" id="discountCode" variant="label-hidden" name="discountCode" label="Discount Code" disabled={orderedBy.isDiscountedOrder}  value={discountCode} onchange={handleDiscountChange}>
+              </lightning-input>
+            </div>
+            <div class="slds-grid">
+              <template if:false={orderedBy.isDiscountedOrder}>
+                <button class="uopButtonStyle slds-button slds-button_destructive slds-p-top_medium"
+                  style="border-radius: 0px;height: 30px; width: 150px;" onclick={handleApply}>Apply</button>
+                  </template> 
+              <button class="uopButtonStyle slds-button slds-button_destructive slds-p-top_medium"
+          style="border-radius: 0px;height: 30px; width: 150px;" onclick={handleClear}>Clear</button>
+            </div>
+            </div>
+            <template if:true={discountError}>
+              <label class="slds-form-element__label fieldLabelStyle" style="color: red; font-size: 12px;" >Please provide a valid discount code.</label><br/>
+            </template>
+        </div>
+      </div>
+    </template>
+
+
+    <!-- <div class="slds-grid">
+
+      <div class="slds-col slds-size_2-of-3">
+        <span>
+          <label class="slds-form-element__label fieldLabelStyle" for="discountCode">Discount code</label>
+          <lightning-input type="text" class="slds-var-p-bottom_small" id="discountCode" variant="label-hidden" name="discountCode" label="Discount Code" disabled={orderedBy.isDiscountedOrder}  value={discountCode} onchange={handleDiscountChange}>
+          </lightning-input>
+        </span>
+      </div>
+      <div class="slds-col slds-size_1-of-3">
+        <button class="uopButtonStyle slds-button slds-button_destructive slds-p-top_medium"
+        style="border-radius: 0px;height: 30px; width: 150px;" onclick={handleClear}>Clear</button>
+        <template if:false={orderedBy.isDiscountedOrder}>
+        <button class="uopButtonStyle slds-button slds-button_destructive slds-p-top_medium"
+          style="border-radius: 0px;height: 30px; width: 150px;" onclick={handleApply}>Apply</button>
+          </template>
+      </div>
+    </div> -->
+
+  </template>
+  <!--Discount Input-->
+
+  <h2 class="slds-p-top_x-small slds-card__header-title headingStyle">
+    Total:
+
+  </h2>
+
+  <div class="slds-p-top_x-small fieldLabelStyle">
+    
+    £<lightning-formatted-number value={totalPrice}></lightning-formatted-number>
+
+
+  </div>
+
+  <!-- <h2 class="slds-p-top_medium slds-card__header-title headingStyle">{consentCaptureTitle}</h2>
+
+  <div class="slds-p-vertical_small fieldLabelStyle">
+    <lightning-formatted-rich-text value={consentCaptureStatementTextAboveDec}></lightning-formatted-rich-text>
+  </div>
+
+  <div class="slds-p-vertical_small fieldLabelStyle">
+    <lightning-formatted-rich-text value={consentCaptureDeclarationtext}></lightning-formatted-rich-text><span><abbr class="slds-required" title="required">*</abbr></span>
+    <lightning-input type="checkbox" variant="label-hidden" id="agreeToConsent" name="agreeToConsent" onchange={handleAgreerToConsent}></lightning-input>
+  </div> -->
+
+  <!-- <div class="fieldLabelStyle"> -->
+    <!-- <template for:each={consentCaptureOptions} for:item="consentOption">
+      <fieldset key={consentOption.value} style="display: inline;">
+          <div class="slds-form-element__control">
+              <span class="slds-radio radioButton">
+                  <input name="radiogroup" data-id={consentOption.value} id={consentOption.value} type="radio" value={consentOption.value} onchange={handleAgreerToConsent}/>
+                  <label class="slds-radio__label" for={consentOption.value}>
+                      <span class="slds-radio_faux"></span>
+                      <span class="slds-form-element__label fieldLabelStyle">{consentOption.label}</span>
+                  </label>
+              </span>
+          </div>
+      </fieldset>
+    </template> -->
+    <!-- <template if:true={showConsentError}>
+      <div class="slds-has-error" id="lastError">
+        <label class="slds-form-element__help">{consentErrorMessage}</label>
+      </div>
+    </template>
+  </div> -->
+
+  <!-- <div class="slds-p-vertical_small fieldLabelStyle">
+    <lightning-formatted-rich-text value={consentCaptureStatementTextBelowDec}></lightning-formatted-rich-text>
+  </div> -->
+  
+  <!-- <div class="slds-grid slds-wrap slds-grid--pull-padded slds-p-vertical--xx-small slds-col--padded">
+    <div class="slds-grid">
+      <div class="slds-col slds-p-vertical--xx-small slds-size_1-of-9 left-align">
+        <lightning-input variant="label-hidden" onchange={handleAgreerToGDPR}
+          class="inputFieldPlaceHolder" type="checkbox" id="AgreedToGDPRTerms"
+          checked={showPlaceOrderButton} label="" name="showPlaceOrderButton"></lightning-input>
+      </div>
+      <div class="uopBrandLabel slds-size--7-of-7">
+        <label style="text-align: justify;" class="slds-form-element__label fieldLabelStyle"
+          for="AgreedToGDPRTerms">I agree to the University's GDPR terms</label>
+      </div>
+    </div>
+    <br />
+  </div> -->
+
+  <!-- <div class="slds-p-vertical--xx-small slds-border_bottom"></div> -->
+
+
+  <template if:true={isInternalComponent}>
+    <template if:true={showPaymentButton}>
+    <div class="slds-p-top_x-small" style="display:flex; flex-direction: row; align-items: center">
+      <lightning-input type="checkbox" variant="label-hidden" id="sendEmail" name="sendEmail" onchange={handleSendEmail} ></lightning-input>
+      <label class="slds-form-element__label fieldLabelStyle" for="sendEmail">Send Payment Email to Order Contact</label>
+    </div>
+  </template>
+  </template>
+  <template if:false={orderConfirmed}>
+  <div  class="slds-grid slds-grid--pull-padded slds-grid_vertical buttongridflexdirection">
+    <div>
+
+      
+      <template if:true={isInternalComponent}>
+        <div class="slds-p-right_small slds-p-top_medium buttonStyle">
+          <span>
+            <button class="uopButtonStyle slds-button slds-button_destructive slds-p-around_small slds-p-left_small" style="border-radius: 0px; background-color:orangered;color:white" onclick={handleTicketOrderSummaryInternalRegBack}>Back</button>
+            <template if:true={showPlaceOrderButton}>
+            <button type="button" name="Confirm" value="Place Order" onclick={handleInternalTicketConfirm} class="activeButton slds-button slds-button_success slds-p-left_small">Place Order</button>
+              </template>
+          </span>
+        </div>
+      </template>
+
+<template if:false={isInternalComponent}>
+<template if:true={showPaymentButton}>
+<div class="slds-grid slds-align_absolute-center slds-p-around_medium slds-grid_vertical">
+  <div>
+
+    <div class="slds-grid slds-grid--pull-padded buttongridflexdirection">
+      <div class="slds-col--padded slds-p-right_small buttonStyle ">
+        <button class="uopButtonStyle slds-button slds-button_destructive"
+      style="border-radius: 0px;" onclick={redirectToOrderDetails}>Back</button>
+    
+    </div>
+    <template if:true={showPlaceOrderButton}>
+      <div class="slds-col--padded slds-p-right_small buttonStyle"><button class="completeDonationActiveButton slds-button slds-button_destructive"
+        style={paymentButtonStyle}
+        onclick={handlePaidOrderConfirmation}>Pay Now by Debit or Credit Card</button>
+      </div>
+    </template>
+ 
+    </div>
+
+
+    
+  </div>
+  
+    <div class="slds-p-around_medium" id="prompt-message-wrapper">
+      <div class=" slds-p-vertical--xx-small slds-border_bottom borderLine"></div>
+      <p class="slds-form-element__label slds-align_absolute-center uopInputFieldLabel">
+        {paymentPromptMessage}</p>
+    </div>
+  </div>
+    <div>
+      <label class="slds-form-element__label slds-p-left_small uopTopicBrandLabel">We accept payments from:</label>
+  </div>
+  <!-- <div>
+            <label class="uopInputFieldLabel slds-form-element__label" for="donateToField">Pay Now by Debit or Credit Card</label>
+          </div> -->
+  
+  <div class="slds-grid slds-align_absolute-center slds-p-top--medium">
+      <div class="slds-p-horizontal--x-small"> <img src={americanExpressLOGO} style="width: 71px;height: 50px;" alt="American Express" /></div>
+      <div class="slds-p-horizontal--x-small"> <img src={masterCardLOGO} style="width: 71px;height: 50px;" alt="Master Card" /></div>
+      <div class="slds-p-horizontal--x-small"> <img src={visaLOGO} style="width: 71px;height: 50px;" alt="Visa" /></div>
+  </div>
+         
+
+
+<!-- 
+          <div class="slds-col slds-align_absolute-center">
+
+            <div class="slds-grid slds-grid--pull-padded">
+              <div class="slds-col--padded">
+                <button class="uopButtonStyle slds-button slds-button_destructive slds-p-top_medium"
+              style="border-radius: 0px;" onclick={redirectToOrderDetails}>Back</button>
+            
+            </div>
+              <div class="slds-col--padded"><button class="uopButtonStyle slds-button slds-button_destructive slds-p-top_medium"
+                style="border-radius: 0px;" onclick={handlePaidOrderConfirmation}>Place Order</button>
+              </div>
+            </div>
+         
+          </div> -->
+          <!-- <div class="slds-col slds-align_absolute-center">
+            <span>
+              <div class=" slds-p-vertical--xx-small slds-border_bottom borderLine"></div>
+          <p class="slds-form-element__label slds-align_absolute-center uopInputFieldLabel">
+            {paymentPromptMessage}</p>
+            </span>
+          </div> -->
+         
+        
+
+
+
+
+        <!-- <div>
+          <label class="slds-form-element__label slds-align_absolute-left uopTopicBrandLabel">We accept payments
+                      from:</label>
+      </div> -->
+      <!-- <div class="slds-grid slds-align_absolute-center slds-p-top--medium"> -->
+        <!-- <div class="slds-p-horizontal--x-small"> <img src={americanExpressLOGO} style="width: 71px;height: 50px;" alt="American Express" /></div>
+        <div class="slds-p-horizontal--x-small"> <img src={masterCardLOGO} style="width: 71px;height: 50px;" alt="Master Card" /></div>
+        <div class="slds-p-horizontal--x-small"> <img src={visaLOGO} style="width: 71px;height: 50px;" alt="Visa" /></div> -->
+    <!-- </div> -->
+
+      </template>
+
+<template if:false={showPaymentButton}>
+  <div class="slds-grid buttongridflexdirection ">
+    <div class="slds-p-right_small slds-p-top_medium buttonStyle slds-p-left_small">
+    <button class="uopButtonStyle slds-button slds-button_destructive"
+    style="border-radius: 0px;" onclick={redirectToOrderDetails}>Back</button></div>
+    <template if:true={showPlaceOrderButton}>
+      <div class="slds-p-right_small buttonStyle slds-p-left_small slds-p-top_medium">
+      <button class="uopButtonStyle slds-button slds-button_destructive slds-p-right_small buttonStyle slds-p-top_small"
+      style="border-radius: 0px;" onclick={handleConfirmUnPaidFromWeb}>Place Order</button></div>
+    </template>
+    
+    
+  
+  </div>
+        <!-- <div class="slds-align_absolute-center">
+          <span>
+            <button class="uopButtonStyle slds-button slds-button_destructive slds-p-top_medium"
+            style="border-radius: 0px;" onclick={handleConfirmOrder}>Place Order</button>
+          </span>
+        </div> -->
+      </template>
+</template>
+
+<!-- <lightning-button variant="brand" label="Confirm Order / Pay Now" title="Confirm Order / Pay Now"
+        onclick={handleConfirmOrder}>
+      </lightning-button> -->
+</div>
+<!-- <div class="slds-col slds-align_absolute-center slds-p-around--x-small">
+      <lightning-button variant="destructive" label="Cancel" title="Cancel" onclick={handleCancelOrder}>
+      </lightning-button>
+    </div> -->
+</div>
+</template>
+</template>
+
+</template>

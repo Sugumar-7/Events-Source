@@ -1,0 +1,40 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 11-18-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   09-28-2020   Creation Admin   Initial Version
+-->
+<template>
+    <div class="slds-box">
+        <lightning-card icon-name="standard:event" title="Add To Calendar">
+            <div class="slds-var-p-around_medium" >
+                <template if:true={enddate}>
+                    <lightning-button-menu  label="Add to Calendar" alternative-text="Add to calendar"
+                    icon-name="standard:event" class="my-button-menu">
+                        <lightning-menu-item value="google" label="Google Calendar" onclick={addToCalendar}>
+                        </lightning-menu-item>
+                        <lightning-menu-item value="outlook" label="Outlook Calendar" onclick={addToCalendar}>
+                        </lightning-menu-item>
+                        <lightning-menu-item value="apple" label="Apple Calendar" onclick={addToCalendar}>
+                        </lightning-menu-item>
+                        <lightning-menu-item value="yahoo" label="Yahoo Calendar" onclick={addToCalendar}>
+                        </lightning-menu-item>
+                </lightning-button-menu>
+                </template>
+                <template if:false={enddate}>
+                    <div>
+                        <lightning-icon icon-name="utility:warning" alternative-text="warning" title="Warning" size="x-small" style="margin-bottom: 5px;">
+                        </lightning-icon>
+                        <span style ='padding-left: 5px'>Make sure event has Start Date and End Date information</span>
+                    </div>
+                    <!-- <div><p style= 'color: darkgoldenrod;padding-top: 1rem;'>Make Sure Event Has a Start Date and End Date, Start Time and End Time Information</p></div> -->
+                    
+                </template>
+            </div>
+        </lightning-card>
+    </div>
+</template>

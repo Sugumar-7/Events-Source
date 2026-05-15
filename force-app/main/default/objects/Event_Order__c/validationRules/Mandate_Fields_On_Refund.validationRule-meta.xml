@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandate_Fields_On_Refund</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND
+(  ISCHANGED(Refund_Status__c ) ,
+   ISPICKVAL( Refund_Status__c ,&quot;Fully Refunded&quot;),
+   OR( ISBLANK( Repayment_Reference__c ) ,
+       ISBLANK( Repayment_Reason__c ),
+       ISNULL( Date_Repayment_Made__c ),
+       ISNULL( Date_Repayment_Requested__c )
+     ) 
+)</errorConditionFormula>
+    <errorMessage>Fill mandatory fields : Repayment Reference, Repayment Reason, Date Repayment Requested, Date Repayment Made</errorMessage>
+</ValidationRule>

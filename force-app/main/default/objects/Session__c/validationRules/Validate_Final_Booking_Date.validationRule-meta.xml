@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Final_Booking_Date</fullName>
+    <active>true</active>
+    <description>Final Booking Date Cannot Be Greater Than Session End Date</description>
+    <errorConditionFormula>Final_Booking_Date__c &gt; Session_End_Date__c</errorConditionFormula>
+    <errorMessage>Final Booking Date cannot be greater than the Session End Date</errorMessage>
+</ValidationRule>

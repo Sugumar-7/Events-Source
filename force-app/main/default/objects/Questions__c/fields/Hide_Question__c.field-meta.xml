@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hide_Question__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is used to hide questions from the webform.</description>
+    <inlineHelpText>Please check if this Question needs to be hidden from the webform, any value entered in the &apos;Default Text&apos; field will be stored in the respective Event Registration/Campaign Member field.</inlineHelpText>
+    <label>Hide Question</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

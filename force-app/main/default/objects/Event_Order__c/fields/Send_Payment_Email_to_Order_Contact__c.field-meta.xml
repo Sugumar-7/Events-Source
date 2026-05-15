@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Payment_Email_to_Order_Contact__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is used to check whether event order payment email should be sent from the internal form</description>
+    <inlineHelpText>This field is auto-populated from the Internal Event Registration form</inlineHelpText>
+    <label>Send Payment Email to Order Contact</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>GDPR_Statement_Used__c</columns>
+    <columns>Statement_Title__c</columns>
+    <columns>Statement_Text_above_dec__c</columns>
+    <columns>Declaration_Text__c</columns>
+    <columns>Statement_Text_below_dec__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

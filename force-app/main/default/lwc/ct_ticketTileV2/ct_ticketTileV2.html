@@ -1,0 +1,59 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 01-20-2021
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   07-22-2020   Creation Admin   Initial Version
+-->
+<template>
+
+  <div class="slds-box">
+    <div class="slds-grid slds-wrap mainFlextDirection">
+      <div class="slds-col slds-size--3-of-6 fieldLabelStyle">
+        <b>{eventTicket.Name}</b>
+      </div>
+      <template  if:false={isOrderSummary}>
+        <template if:true={isTicketsAvailable}>
+          <div id={eventTicket.Id} class={comboBoxStyle}>
+            <lightning-combobox  read-only={isOrderSummary} class="ticketFields" variant ="label-hidden" options={availableTickets} value={selectedTicketCount} required  onchange={handleTicketCountChange} placeholder={placeHolderText}>
+            </lightning-combobox>
+          </div>
+        </template>
+      <template if:false={isTicketsAvailable}>
+        <div class={notAvailableStyle}>
+                  Not Available
+                </div>
+              </template>
+
+              <div class="slds-col slds-size--6-of-6 fieldLabelStyle">
+                <!-- GBP {eventTicket.Event_Product_Price__c} -->
+                £<lightning-formatted-number value={currencyValue}></lightning-formatted-number>
+
+              </div>
+
+      </template>
+
+      <template  if:true={isOrderSummary}>
+        <div id={eventTicket.Id} class={comboBoxStyle}>
+          <lightning-combobox class="ticketFields" read-only="true" variant ="label-hidden" options={availableTickets} value={eventTicket.ticketCount} required onchange={handleTicketCountChange}>
+          </lightning-combobox>
+        </div>
+
+        <div class="slds-col slds-size--6-of-6">
+          £<lightning-formatted-number value={currencyValue}></lightning-formatted-number>
+
+        </div>
+      </template>
+
+        
+    
+    </div>
+    <div class="slds-p-vertical_large fieldLabelStyle" style="text-align: justify;">
+      {eventTicket.Event_Product_Description__c}
+    </div>
+    
+  </div>
+</template>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Text__c</fullName>
+    <description>This field is used to populate the default answer for the Question in the webform.</description>
+    <inlineHelpText>Please enter the default answer if you want to automatically default this answer in the web form. For Date use (YYYY-MM-DD) format.</inlineHelpText>
+    <label>Default Answer</label>
+    <length>131072</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

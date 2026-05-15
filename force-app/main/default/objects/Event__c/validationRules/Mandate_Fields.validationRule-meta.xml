@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandate_Fields</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+     
+     OR(
+        AND(
+            TEXT( Manual_or_Scheduled_Publishing__c ) = &quot;Manual Publishing&quot;,
+         Active__c  == True
+        ),
+        AND(
+         TEXT( Manual_or_Scheduled_Publishing__c ) = &quot;Scheduled Publishing&quot;,
+         NOT(ISBLANK(Event_Publishing_Date_Time__c) )
+        )
+     )
+     ,
+     OR(
+      ISBLANK( Web_Event_Name__c ) ,
+      ISBLANK( Web_Event_Location__c ) ,
+      ISBLANK( Event_End_Date__c ) ,
+      ISBLANK( Event_Start_Date__c ) ,
+      ISBLANK( Start_Time__c ) ,
+      ISBLANK( End_Time__c ) ,
+      ISPICKVAL(Social_App_Visibility__c , &quot;&quot;) ,
+      ISBLANK( Web_Event_Image__c ) ,
+      ISPICKVAL(Web_Event_Pricing__c , &quot;&quot;),
+      ISPICKVAL(Registration_Status__c , &quot;&quot;),
+      ISBLANK( Web_Event_Short_Description__c ),
+      ISPICKVAL( Object_for_New_Attendees__c , &quot;&quot;),
+      ISPICKVAL( Record_Type_for_New_Attendees__c , &quot;&quot;),
+      ISBLANK( Final_Event_Registration_Date__c )   
+     ) 
+)</errorConditionFormula>
+    <errorMessage>Fill mandatory fields: Web Event Name, Location, Date and Time information, Social App Visibility, Image, Pricing, Registration Status, Web Event Short Description, Object for New Attendees, Record Type for New Attendees and Final Event Registration Date.</errorMessage>
+</ValidationRule>

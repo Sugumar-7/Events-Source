@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Order_Address_Fields_Mandatory</fullName>
+    <active>true</active>
+    <description>This field is to restrict the selection of the &apos;Order Address Fields Mandatory&apos; field is &apos;Display Order Address Fields&apos; is un checked</description>
+    <errorConditionFormula>AND(Display_Order_Address_Fields__c = false,  Order_Address_Fields_Mandatory__c = true)</errorConditionFormula>
+    <errorMessage>Please enable &apos;Display Order Address Fields&apos;  to enable &apos;Order Address Fields Mandatory&apos;</errorMessage>
+</ValidationRule>

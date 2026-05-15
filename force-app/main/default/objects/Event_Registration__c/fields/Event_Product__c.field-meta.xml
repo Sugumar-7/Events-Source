@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Product__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Event Product</label>
+    <referenceTo>Event_Product__c</referenceTo>
+    <relationshipLabel>Event Registrations</relationshipLabel>
+    <relationshipName>Event_Registrations</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<!--
+  @description       : Check In manager Page button component 
+                     : A container Component created to hold LWC because isUrlAddressable interface is not in LWC Component
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 10-07-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   09-08-2020   Creation Admin   Initial Version
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:isUrlAddressable,force:appHostable" access="global">
+  <aura:attribute name="eventRecordId" type="String"  description="ID of the event record"/>
+  <aura:attribute name="sessionRecordId" type="String"  description="ID of the Session record"/>
+  <aura:handler name="change" value="{!v.pageReference}" action="{!c.reInit}"/>
+  <aura:handler name="init" value="this" action="{!c.doInit}"/>
+  <c:ct_CheckInManager eventIdParamater="{!v.eventRecordId}" sessionIdParamater="{!v.sessionRecordId}"/>
+</aura:component>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This object is introduced to track the events and events related fields</description>
+    <label>Event Clone Setting</label>
+    <pluralLabel>Event Clone Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Web_Event_Location__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please enter the display location that you wish to show people booking via the Event Registration Page e.g. Launch ED Campus, Virtual Event, Halpern House etc.</inlineHelpText>
+    <label>Web Event Location(s)</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

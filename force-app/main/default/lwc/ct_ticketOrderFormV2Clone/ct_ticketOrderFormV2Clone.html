@@ -1,0 +1,137 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 01-21-2021
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   07-22-2020   Creation Admin   Initial Version
+-->
+<template>
+  <div data-id="topElement" id="topElem" class="topElement"></div>
+  <!-- <template if:false={getFormFactor}> -->
+  <!-- <h2 class="slds-card__header-title mainHeadingStyle">
+    {formTitle}
+  </h2>
+  <template if:false={displaySummary}>
+  <lightning-formatted-rich-text class="descStyle" value={formDescription} read-only="true"></lightning-formatted-rich-text>
+  </template>
+  <p class="descStyle slds-p-vertical--xx-small">{formNote}</p> -->
+  <!-- <div class="slds-p-vertical--xx-small slds-border_bottom"></div> -->
+  <h2 class="slds-card__header-title headingStyle">
+    <!--{subFormTitle}--> Your details
+  </h2>
+  <!-- <p class="slds-p-vertical--xx-small fieldLabelStyle">Ordered By</p> -->
+  <div>
+    <label class="slds-form-element__label fieldLabelStyle" for="firstName">First Name<abbr class="slds-required" title="required">*</abbr></label>
+    <lightning-input type="text" id="firstName" class="ticketOrderField fieldLabelStyle" variant="label-hidden" label="First Name" value={firstName}
+    placeholder="Enter your first name" onchange={handleFirstName} read-only={displaySummary} disabled={isManualRegistration} required></lightning-input>
+    
+  </div>
+  <div>
+    <label class="slds-form-element__label fieldLabelStyle" for="lastName">Last Name<abbr class="slds-required" title="required">*</abbr></label>
+    <lightning-input type="text" id="lastName" variant="label-hidden" class="ticketOrderField fieldLabelStyle" label="Last Name" value={lastName}
+    placeholder="Enter your last name" onchange={handleLastName} read-only={displaySummary} disabled={isManualRegistration} required></lightning-input>
+  </div>
+  <div>
+    <label class="slds-form-element__label fieldLabelStyle" for="email">Email<abbr class="slds-required" title="required">*</abbr></label>
+    <lightning-input type="email" id="email" variant="label-hidden" class="ticketOrderField fieldLabelStyle" label="Email" value={email} onchange={handleEmail}
+    placeholder="Enter your email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,15})$" message-when-pattern-mismatch="Please enter a valid email address" read-only={displaySummary} disabled={isManualRegistration} required></lightning-input>
+  </div>
+  <div>
+    <label class="slds-form-element__label fieldLabelStyle" for="Mobile">Mobile <abbr class="slds-required" title="required">*</abbr></label>
+    <lightning-input  placeholder="Enter your mobile number" type="text" class="fieldLabelStyle" pattern="[0-9-+()]*$" message-when-pattern-mismatch="Please provide a valid mobile number" min-length="11" read-only={displaySummary} variant="label-hidden" id="Mobile" name="Mobile" value={mobile} onchange={handleMobile} required></lightning-input>
+  </div>
+  <!-- <div>
+    <label class="slds-form-element__label fieldLabelStyle" for="TicketDelivery">Ticket Delivery<abbr class="slds-required" title="required">*</abbr></label>
+    <lightning-combobox  class="ticketOrderField" read-only={displaySummary} variant="label-hidden" name="TicketDelivery" id="TicketDelivery" value={ticketDelivery} placeholder=" "  options={options} onchange={handleTicketDelivery} ></lightning-combobox>
+  </div> -->
+  <!-- <template if:true={isAddressVisible}> -->
+    <!-- <template if:false ={displaySummary}>
+      <c-ct_-address-validator onaddressresults={handleSelectedAddress}></c-ct_-address-validator>
+    </template> -->
+    <template if:true={selectedEvent.Display_Order_Address_Fields__c}>
+    
+    <div>
+      <label class="slds-form-element__label fieldLabelStyle" for="street">Street
+        <template if:true={selectedEvent.Order_Address_Fields_Mandatory__c}>
+        <abbr class="slds-required" title="required">*</abbr>
+      </template>
+      </label>
+      <lightning-input placeholder="Enter your street" type="text" id="street" read-only={displaySummary} variant="label-hidden" class="ticketOrderField fieldLabelStyle" label="street" value={street} required={selectedEvent.Order_Address_Fields_Mandatory__c} onchange={handleStreet}></lightning-input>
+    </div>
+    <div>
+      <label class="slds-form-element__label fieldLabelStyle" for="city">City
+        <template if:true={selectedEvent.Order_Address_Fields_Mandatory__c}>
+        <abbr class="slds-required" title="required">*</abbr>
+        </template>
+      </label>
+      <lightning-input placeholder="Enter your city" type="text" id="city" read-only={displaySummary} variant="label-hidden" class="ticketOrderField fieldLabelStyle" label="city" value={city} required={selectedEvent.Order_Address_Fields_Mandatory__c}  onchange={handleCity}></lightning-input>
+    </div>
+    <!-- <div>
+      <label class="slds-form-element__label fieldLabelStyle" for="state">County / State
+        <template if:true={selectedEvent.Order_Address_Fields_Mandatory__c}>
+        <abbr class="slds-required" title="required">*</abbr>
+        </template>
+      </label>
+      <lightning-input placeholder="Enter your county / state"  type="text" id="state" read-only={displaySummary} variant="label-hidden" class="ticketOrderField fieldLabelStyle" label="state" value={state} required={selectedEvent.Order_Address_Fields_Mandatory__c}  onchange={handleState} ></lightning-input>
+    </div> -->
+    <div>
+      <c-ct_-country-state-picklist-v2
+        is-disabled={displaySummary}
+        is-required={selectedEvent.Order_Address_Fields_Mandatory__c}
+        selected-country={countryValue}
+        selected-state={stateValue}
+        oncountrychange={handleCountryChange}
+        onstatechange={handleStateChange}
+        data-id="stateElement">
+    </c-ct_-country-state-picklist-v2>
+
+    </div>
+    <div>
+      <!-- <c-ct_-country-picklist-v2 is-disabled={displaySummary} is-event-registration="true" data-id="countryElement" onselectedcountry={handleCountrySelect} is-required={selectedEvent.Order_Address_Fields_Mandatory__c} order-by={orderedBy} ></c-ct_-country-picklist-v2> -->
+      <!-- <label class="slds-form-element__label fieldLabelStyle" for="country">Country<abbr class="slds-required" title="required">*</abbr></label>
+      <lightning-input type="text" id="country" read-only={displaySummary} variant="label-hidden" class="ticketOrderField" label="country" value={country}   onchange={handleCountry} required></lightning-input> -->
+    </div>
+    
+    <div>
+      <label class="slds-form-element__label fieldLabelStyle" for="postcode">Post code / ZIP
+        <template if:true={selectedEvent.Order_Address_Fields_Mandatory__c}>
+        <abbr class="slds-required" title="required">*</abbr>
+        </template>
+      </label>
+      <lightning-input  placeholder="Enter your post code / zip" type="text" id="postcode"  read-only={displaySummary} variant="label-hidden" class="ticketOrderField fieldLabelStyle" label="postcode" value={postcode} required={selectedEvent.Order_Address_Fields_Mandatory__c}  onchange={handlePostCode}></lightning-input>
+    </div>
+  </template>
+  <!-- </template> -->
+  
+  <!-- <div>
+    <label class="slds-form-element__label fieldLabelStyle" for="ReceiveSMSnotification">Receive SMS notification</label>
+    <lightning-input type="checkbox" disabled={displaySummary} id="ReceiveSMSnotification" name="ReceiveSMSnotification" checked={receiveSMSnotification} onchange={handleReceiveSMSnotification} ></lightning-input>
+
+  </div> -->
+ 
+  <template if:false={displaySummary}>
+    <!-- <template if:true={canRenderTicketForm}> -->
+    <!-- <template for:each={ticketForms} for:item="eachTicket">
+      <c-ct_ticket-form ticket={eachTicket} all-ordered-tickets={orderedTickets} key={eachTicket.ticketNumber} dynamic-session-data={dynamicSessionData} allow-guest={eachTicket.allGuestRegistrations}></c-ct_ticket-form>
+    </template> -->
+  <!-- </template> -->
+<!-- <lightning-button variant="brand" label="Next" title="Next" onclick={handleDisplaySummary} class="slds-p-around--x-small slds-align_absolute-center">
+</lightning-button> -->
+<!-- <div class="slds-p-vertical--small ">
+  <button type="button" name="Back" value="Back" onclick={handlePrevPage} class="activeButton slds-button slds-button_success">Back</button>
+    <button type="button" name="Next" value="Next" onclick={handleDisplaySummary} class="activeButton slds-button slds-button_success">Next</button>
+
+</div> -->
+
+
+</template>
+
+<!-- <template if:true={displaySummary}>
+    <c-ct_ticket-order-summary internal-registration-form-data={internalRegistrationFormData} oneventregistered={triggerEventregisteredCustomEvent} onordersummaryback={handleOrderSummaryBack} is-check-in-manager-component={isCheckInManagerComponent} is-internal-component={isInternalComponent} tickets={selectedTickets} ordered-tickets={orderedTickets} ordered-by={orderedBy}>
+    </c-ct_ticket-order-summary>
+  </template> -->
+<!-- </template> -->
+</template>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>School_Year_Group__c</fullName>
+    <description>This field is used to identify the school group</description>
+    <inlineHelpText>This field is used to identify the school group</inlineHelpText>
+    <label>School Year Group</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Year 7</fullName>
+                <default>false</default>
+                <label>Year 7</label>
+            </value>
+            <value>
+                <fullName>Year 8</fullName>
+                <default>false</default>
+                <label>Year 8</label>
+            </value>
+            <value>
+                <fullName>Year 9</fullName>
+                <default>false</default>
+                <label>Year 9</label>
+            </value>
+            <value>
+                <fullName>Year 10</fullName>
+                <default>false</default>
+                <label>Year 10</label>
+            </value>
+            <value>
+                <fullName>Year 11</fullName>
+                <default>false</default>
+                <label>Year 11</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

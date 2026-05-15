@@ -1,0 +1,130 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 01-17-2021
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   08-20-2020   Creation Admin   Initial Version
+-->
+<template>
+  <template if:true={renderPrimarySession}>
+    <div class="slds-grid slds-grid--vertical" style="padding: 0%;">
+      <template if:true={ticket.primarySessionInterestHeading}>
+      <div class="slds-col slds-p-bottom--xx-small">
+        <lightning-formatted-rich-text value={ticket.primarySessionInterestHeading}>
+        </lightning-formatted-rich-text>
+      </div>
+      </template>
+      <div class="slds-col slds-p-bottom--xx-small">
+        <label class="slds-form-element__label fieldLabelStyle">{primaryInterestLabel}
+          <template if:true={ticket.mandatePrimarySession}>
+            <abbr class="slds-required" title="required">*</abbr>
+          </template>   
+        </label>
+        <lightning-combobox  name="primarySessions"  variant="label-hidden" options={primarySessionOptions} value={selectedSession}
+            onchange={handlePrimarySession} id="selectOptions" required={ticket.mandatePrimarySession} class="primarySessions inputFieldPlaceHolder saveRequiredClass" placeholder="Please choose an option" disabled={isDisabled}></lightning-combobox> 
+      </div>
+    </div>
+  </template>
+ 
+  <template if:true={renderComp}>
+    <article class="slds-tile tileStyle">
+      <!-- <h2 class="slds-card__header-title slds-p-top--x-small slds-p-bottom--x-small headerFont">
+        Please complete below questions:
+      </h2> -->
+      <div class="slds-grid slds-grid--vertical" style="padding: 0%;">
+        <template for:each={eventQuestions} for:item="questionWrapper" for:index="thisIndex">
+          <template if:true={questionWrapper.hasDependent}>
+            <c-ct_-event-dependent-question-v2 onanswer={handleDependentAnswers} onrender ={handleRender} key={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} question-wrapper={questionWrapper} event-registration={eventRegistration} campaign-member={campaignMember} is-disabled={isDisabled}></c-ct_-event-dependent-question-v2>
+          </template>
+        <template if:false={questionWrapper.hasDependent}>
+          <template if:false={questionWrapper.thisQuestion.Show_Only_Text__c}>
+            <template if:false={questionWrapper.thisQuestion.Hide_Question__c}>
+              <div key={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} class="slds-col slds-p-bottom--xx-small">
+                <lightning-formatted-rich-text class="slds-form-element__label fieldLabelStyle" value={questionWrapper.thisQuestion.Question__c} disabled={isDisabled} title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c}></lightning-formatted-rich-text>
+                <label class="slds-form-element__label fieldLabelStyle" for={questionWrapper.eventProductId}>
+                <template if:true={questionWrapper.thisQuestion.Is_Mandatory__c}>
+                <abbr class="slds-required" title="required">*</abbr>
+                </template>         
+                </label>
+              </div>
+              <div key={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} class="slds-col slds-p-bottom--xx-small">
+                <template if:true={questionWrapper.hasInput}>
+                  <lightning-input type={questionWrapper.thisQuestion.Data_Type__c} data-id={questionWrapper.eventProductId} name={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} variant="label-hidden" value={questionWrapper.eventRegRecordValue}
+                  class="inputFieldPlaceHolder saveRequiredClass" placeholder="Enter details" max-length={questionWrapper.maxLength} onchange={handleValueChange} onblur={handleInputComplete} required={questionWrapper.thisQuestion.Is_Mandatory__c} disabled={isDisabled}></lightning-input>
+                </template>
+
+                <template if:true={questionWrapper.hasDate}>
+                  <lightning-input type="date"  date-style="short" data-id={questionWrapper.eventProductId} name={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} variant="label-hidden" value={questionWrapper.eventRegRecordValue}
+                    class="inputFieldPlaceHolder saveRequiredClass" placeholder="Enter details" onchange={handleValueChange} onblur={handleInputComplete} required={questionWrapper.thisQuestion.Is_Mandatory__c} disabled={isDisabled}></lightning-input>
+                </template>
+
+                <template if:true={questionWrapper.hasPhone}>
+                  <lightning-input type={questionWrapper.thisQuestion.Data_Type__c} data-id={questionWrapper.eventProductId} name={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} variant="label-hidden" value={questionWrapper.eventRegRecordValue}
+                    class="inputFieldPlaceHolder saveRequiredClass" placeholder="Enter details" pattern="[0-9-+()]*$" message-when-pattern-mismatch="Enter a valid mobile number" min-length="11" onchange={handleValueChange} onblur={handleInputComplete} required={questionWrapper.thisQuestion.Is_Mandatory__c} disabled={isDisabled}></lightning-input>
+                </template>
+
+                <template if:true={questionWrapper.hasNumber}>
+                  <lightning-input type={questionWrapper.thisQuestion.Data_Type__c} data-id={questionWrapper.eventProductId} name={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} variant="label-hidden" value={questionWrapper.eventRegRecordValue}
+                    class="inputFieldPlaceHolder saveRequiredClass" max={questionWrapper.maxLength} step=".01" placeholder="Enter details"  message-when-bad-input="Enter a valid number" onchange={handleValueChange} onblur={handleInputComplete} required={questionWrapper.thisQuestion.Is_Mandatory__c} disabled={isDisabled}></lightning-input>
+                </template>
+
+                <template if:true={questionWrapper.hasCurrency}>
+                  <lightning-input type="number" formatter="currency" step=".01" data-id={questionWrapper.eventProductId} name={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} variant="label-hidden" value={questionWrapper.eventRegRecordValue}
+                    class="inputFieldPlaceHolder saveRequiredClass" placeholder="Please enter the amount" max-length="255" onchange={handleValueChange} onblur={handleInputComplete} required={questionWrapper.thisQuestion.Is_Mandatory__c} disabled={isDisabled}></lightning-input>
+                
+                </template>
+                <template if:true={questionWrapper.hasPicklist}>
+                  <lightning-combobox  data-id={questionWrapper.eventProductId} name={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} variant="label-hidden" options={questionWrapper.picklistFields} value={questionWrapper.eventRegRecordValue}
+                  onchange={handleValueChange} onblur={handleInputComplete} class="saveRequiredClass inputFieldPlaceHolder" placeholder="Please choose an option" required={questionWrapper.thisQuestion.Is_Mandatory__c} disabled={isDisabled}></lightning-combobox>
+                </template>
+
+                <template if:true={questionWrapper.hasRadioOptions}>
+                  <table>
+                    <template for:each={questionWrapper.picklistFields} for:item="eachOption">
+                        <tr key={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c}>
+                        <td style="vertical-align: bottom; width:40px">
+                      <input class="inputFieldPlaceHolder saveRequiredClass"  data-id={questionWrapper.eventProductId} id={questionWrapper.eventProductId} type="radio"  name={questionWrapper.radioOptionName} title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} value={eachOption.value} onblur={handleInputComplete} onchange={handleValueChange} required={questionWrapper.thisQuestion.Is_Mandatory__c} disabled={isDisabled}>
+                      </td><td >
+                      <label class="slds-form-element__label fieldLabelStyle">{eachOption.value}</label>
+                      </td>
+                      </tr>
+                    </template>
+                  </table>
+                </template>
+
+                <template if:true={questionWrapper.hasTextArea}>
+                  <lightning-textarea data-id={questionWrapper.eventProductId} name={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} variant="label-hidden" placeholder="Enter details"
+                  onchange={handleValueChange} onblur={handleInputComplete} max-length={questionWrapper.maxLength} required={questionWrapper.thisQuestion.Is_Mandatory__c} class="saveRequiredClass inputFieldPlaceHolder"  value={questionWrapper.eventRegRecordValue} disabled={isDisabled}></lightning-textarea>
+                </template>
+
+                <template if:true={questionWrapper.hasTextAreaLong}>
+                  <lightning-textarea data-id={questionWrapper.eventProductId} name={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} variant="label-hidden" placeholder="Enter details"
+                  onchange={handleValueChange} onblur={handleInputComplete} max-length={questionWrapper.maxLength} required={questionWrapper.thisQuestion.Is_Mandatory__c} class="saveRequiredClass inputFieldPlaceHolder"  value={questionWrapper.eventRegRecordValue} disabled={isDisabled}></lightning-textarea>
+                </template>
+
+                <template if:true={questionWrapper.hasRichTextArea}>
+                  <lightning-input-rich-text data-id={questionWrapper.eventProductId} name={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c}  title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} variant="label-hidden" placeholder="Enter details"
+                  onchange={handleValueChange} onblur={handleInputComplete} max-length={questionWrapper.maxLength} class="inputFieldPlaceHolder"  value={questionWrapper.eventRegRecordValue} disabled={isDisabled}></lightning-input-rich-text>
+                
+                </template>
+              </div>
+            </template>
+          </template>
+      
+          <template if:true={questionWrapper.thisQuestion.Show_Only_Text__c}>
+            <div key={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} class="slds-col slds-p-bottom--xx-small">
+            <lightning-formatted-rich-text class="slds-form-element__label fieldLabelStyle" value={questionWrapper.thisQuestion.Text_To_Display__c} title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c}></lightning-formatted-rich-text>
+            <!-- <label class="slds-form-element__label fieldLabelStyle" for={questionWrapper.eventProductId}>
+                
+            </label> -->
+            </div>
+          </template>
+        </template>
+        </template>
+      </div>
+    </article>
+  </template>
+</template>

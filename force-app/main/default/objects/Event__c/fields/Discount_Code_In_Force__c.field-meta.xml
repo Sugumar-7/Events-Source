@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Code_In_Force__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Field to identify whether the discount code for this event is In Force based on discount Valid From &amp; Valid To from Discount Code record</description>
+    <inlineHelpText>This is an automated field which is selected further to the status of the associated Discount Code field</inlineHelpText>
+    <label>Discount Code In Force</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

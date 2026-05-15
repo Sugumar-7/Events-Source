@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AAA_Site_MasterLabel</fullName>
+        <categories>AAA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AAA Site MasterLabel</shortDescription>
+        <value>Advancement</value>
+    </labels>
+    <labels>
+        <fullName>Check_In_Manager_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Check In Manager URL</shortDescription>
+        <value>https://creationed-dev-ed.my.salesforce.com</value>
+    </labels>
+    <labels>
+        <fullName>Event_Site_Base_URL</fullName>
+        <categories>Events</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Event_Site_Base_URL</shortDescription>
+        <value>launchedv2-dev-ed.my.site.com/launchEDEvents</value>
+    </labels>
+    <labels>
+        <fullName>Experience_Site_Base_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Experience Site Base URL</shortDescription>
+        <value>https://universityoflimerick--uldev2.sandbox.my.site.com</value>
+    </labels>
+    <labels>
+        <fullName>Record_Page_Base_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Record Page Base URL</shortDescription>
+        <value>https://ctsbs-dev-ed.lightning.force.com</value>
+    </labels>
+    <labels>
+        <fullName>Site_Base_URL</fullName>
+        <categories>Events</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Site Base URL</shortDescription>
+        <value>https://universityoflimerick--uldev2.sandbox.lightning.force.com</value>
+    </labels>
+    <labels>
+        <fullName>Watch_Training_Video</fullName>
+        <categories>ED</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Watch Training Video</shortDescription>
+        <value>Watch Training Video</value>
+    </labels>
+    <labels>
+        <fullName>ct_CheckinManager</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ct_CheckinManager</shortDescription>
+        <value>https://creationed-dev-ed.my.salesforce.com</value>
+    </labels>
+    <labels>
+        <fullName>ct_EventDeclaration_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ct_EventDeclaration Text</shortDescription>
+        <value>I’d like to receive information and invitations</value>
+    </labels>
+    <labels>
+        <fullName>ct_EventStatementText_above_dec</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ct_EventStatementText(above dec)</shortDescription>
+        <value>Engaging in lifelong learning is important in so many ways from supporting career aspirations to personal wellbeing. We’d love to share our business insights plus information we think you’d find useful and thought provoking, such as the latest research and ideas from our renowned academics, various events you might like to attend as well as information on current and future programmes we are launching and how to apply.
+We’ll always treat your personal information with the utmost care and won’t share it with third parties.</value>
+    </labels>
+    <labels>
+        <fullName>ct_EventStatementTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ct_EventStatementTitle</shortDescription>
+        <value>Stay in touch with me</value>
+    </labels>
+    <labels>
+        <fullName>ct_EventStatement_Text_below_dec</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ct_EventStatement_Text_below_dec</shortDescription>
+        <value>By consenting to receive communications you agree to the data storage, communication and tracking of your data as described in our privacy statement.</value>
+    </labels>
+    <labels>
+        <fullName>ct_Events_Team_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ct_Events_Team_Address</shortDescription>
+        <value>Events</value>
+    </labels>
+</CustomLabels>

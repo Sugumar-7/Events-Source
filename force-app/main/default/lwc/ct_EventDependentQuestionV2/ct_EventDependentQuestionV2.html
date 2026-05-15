@@ -1,0 +1,57 @@
+<!--
+  @description       : 
+  @author            : Umashankar Creation
+  @group             : 
+  @last modified on  : 01-16-2021
+  @last modified by  : Umashankar Creation
+  Modifications Log 
+  Ver   Date         Author                Modification
+  1.0   12-10-2020   Umashankar Creation   Initial Version
+-->
+<template>
+  <template if:false={questionWrapper.thisQuestion.Show_Only_Text__c}>
+    <template if:false={questionWrapper.thisQuestion.Hide_Question__c}>
+      <div key={questionWrapper.eventProductId} class="slds-col slds-p-bottom--xx-small">
+        <lightning-formatted-rich-text class="slds-form-element__label fieldLabelStyle" value={questionWrapper.thisQuestion.Question__c} disabled={isDisabled} title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c}></lightning-formatted-rich-text>
+        <label class="slds-form-element__label fieldLabelStyle" for={questionWrapper.eventProductId}>
+        <template if:true={questionWrapper.thisQuestion.Is_Mandatory__c}>
+        <abbr class="slds-required" title="required">*</abbr>
+        </template>         
+        </label>
+      </div>
+      <div key={questionWrapper.eventProductId} class="slds-col slds-p-bottom--xx-small">
+      <template if:true={questionWrapper.hasDependent}>
+       
+        <template if:true={questionWrapper.thisQuestion.Is_Mandatory__c}>
+        <lightning-combobox  data-valid="mandatoryFields"  data-id={questionWrapper.eventProductId} name={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} variant="label-hidden" options={questionWrapper.picklistFields} value={questionWrapper.eventRegRecordValue}
+        onchange={handleValueChange} onblur={handleInputComplete} class="saveRequiredClass inputFieldPlaceHolder" placeholder="Please choose an option" required disabled={isDisabled}></lightning-combobox>
+      </template>
+      <template if:false={questionWrapper.thisQuestion.Is_Mandatory__c}>
+        <lightning-combobox  data-valid="mandatoryFields" data-id={questionWrapper.eventProductId} name={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c} variant="label-hidden" options={questionWrapper.picklistFields} value={questionWrapper.eventRegRecordValue}
+        onchange={handleValueChange} onblur={handleInputComplete} class="saveRequiredClass inputFieldPlaceHolder" placeholder="Please choose an option" disabled={isDisabled}></lightning-combobox>
+      </template>
+      </template>
+      </div>
+      <template if:true={isDependentToShow}>
+      <div key={questionWrapper.eventProductId} class="slds-col slds-p-bottom--xx-small">
+        <lightning-formatted-rich-text class="slds-form-element__label fieldLabelStyle" value={questionWrapper.thisQuestion.Dependent_Field_Question__c} disabled={isDisabled} title={questionWrapper.thisQuestion.Even_Registration_Field_API_Name__c}></lightning-formatted-rich-text>
+        <label class="slds-form-element__label fieldLabelStyle" for={questionWrapper.eventProductId}>
+        <template if:true={questionWrapper.thisQuestion.Dependent_Answer_is_Mandatory__c}>
+        <abbr class="slds-required" title="required">*</abbr>
+        </template>         
+        </label>
+      </div>
+      <div key={questionWrapper.eventProductId} class="slds-col slds-p-bottom--xx-small">
+        <template if:true={questionWrapper.thisQuestion.Dependent_Answer_is_Mandatory__c}>
+          <lightning-combobox  data-valid="mandatoryFields" data-id={questionWrapper.eventProductId} name={dependentWrapper.fieldAPIName} title={dependentWrapper.fieldAPIName} variant="label-hidden" options={picklistOptions} value={dependentWrapper.eventRegRecordValue}
+        onchange={handleDependentChange} onblur={handleInputComplete} class="saveRequiredClass inputFieldPlaceHolder" placeholder="Please choose an option" required disabled={isDisabled}></lightning-combobox>
+        </template>
+        <template if:false ={questionWrapper.thisQuestion.Dependent_Answer_is_Mandatory__c}>
+          <lightning-combobox  data-valid="mandatoryFields" data-id={questionWrapper.eventProductId} name={dependentWrapper.fieldAPIName} title={dependentWrapper.fieldAPIName} variant="label-hidden" options={picklistOptions} value={dependentWrapper.eventRegRecordValue}
+          onchange={handleDependentChange} onblur={handleInputComplete} class="saveRequiredClass inputFieldPlaceHolder" placeholder="Please choose an option" disabled={isDisabled}></lightning-combobox>
+        </template>
+      </div>
+      </template>
+    </template>
+  </template>
+</template>

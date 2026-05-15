@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "'Encode Sans Expanded', sans-serif";
+    src: url(/s/sfsites/c/resource/ct_Font_Encode_Sans_Expanded);
+}
+
+@font-face {
+    font-family: "'Open Sans', sans-serif";
+    src: url(/s/sfsites/c/resource/font_Open_Sans);
+}
+
+.mainHeadingStyle {
+    font-family: "'Encode Sans Expanded', sans-serif" !important;
+    color: black;
+    font-size: 18px !important;
+}
+
+.headingStyle {
+    font-family: "'Encode Sans Expanded', sans-serif" !important;
+    color: #027119;
+}
+
+.fullWidthStyle {
+    width: 100% !important;
+}
+
+.fieldLabelStyle {
+    font-family: "'Open Sans', sans-serif" !important;
+    font-size: 14px !important;
+    font-weight: normal;
+    color: #505457;
+}
+
+.uopBrandLabel {
+    /* color: #3C023C; */
+    font-family: "'Open Sans', sans-serif" !important;
+    color: #505457;
+    font-size: 15px !important;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* font: inherit; */
+}

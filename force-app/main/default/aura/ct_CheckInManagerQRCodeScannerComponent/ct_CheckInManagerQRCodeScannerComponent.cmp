@@ -1,0 +1,17 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 10-12-2020
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   09-14-2020   Creation Admin   Initial Version
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:isUrlAddressable,force:appHostable" access="global">
+  <aura:attribute name="eventRecordId" type="String"  description="ID of the event record"/>
+  <aura:attribute name="eventRegistrationId" type="String"  description="ID of the event registration"/>
+  <aura:handler name="change" value="{!v.pageReference}" action="{!c.reInit}"/>
+  <aura:handler name="init" value="this" action="{!c.doInit}"/>
+  <c:ct_CheckInManagerQRCodeScanner aura:id="checkInQRScannerLWC" eventIdParamater="{!v.eventRecordId}"  eventRegId ="{!v.eventRegistrationId}"/>
+</aura:component>

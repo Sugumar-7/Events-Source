@@ -1,0 +1,332 @@
+<!--
+  @description       : 
+  @author            : Creation Admin
+  @group             : 
+  @last modified on  : 02-12-2021
+  @last modified by  : Creation Admin
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   08-18-2020   Creation Admin   Initial Version
+-->
+<template>
+ <div>
+  <template if:true={spinnerBoolean}>
+    <div class="slds-spinner_container">
+      <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+    </div>
+  </template> 
+
+  <div class="slds-grid slds-gutters" style="background-color: #3C023C;">
+      <!-- <div class="slds-col slds-size_7-of-7 slds-text-align_center">
+        <div class="slds-float_left" style="width: 100%;">
+          <a href="javascript:void(0);" alt="Ticket Management" onclick={handleTicketManagement}>
+          
+          </a>
+        </div>
+      </div> -->
+      <template if:false={isCancelled}>
+      <!-- <template if:false={getFormFactor}> -->
+
+              <!-- <div class="slds-col slds-size_5-of-7 slds-text-align_right desktopMenus linkStyle">
+                <a href="javascript:void(0);" alt="Ticket Management" onclick={handleTicketManagement}>Ticket Management</a>
+              </div> -->
+      <!-- <template if:true={showMenuLinks}>-->
+              <!-- <div class="slds-col slds-size_1-of-7 slds-text-align_right desktopMenus linkStyle">
+                <a href="javascript:void(0);" style={showMenuLinks} alt="Event QR Code" onclick={handleEventQRCode}>Event QR Code</a>
+              </div>
+              <div class="slds-col slds-size_1-of-7 slds-text-align_right desktopMenus linkStyle">
+                <a href="javascript:void(0);" style={showMenuLinks} alt="Session Registration" onclick={handleSessionRegistration}>Session Registration</a>
+              </div>   -->
+    <!-- </template> -->
+    <!-- </template> -->
+    <!-- <template if:true={getFormFactor}> -->
+      <div class="slds-col slds-size_5-of-6 mobileMenus" style="padding:16px;"></div>
+      <div class="slds-col slds-size_1-of-6 mobileMenus">
+      <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open slds-float_right" style="background-color: #05884a; border:none; width:59px; height:57px; padding:16px;"> 
+        <div class="slds-no-flex" >
+          <template if:false={showMenu}>
+            <!-- <lightning-button-icon icon-name="utility:rows" size="large" slot="actions" alternative-text="collapsed" 
+              title="click to collapse" onclick={show_Menu} icon-class="iconStyle"></lightning-button-icon> -->
+
+              <a  onclick={show_Menu}>
+                <svg class="menuitem" width="26" height="26" viewBox="0 0 50 50">
+                  <path d="M46.5 14h-41c-.8 0-1.5-.7-1.5-1.5v-3C4 8.7 4.7 8 5.5 8h41c.8 0 1.5.7 1.5 1.5v3c0 .8-.7 1.5-1.5 1.5zM46.5 28.9h-41c-.8 0-1.5-.7-1.5-1.5v-3c0-.7.7-1.4 1.5-1.4h41c.8 0 1.5.7 1.5 1.5v3c0 .7-.7 1.4-1.5 1.4zM46.5 44h-41c-.8 0-1.5-.7-1.5-1.5v-3c0-.8.7-1.5 1.5-1.5h41c.8 0 1.5.7 1.5 1.5v3c0 .8-.7 1.5-1.5 1.5z"></path>
+
+                </svg>
+              </a>
+
+          </template>
+          <template if:true={showMenu}>
+            <!-- <lightning-button-icon icon-name="utility:close" size="large" slot="actions" alternative-text="open" 
+              title="click to collapse" onclick={hide_Menu} icon-class="iconStyle"></lightning-button-icon> -->
+              <a  onclick={hide_Menu}>
+                <svg class="cross" width="26" height="26" viewBox="0 0 50 50">
+                  <path d="M31 25.4l13-13.1c.6-.6.6-1.5 0-2.1l-2-2.1c-.6-.6-1.5-.6-2.1 0L26.8 21.2c-.4.4-1 .4-1.4 0L12.3 8c-.6-.6-1.5-.6-2.1 0l-2.1 2.1c-.6.6-.6 1.5 0 2.1l13.1 13.1c.4.4.4 1 0 1.4L8 39.9c-.6.6-.6 1.5 0 2.1l2.1 2.1c.6.6 1.5.6 2.1 0L25.3 31c.4-.4 1-.4 1.4 0l13.1 13.1c.6.6 1.5.6 2.1 0L44 42c.6-.6.6-1.5 0-2.1L31 26.8c-.4-.4-.4-1 0-1.4z"></path>
+
+                </svg>
+              </a>
+            </template>
+        </div>
+        
+          <!-- <div class="slds-dropdown slds-dropdown_right" style="width: 100vw;">
+          <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+          <li class="slds-dropdown__item" role="presentation">
+          <a href="javascript:void(0);" onclick={handleTicketManagement} role="menuitem" tabindex="0">
+          <span class="slds-truncate" title="Ticket Management">Ticket Management</span>
+          </a>
+          </li>
+         
+          <li class="slds-dropdown__item" role="presentation">
+          <a href="javascript:void(0);" style={showMenuLinks} onclick={handleEventQRCode} role="menuitem" tabindex="-1">
+          <span class="slds-truncate" title="Event QR Code">Event QR Code</span>
+          </a>
+          </li>
+          <li class="slds-dropdown__item" role="presentation">
+            <a href="javascript:void(0);" style={sessionStyle} onclick={handleSessionRegistration} role="menuitem" tabindex="-1">
+          <span class="slds-truncate" title="Session Registration">Session Registration</span>
+          </a>
+          </li>
+      
+          </ul>
+          </div> -->
+           
+        </div>
+      </div>
+        
+    <!-- </template> -->
+  </template>
+  </div>
+  <template if:false={isCancelled}>
+        <template if:true={showMenu}>
+          <div class="slds-grid mobileMenus" style="width: 100%;margin-bottom: 16px;background:#3C023C;">
+            <ul>
+            <li class="listStyle" role="presentation">
+            <a href="javascript:void(0);" onclick={handleTicketManagement} role="menuitem" tabindex="0">
+            <span class="slds-truncate listItemStyle" title="Ticket Management">Ticket Management</span>
+            </a>
+            </li>
+            <li class="listStyle" role="presentation">
+              <a href="javascript:void(0);" style={showMenuLinks} onclick={handleEventQRCode} role="menuitem" tabindex="-1">
+              <span class="slds-truncate listItemStyle" title="Check In Details">Check In Details</span>
+              </a>
+              </li>
+              <template if:true={showSessionRegistrationLink}>
+              <li class="listStyle" role="presentation">
+                <a href="javascript:void(0);" style={sessionStyle} onclick={handleSessionRegistration} role="menuitem" tabindex="-1">
+              <span class="slds-truncate listItemStyle" title="Session Registration">Session Registration</span>
+              </a>
+              </li>
+              </template>
+        
+            </ul>
+            </div>
+      </template>
+    </template>
+
+  <div style="padding: 16px;">
+    <div class="slds-grid slds-gutters">
+      <div class="slds-col slds-size_7-of-7 slds-text-align_center">
+        <div class="slds-float_left" style="width: 100%;">
+          <a href="javascript:void(0);" alt="Ticket Management" onclick={handleTicketManagement}>
+            <!-- <img src={uopLOGO} style={getUopLogoStyle}></img> -->
+          </a>
+        </div>
+      </div>
+    
+    </div>
+    <div class="slds-grid slds-gutters slds-align_absolute-center slds-p-top_small">
+    <template if:false={isCancelled}>
+      <p style="text-align: center;">
+        <span class="desktopMenus linkStyle">
+            <a href="javascript:void(0);" class="textStyle" style="border-left: 2px solid #ffffff;" alt="Ticket Management" onclick={handleTicketManagement}>Ticket Management</a>
+            <a href="javascript:void(0);" style={showMenuLinks} class="textStyle" alt="Check In Details" onclick={handleEventQRCode}>Check In Details</a>
+            <template if:true={showSessionRegistrationLink}>
+            <a href="javascript:void(0);" style={sessionStyle} class="textStyle" alt="Session Registration" onclick={handleSessionRegistration}>Session Registration</a>
+              </template>
+          </span>
+      </p>
+      <!-- <template if:false={getFormFactor}> already commented-->
+      <!-- <div class="slds-col slds-size_2-of-7 slds-text-align_right desktopMenus linkStyle">
+      </div>
+      <div class="slds-col slds-size_1-of-7 slds-text-align_right desktopMenus linkStyle">
+        <a href="javascript:void(0);" alt="Ticket Management" onclick={handleTicketManagement}>Ticket Management</a>
+      </div> -->
+      <!-- <template if:true={showMenuLinks}> already commented-->
+      <!-- <div class="slds-col slds-size_1-of-7 slds-text-align_right desktopMenus linkStyle">
+        <a href="javascript:void(0);" style={showMenuLinks} alt="Event QR Code" onclick={handleEventQRCode}>Event QR Code</a>
+      </div>
+      <div class="slds-col slds-size_1-of-7 slds-text-align_right desktopMenus linkStyle">
+        <a href="javascript:void(0);" style={showMenuLinks} alt="Session Registration" onclick={handleSessionRegistration}>Session Registration</a>
+      </div>   -->
+    </template>
+  </div>
+    <hr>
+
+    <!--TICKET UNAVAILABLE-->
+    <template if:true={isCancelled}>
+      <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+          <h1 class="slds-card__header-title slds-p-around_small slds-p-left_none headerFont">
+            Ticket Management Unavailable
+          </h1>
+          <label class="slds-form-element__label fieldLabelStyle" for="eventName">Ticket Management is not currently available for this Event Ticket.</label><br>
+          <label class="slds-form-element__label fieldLabelStyle" for="eventName">This may be due to the fact that the ticket has been cancelled or the event is no longer available.</label><br>
+          <label class="slds-form-element__label fieldLabelStyle" for="eventName">If you believe there is an issue please visit <a href="https://www.google.com" target="_blank">https://www.google.com</a></label>
+        </div>
+      </div>
+    </template>
+    <!--TICKET UNAVAILABLE-->
+
+    <template if:false={isCancelled}>
+    <!--TICKET MANAGEMENT-->
+    <template if:true={showTicketManagement}>
+    <div class="slds-grid slds-gutters slds-grid_vertical">
+      <template if:true={eventRegistration}>
+        <div class="slds-p-vertical_medium">
+          <h2 class="slds-card__header-title slds-p-horizontal_small headerFont">
+            Ticket Management
+          </h2>
+        <div class="slds-col slds-p-around--xx-small">
+          <label class="slds-form-element__label fieldLabelStyle" for="`">Event</label>
+          <lightning-input type="text" id="eventName" disabled variant="label-hidden" value={eventRegistration.Event__r.Web_Event_Name__c}
+                  class="inputFieldPlaceHolder" ></lightning-input>
+        </div>
+        <div class="slds-col slds-p-around--xx-small">
+          <label class="slds-form-element__label fieldLabelStyle" for="ticketRegNo">Ticket Registration Number</label>
+          <lightning-input type="text" id="ticketRegNo" disabled  variant="label-hidden" value={eventRegistration.Name}
+                  class="inputFieldPlaceHolder fieldLabelStyle" ></lightning-input>
+        </div>
+        <div class="slds-col slds-p-around--xx-small">
+          <label class="slds-form-element__label fieldLabelStyle" for="eventRegStatus">Event Registration Status</label>
+          <lightning-input type="text" id="eventRegStatus" disabled  variant="label-hidden" value={eventRegistration.Event_Registration_Status__c}
+                  class="inputFieldPlaceHolder fieldLabelStyle" ></lightning-input>
+        </div>
+        <div class="slds-col slds-p-around--xx-small">
+          <label class="slds-form-element__label fieldLabelStyle" for="eventOrder">Event Order</label>
+          <lightning-input type="text" id="eventOrder" disabled  variant="label-hidden" value={eventRegistration.Event_Order__r.Name}
+                  class="inputFieldPlaceHolder fieldLabelStyle" ></lightning-input>
+        </div>
+        <div class="slds-col slds-p-around--xx-small">
+          <label class="slds-form-element__label fieldLabelStyle" for="eventProduct">Event Product</label>
+          <lightning-input type="text" id="eventProduct" disabled  variant="label-hidden" value={eventRegistration.Event_Product__r.Name}
+                  class="inputFieldPlaceHolder fieldLabelStyle" ></lightning-input>
+        </div>
+      </div>
+      <div class="slds-p-vertical_medium">
+      <h2 class="slds-card__header-title slds-p-horizontal_small headerFont">
+        Attendee Details
+      </h2>
+      <div class="slds-col slds-p-around--xx-small">
+        <label class="slds-form-element__label fieldLabelStyle" for="regType">Registration Type</label>
+        <lightning-input type="text" id="regType" disabled  variant="label-hidden" value={registrationType}
+                class="inputFieldPlaceHolder fieldLabelStyle" ></lightning-input>
+      </div>
+      <template if:false={isNamedAttendee}>
+        <div class="slds-col slds-p-around--xx-small">
+          <label class="slds-form-element__label fieldLabelStyle" for="eventName">This ticket is currently for a guest. To receive event information &amp; to register for sessions please provide attendee details below.</label>
+        </div>
+      </template>
+      <div class="slds-col slds-p-around--xx-small">
+        <label class="slds-form-element__label fieldLabelStyle" for="firstName">First Name<abbr class="slds-required"
+          title="required">*</abbr></label>
+        <lightning-input type="text" id="firstName" name="First_Name__c"  variant="label-hidden" value={eventRegistration.First_Name__c}
+                class="saveRequiredClass inputFieldPlaceHolder fieldLabelStyle" disabled={isNamedAttendee} onchange={handleValueChange} placeholder="Please enter first name" required></lightning-input>
+      </div>
+      <div class="slds-col slds-p-around--xx-small">
+        <label class="slds-form-element__label fieldLabelStyle" for="lastName">Last Name<abbr class="slds-required"
+          title="required">*</abbr></label>
+        <lightning-input type="text" id="lastName" name="Last_Name__c"  variant="label-hidden" value={eventRegistration.Last_Name__c}
+                class="saveRequiredClass inputFieldPlaceHolder fieldLabelStyle" disabled={isNamedAttendee} onchange={handleValueChange} placeholder="Please enter last name" required></lightning-input>
+      </div>
+      <div class="slds-col slds-p-around--xx-small">
+        <label class="slds-form-element__label fieldLabelStyle" for="email">Email<abbr class="slds-required"
+          title="required">*</abbr></label>
+        <lightning-input type="text" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,15})$" message-when-pattern-mismatch="Please enter a valid email address" id="email" name="Event_Email__c" onblur={validateDuplicateEmail} variant="label-hidden" disabled={isNamedAttendee} value={eventRegistration.Event_Email__c}
+                class="saveRequiredClass inputFieldPlaceHolder fieldLabelStyle "  data-id="emailaddressinput" onchange={handleValueChange} placeholder="Please enter email" required></lightning-input>
+      </div>
+      <!-- Below line is commented--because we are not getting the value from the user -->
+      <!-- <div class="slds-col slds-p-around--xx-small">
+        <label class="slds-form-element__label fieldLabelStyle" for="mobile">Mobile</label>
+        <lightning-input type="text" pattern="[0-9-+()]*$" message-when-pattern-mismatch="Please provide a valid mobile number" max-length="11" id="mobile" name="Event_Mobile__c"  variant="label-hidden" disabled={isNamedAttendee} value={eventRegistration.Event_Mobile__c}
+                class="inputFieldPlaceHolder fieldLabelStyle" onchange={handleValueChange} placeholder="Please enter mobile number"></lightning-input>
+      </div> -->
+      <!-- <template if:true={canRenderQuestionForm}> -->
+      <template if:true={showSaveEdit}>
+        <div>
+          <c-ct_-event-questions-form-v2 onanswergiven={handleQuestionsAnswers} onsessionselection={handleSessionSelection} record-id={eventRegistrationId} is-disabled={isNamedAttendee} ></c-ct_-event-questions-form-v2>
+        </div>
+      </template>
+    <!-- </template> -->
+      <template if:true={showSaveEdit}>
+      <div class="slds-col slds-p-around--x-small">
+        <button type="button" value="Save / Edit" style="border-radius: 0px;"
+                class="searchButtonStyle slds-button slds-button_success slds-float_left" onclick={handleSave}>Save / Edit</button>
+      </div>
+      </template>
+    </div>
+    <div class="slds-p-vertical_medium">
+      <h2 class="slds-card__header-title slds-p-horizontal_small headerFont">
+        Ticket Cancellation
+      </h2>
+      <div class="slds-col slds-p-around--xx-small">
+        <label class="slds-form-element__label fieldLabelStyle" for="eventType">Cancellation Reason<abbr class="slds-required"
+          title="required">*</abbr></label>
+        <lightning-combobox label="By Event Type" id="eventType" required variant="label-hidden" options={eventCancelOptions} name="Cancellation_Reason__c" value={eventRegistration.Cancellation_Reason__c} onchange={handleValueChange} dropdown-alignment="auto"
+         class="cancelRequiredClass inputFieldPlaceHolder fieldLabelStyle" placeholder="Please select cancellation reason"></lightning-combobox>
+      </div>
+      <div class="slds-col slds-p-around--xx-small">
+        <label class="slds-form-element__label fieldLabelStyle" for="description">Additional cancellation details</label>
+        <lightning-input type="text" id="description"   variant="label-hidden" name="Cancellation_Description__c" value={eventRegistration.Cancellation_Description__c} onchange={handleValueChange}
+                class="cancelRequiredClass inputFieldPlaceHolder fieldLabelStyle" placeholder="Please enter cancellation details"></lightning-input>
+      </div>
+      <div class="slds-col slds-p-around--x-small">
+        <button type="button" value="Cancel Ticket"
+                class="cancelButtonStyle slds-button slds-button_success slds-float_left" onclick={handleEventCancellation}>Cancel Ticket</button>
+      </div>
+    </div>
+    </template>
+    </div>
+  </template>
+  <!--TICKET MANAGEMENT-->
+
+  <!--SESSION REGISTRATION-->
+  <template if:true={showSessionRegistration}>
+    <c-ct_-session-registration-form-v2 event-register-id={eventRegistrationId}></c-ct_-session-registration-form-v2>
+  </template>
+  <!--SESSION REGISTRATION-->
+
+  <!--EVENT QR CODE-->
+  <template if:true={showEventQRCode}>
+    <h2 class="slds-card__header-title slds-p-around--xx-small headerFont"> 
+      Check In Details
+    </h2>
+
+      <div class="slds-p-around--xx-small fieldLabelStyle">
+        Please have the QR code below ready to scan when you arrive at the event.
+    </div>
+    <div class="slds-p-around--xx-small fieldLabelStyle">
+      We use QR codes to check you into the event and at some sessions to speed up your entry process.
+    </div>
+    <div class="slds-p-around--xx-small">
+      <canvas class="QRSelector" data-id="QRCode" lwc:dom="manual"></canvas>
+      <!-- <img src={eventRegistration.QR_Code__c} alt="QR Code"></img> -->
+       <lightning-formatted-rich-text value={eventRegistration.QR_Code__c}></lightning-formatted-rich-text>
+      <!-- <lightning-formatted-rich-text value={eventRegistration.QR_Code__c}></lightning-formatted-rich-text> -->
+    </div>
+  </template>
+  <!--EVENT QR CODE-->
+  </template>
+</div>
+
+    <template if:false={showBackButton}>
+      <div class="slds-col slds-p-around--x-small">
+              <button type="button" value="Back Ticket"
+                      class="cancelButtonStyle slds-button slds-button_success slds-float_left" onclick={handleBackNavigation}>Back</button>
+            </div>
+    </template>
+
+</div>
+
+
+ 
+</template>

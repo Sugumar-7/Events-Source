@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Address_Fields_Mandatory__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is used to make address fields mandatory during the event registration</description>
+    <inlineHelpText>Check this field if the address fields need to be mandatory during the event registration</inlineHelpText>
+    <label>Order Address Fields Mandatory</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
